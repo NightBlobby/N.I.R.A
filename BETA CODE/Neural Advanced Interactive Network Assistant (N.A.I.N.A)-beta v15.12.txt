@@ -75,7 +75,7 @@ currency_converter = CurrencyRates()
 btc_converter = BtcConverter()
 
 # Initialize weather API with your API key
-owm = pyowm.OWM('5a16d7f729e69aced4b2d8745c1d6f6c')  # Replace with your OpenWeatherMap API key
+owm = pyowm.OWM('UR API')  # Replace with your OpenWeatherMap API key
 
 # Function to fetch weather information
 def get_weather(city_name):
