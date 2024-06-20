@@ -1,0 +1,264 @@
+import speech_recognition as sr
+import pyttsx3
+import requests
+from bs4 import BeautifulSoup
+from translate import Translator
+from forex_python.converter import CurrencyRates
+from forex_python.bitcoin import BtcConverter
+import random
+import webbrowser
+import pyowm
+import os
+import datetime
+import smtplib
+from email.message import EmailMessage
+
+# Initialize the speech engine
+engine = pyttsx3.init()
+
+# Set voice to female
+voices = engine.getProperty('voices')
+female_voice_found = False
+
+for voice in voices:
+    if 'female' in voice.name.lower():
+        engine.setProperty('voice', voice.id)
+        female_voice_found = True
+        break
+
+if not female_voice_found:
+    engine.setProperty('voice', 'english+f1')  # Use a default English female voice
+    print("There seems to have been a problem with the voice synthesizer. Default settings have been restored.")
+
+# Function to speak
+def speak(text):
+    engine.say(text)
+    engine.runAndWait()
+
+# Function to listen to the user's command
+def listen():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening...")
+        r.adjust_for_ambient_noise(source)
+        audio = r.listen(source)
+    try:
+        command = r.recognize_google(audio)
+        print(f"You said: {command}")
+        return command.lower()
+    except sr.UnknownValueError:
+        print("Sorry, I did not understand that.")
+        return None
+    except sr.RequestError:
+        print("Sorry, my speech service is down.")
+        return None
+
+# Initialize translator
+translator = Translator(to_lang='en')
+
+# Function to translate text
+def translate_text(text, dest_lang):
+    try:
+        translation = translator.translate(text, dest=dest_lang)
+        return translation
+    except Exception as e:
+        return f"Translation failed: {e}"
+
+# Initialize currency converter
+currency_converter = CurrencyRates()
+btc_converter = BtcConverter()
+
+# Initialize weather API
+owm = pyowm.OWM('your_openweather_api_key')  # Replace with your OpenWeatherMap API key
+
+# Function to fetch a joke from an online API
+def fetch_joke():
+    response = requests.get("https://official-joke-api.appspot.com/random_joke")
+    if response.status_code == 200:
+        joke_data = response.json()
+        return f"{joke_data['setup']} ... {joke_data['punchline']}"
+    else:
+        jokes = [
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "What do you get if you cross a cat with a dark horse? Kitty Perry.",
+            "Why don't some couples go to the gym? Because some relationships don't work out.",
+            "I told my wife she was drawing her eyebrows too high. She looked surprised."
+        ]
+        return random.choice(jokes)
+
+# Function to play music from a YouTube URL
+def play_music(url):
+    webbrowser.open(url)
+    speak("Playing music from YouTube.")
+
+# Function to greet the user
+def greet_user():
+    hour = datetime.datetime.now().hour
+    if hour < 12:
+        speak("Good morning!")
+    elif hour < 18:
+        speak("Good afternoon!")
+    else:
+        speak("Good evening!")
+    now = datetime.datetime.now()
+    speak(f"Today is {now.strftime('%A, %B %d, %Y')}, and the time is {now.strftime('%I:%M %p')}.")
+
+# Function to send an email
+def send_email():
+    try:
+        speak("Who is the recipient?")
+        recipient = listen()
+        speak("What is the subject?")
+        subject = listen()
+        speak("What is the message?")
+        message_content = listen()
+
+        msg = EmailMessage()
+        msg.set_content(message_content)
+        msg['Subject'] = subject
+        msg['From'] = 'your_email@example.com'  # Replace with your email
+        msg['To'] = recipient
+
+        with smtplib.SMTP('smtp.example.com', 587) as server:  # Replace with your SMTP server and port
+            server.starttls()
+            server.login('your_email@example.com', 'your_password')  # Replace with your login credentials
+            server.send_message(msg)
+
+        speak("Email sent successfully.")
+    except Exception as e:
+        speak(f"Sorry, I couldn't send the email. {e}")
+
+# Function to search for a file or application and open it
+def search_and_open(query):
+    for root, dirs, files in os.walk("C:\\"):  # Adjust the search path as needed
+        for name in files:
+            if query in name.lower():
+                os.startfile(os.path.join(root, name))
+                speak(f"Opening {name}")
+                return
+        for name in dirs:
+            if query in name.lower():
+                os.startfile(os.path.join(root, name))
+                speak(f"Opening {name}")
+                return
+    speak("Sorry, I couldn't find that file or application.")
+
+# Function to parse and execute commands
+def parse_and_execute_command(command):
+    if "open youtube" in command:
+        webbrowser.open("https://www.youtube.com")
+        speak("Opening YouTube.")
+    elif "open google" in command:
+        webbrowser.open("https://www.google.com")
+        speak("Opening Google.")
+    elif "open spotify" in command:
+        webbrowser.open("https://open.spotify.com")
+        speak("Opening Spotify.")
+    elif "open discord" in command:
+        webbrowser.open("https://discord.com")
+        speak("Opening Discord.")
+    elif "open email" in command or "open gmail" in command:
+        webbrowser.open("https://mail.google.com")
+        speak("Opening Email.")
+    elif "open G drive" in command:
+        webbrowser.open("https://drive.google.com")
+        speak("Opening Google Drive.")
+    elif "open twitter" in command or "open x" in command:
+        webbrowser.open("https://twitter.com")
+        speak("Opening X.")
+    elif "open instagram" in command or "open inta" in command:
+        webbrowser.open("https://instagram.com")
+        speak("Opening Instagram.")
+    elif "tell me a joke" in command:
+        joke = fetch_joke()
+        speak(joke)
+    elif "translate" in command:
+        speak("Please tell me the sentence you want to translate.")
+        sentence = listen()
+        speak("Which language do you want to translate to?")
+        dest_lang = listen()
+        translated_text = translate_text(sentence, dest_lang)
+        speak(translated_text)
+    elif "currency rate" in command:
+        speak("Please provide the base currency.")
+        base = listen()
+        speak("Please provide the target currency.")
+        target = listen()
+        try:
+            rate = currency_converter.get_rate(base.upper(), target.upper())
+            speak(f"The exchange rate from {base} to {target} is {rate}.")
+        except Exception as e:
+            speak(f"Sorry, I couldn't get the exchange rate. {e}")
+    elif "bitcoin price" in command:
+        try:
+            price = btc_converter.get_latest_price('USD')
+            speak(f"The current price of Bitcoin is {price} USD.")
+        except Exception as e:
+            speak(f"Sorry, I couldn't get the Bitcoin price. {e}")
+    elif "time" in command:
+        current_time = datetime.datetime.now().strftime("%I:%M %p")
+        speak(f"The current time is {current_time}.")
+    elif "date" in command:
+        current_date = datetime.datetime.now().strftime("%B %d, %Y")
+        speak(f"Today's date is {current_date}.")
+    elif "month" in command:
+        current_month = datetime.datetime.now().strftime("%B")
+        speak(f"We are currently in the month of {current_month}.")
+    elif "year" in command:
+        current_year = datetime.datetime.now().strftime("%Y")
+        speak(f"The current year is {current_year}.")
+    elif "event" in command:
+        # You can implement event checking logic here
+        # For demonstration purposes, let's just say there are no events
+        speak("There are no events scheduled.")
+    elif "search" in command:
+        speak("What would you like to search for?")
+        query = listen()
+        search_and_provide_answer(query)
+    elif "send email" in command:
+        send_email()
+    elif "exit" in command or "bye" in command or "quit" in command:
+        speak("Goodbye and take care, if you need anything feel free to ask!")
+        exit()
+    else:
+        speak("Sorry, I didn't understand that.")
+import requests
+
+def search_and_provide_answer(query):
+    try:
+        # Set up Google Custom Search API
+        api_key = "AIzaSyAawDA4Jd28VKhDxp2M5SYa8RN9aBZ_ZcA"
+        search_engine_id = "d6792a9ede5fa4835"
+        search_url = f"https://www.googleapis.com/customsearch/v1?key={api_key}&cx={search_engine_id}&q={query}"
+
+        # Make request to the API
+        response = requests.get(search_url)
+        data = response.json()
+
+        # Parse the response
+        if "items" in data:
+            items = data["items"]
+            if items:
+                # Get the first few relevant snippets
+                snippets = [item["snippet"] for item in items[:3]]
+                speak("Here are the top results I found:")
+                for snippet in snippets:
+                    speak(snippet)
+            else:
+                speak("Sorry, I couldn't find relevant information.")
+        else:
+            speak("Sorry, I encountered an error while searching. Please try again later.")
+    except Exception as e:
+        speak(f"Sorry, I encountered an error while searching. Error: {e}")
+
+# Main function to run the assistant
+def run_assistant():
+    greet_user()
+    while True:
+        command = listen()
+        if command:
+            parse_and_execute_command(command)
+
+if __name__ == "__main__":
+    run_assistant()
+    

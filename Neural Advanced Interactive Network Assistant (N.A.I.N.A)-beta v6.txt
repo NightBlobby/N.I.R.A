@@ -1,0 +1,243 @@
+import datetime
+import speech_recognition as sr
+import pyttsx3
+import wikipedia
+import requests
+import pygame
+import webbrowser
+import os
+import subprocess
+from googletrans import Translator
+from forex_python.converter import CurrencyRates
+from forex_python.bitcoin import BtcConverter
+import random
+import pyowm
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
+
+# Initialize the speech engine
+engine = pyttsx3.init()
+
+# Function to set voice to female
+def set_female_voice():
+    voices = engine.getProperty('voices')
+    for voice in voices:
+        if 'female' in voice.name.lower():
+            engine.setProperty('voice', voice.id)
+            break
+
+set_female_voice()
+
+# Function to speak
+def speak(text):
+    engine.say(text)
+    engine.runAndWait()
+
+# Function to listen to the user's command
+def listen():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening...")
+        r.adjust_for_ambient_noise(source)
+        audio = r.listen(source)
+    try:
+        command = r.recognize_google(audio)
+        print(f"You said: {command}")
+        return command.lower()
+    except sr.UnknownValueError:
+        print("Sorry, I did not understand that.")
+        return None
+    except sr.RequestError:
+        print("Sorry, my speech service is down.")
+        return None
+
+# Initialize pygame mixer for music control
+pygame.mixer.init()
+
+# Initialize translator
+translator = Translator()
+
+# Initialize currency converter
+currency_converter = CurrencyRates()
+btc_converter = BtcConverter()
+
+# Initialize weather API
+owm = pyowm.OWM('your_openweather_api_key')  # Replace with your OpenWeatherMap API key
+
+# Initialize Spotify API (replace with your own client_id and client_secret)
+spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id='your_spotify_client_id', client_secret='your_spotify_client_secret'))
+
+# List of predefined jokes
+jokes = [
+    "Why don't scientists trust atoms? Because they make up everything!",
+    "What do you get if you cross a cat with a dark horse? Kitty Perry.",
+    "Why don't some couples go to the gym? Because some relationships don't work out.",
+    "I told my wife she was drawing her eyebrows too high. She looked surprised."
+]
+
+# Function to fetch a joke from an online API
+def fetch_joke():
+    response = requests.get("https://official-joke-api.appspot.com/random_joke")
+    if response.status_code == 200:
+        joke_data = response.json()
+        return f"{joke_data['setup']} ... {joke_data['punchline']}"
+    else:
+        return random.choice(jokes)
+
+# Function to play music from a YouTube URL
+def play_music(url):
+    webbrowser.open(url)
+    speak("Playing music from YouTube.")
+
+# Function to control music playback
+def control_music(action):
+    if action == "pause":
+        pygame.mixer.music.pause()
+        speak("Music paused.")
+    elif action == "resume":
+        pygame.mixer.music.unpause()
+        speak("Music resumed.")
+    elif action == "stop":
+        pygame.mixer.music.stop()
+        speak("Music stopped.")
+    elif action == "next":
+        pygame.mixer.music.stop()
+        speak("Playing next song.")
+    elif action == "previous":
+        pygame.mixer.music.stop()
+        speak("Playing previous song.")
+    else:
+        speak("Invalid action.")
+
+# Function to play a song on Spotify
+def play_song_on_spotify(song_name):
+    results = spotify.search(q=song_name, limit=1, type='track')
+    if results['tracks']['items']:
+        track = results['tracks']['items'][0]
+        webbrowser.open(track['external_urls']['spotify'])
+        speak(f"Playing {track['name']} by {track['artists'][0]['name']} on Spotify.")
+    else:
+        speak("Sorry, I couldn't find the song on Spotify.")
+
+# Function to get phone stock ROM link (placeholder)
+def get_stock_rom(phone_model):
+    # Implement logic to get stock ROM link for a phone model
+    # For simplicity, using a placeholder link
+    return f"https://www.google.com/search?q={phone_model.replace(' ', '+')}+stock+ROM"
+
+# Function to search and open files or applications
+def search_and_open(query):
+    search_results = []
+    for root, dirs, files in os.walk("C:/"):
+        for name in files:
+            if query.lower() in name.lower():
+                search_results.append(os.path.join(root, name))
+        for name in dirs:
+            if query.lower() in name.lower():
+                search_results.append(os.path.join(root, name))
+    if search_results:
+        file_to_open = search_results[0]
+        os.startfile(file_to_open)
+        speak(f"Opening {os.path.basename(file_to_open)}")
+    else:
+        speak(f"Sorry, I couldn't find any file or application named {query}")
+
+# Main function to process commands
+def process_command(command):
+    if "naina" in command:
+        if "open" in command:
+            item_to_open = command.replace("naina open", "").strip()
+            search_and_open(item_to_open)
+        elif "play music" in command:
+            speak("Please provide the URL of the music.")
+            url = listen()
+            play_music(url)
+        elif "pause music" in command:
+            control_music("pause")
+        elif "resume music" in command:
+            control_music("resume")
+        elif "stop music" in command:
+            control_music("stop")
+        elif "next song" in command:
+            control_music("next")
+        elif "previous song" in command:
+            control_music("previous")
+        elif "play song" in command:
+            song_name = command.replace("naina play song", "").strip()
+            play_song_on_spotify(song_name)
+        elif "tell me a joke" in command:
+            joke = fetch_joke()
+            speak(joke)
+        elif "what is" in command or "who is" in command:
+            topic = command.replace("what is", "").replace("who is", "").strip()
+            summary = wikipedia.summary(topic, sentences=2)
+            speak(summary)
+        elif "translate" in command:
+            speak("Please tell me the sentence you want to translate.")
+            sentence = listen()
+            speak("Which language do you want to translate to?")
+            dest_lang = listen()
+            translation = translator.translate(sentence, dest=dest_lang).text
+            speak(f"The translation is: {translation}")
+        elif "currency rate" in command:
+            speak("Please provide the base currency.")
+            base = listen()
+            speak("Please provide the target currency.")
+            target = listen()
+            rate = currency_converter.get_rate(base.upper(), target.upper())
+            speak(f"The exchange rate from {base} to {target} is {rate}.")
+        elif "bitcoin price" in command:
+            price = btc_converter.get_latest_price('USD')
+            speak(f"The current price of Bitcoin is {price} USD.")
+        elif "weather" in command:
+            speak("Please provide the city name.")
+            city = listen()
+            weather = owm.weather_at_place(city).get_weather()
+            temperature = weather.get_temperature('celsius')['temp']
+            status = weather.get_status()
+            speak(f"The current temperature in {city} is {temperature} degrees Celsius with {status}.")
+        elif "stock rom" in command:
+            speak("Please provide the phone model.")
+            phone_model = listen()
+            rom_link = get_stock_rom(phone_model)
+            speak(f"You can search for the stock ROM for {phone_model} using this link: {rom_link}")
+            webbrowser.open(rom_link)
+        else:
+            speak("Sorry, I didn't understand.")
+    elif "your name" in command or "who are you" in command:
+        speak("My name is Naina.")
+    elif "creator" in command or "created" in command:
+        speak("I was created by Priyanshu.")
+    elif "time" in command or "day" in command:
+        now = datetime.datetime.now()
+        current_time = now.strftime("%I:%M %p")
+        current_day = now.strftime("%A")
+        speak(f"It is {current_time} on {current_day}.")
+    elif "exit" in command or "bye" in command or "quit" in command:
+        speak("Goodbye!")
+        return True
+    else:
+        return False
+
+# Function to wish the user
+def wish_user():
+    hour = datetime.datetime.now().hour
+    if 0 <= hour < 12:
+        speak("Good morning!")
+    elif 12 <= hour < 18:
+        speak("Good afternoon!")
+    else:
+        speak("Good evening!")
+    now = datetime.datetime.now()
+    current_time = now.strftime("%I:%M %p")
+    current_day = now.strftime("%A")
+    speak(f"It is {current_time} on {current_day}.")
+
+# Run the assistant
+if __name__ == "__main__":
+    wish_user()
+    while True:
+        command = listen()
+        if command:
+            if process_command(command):
+                break

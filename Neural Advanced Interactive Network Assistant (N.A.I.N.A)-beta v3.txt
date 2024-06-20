@@ -1,0 +1,149 @@
+import speech_recognition as sr
+import pyttsx3
+import wikipedia
+import webbrowser
+import datetime
+import os
+import random
+import requests
+import pygame
+import math
+from googletrans import Translator
+from forex_python.converter import CurrencyRates
+from forex_python.bitcoin import BtcConverter
+import json
+import pyowm
+
+# Initialize text-to-speech engine
+engine = pyttsx3.init()
+
+# Get all available voices
+voices = engine.getProperty('voices')
+
+# Set female voice (assuming it's the first one in the list)
+engine.setProperty('voice', voices[0].id)
+
+# Set other properties
+engine.setProperty('rate', 150)  # Speed of speech
+engine.setProperty('volume', 0.9)  # Volume level (0.0 to 1.0)
+
+# Initialize pygame mixer
+pygame.mixer.init()
+
+# Initialize translator
+translator = Translator()
+
+# Initialize currency converter
+currency_converter = CurrencyRates()
+
+# Initialize bitcoin converter
+bitcoin_converter = BtcConverter()
+
+# Initialize OpenWeatherMap API client
+owm = pyowm.OWM("YOUR_API_KEY")  # Replace with your OWM API key
+
+def listen():
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("N.A.I.NA is listening...")
+        recognizer.adjust_for_ambient_noise(source)
+        audio = recognizer.listen(source)
+    try:
+        print("N.A.I.NA is recognizing...")
+        query = recognizer.recognize_google(audio, language='en-US')
+        print(f"You said: {query}")
+    except Exception as e:
+        print("Sorry, N.A.I.NA didn't catch that.")
+        return None
+    return query
+
+def speak(text):
+    engine.say(text)
+    engine.runAndWait()
+
+def wish_me():
+    current_time = datetime.datetime.now().strftime("%H:%M")
+    if "00:00" <= current_time < "12:00":
+        speak("Good morning!")
+    elif "12:00" <= current_time < "18:00":
+        speak("Good afternoon!")
+    else:
+        speak("Good evening!")
+    speak("I'm N.A.I.NA, your Neural Advanced Interactive Network Assistant. How can I assist you today?")
+
+def search_wikipedia(query):
+    speak("Searching Wikipedia...")
+    try:
+        summary = wikipedia.summary(query, sentences=2)
+        speak("According to Wikipedia")
+        speak(summary)
+    except wikipedia.exceptions.DisambiguationError as e:
+        speak("There are multiple matches. Please specify your query.")
+
+def search_online(query):
+    url = f"https://www.google.com/search?q={query}"
+    speak("Searching online...")
+    webbrowser.open(url)
+
+def calculate(expression):
+    try:
+        result = eval(expression)
+        speak(f"The result is {result}")
+    except Exception as e:
+        speak("Sorry, I couldn't calculate that.")
+
+def translate_text(text, target_language):
+    try:
+        translation = translator.translate(text, dest=target_language)
+        speak(f"The translation to {translation.dest} is: {translation.text}")
+    except Exception as e:
+        speak("Sorry, I couldn't translate the text.")
+
+def convert_currency(amount, from_currency, to_currency):
+    try:
+        result = currency_converter.convert(from_currency, to_currency, amount)
+        speak(f"{amount} {from_currency} is equal to {result} {to_currency}")
+    except Exception as e:
+        speak("Sorry, I couldn't convert the currency.")
+
+def convert_bitcoin(amount, from_currency, to_currency):
+    try:
+        result = bitcoin_converter.convert_to_btc(amount, from_currency)
+        converted_amount = bitcoin_converter.convert_btc_to_cur(result, to_currency)
+        speak(f"{amount} {from_currency} is equal to {converted_amount} {to_currency}")
+    except Exception as e:
+        speak("Sorry, I couldn't convert the cryptocurrency.")
+
+def get_weather_forecast(city):
+    try:
+        observation = owm.weather_at_place(city)
+        weather = observation.get_weather()
+        temperature = weather.get_temperature('celsius')['temp']
+        status = weather.get_status()
+        speak(f"The current weather in {city} is {status} with a temperature of {temperature} degrees Celsius.")
+    except Exception as e:
+        speak("Sorry, I couldn't fetch the weather information.")
+
+def pause_music():
+    pygame.mixer.music.pause()
+    speak("Music paused.")
+
+def unpause_music():
+    pygame.mixer.music.unpause()
+    speak("Music resumed.")
+
+def stop_music():
+    pygame.mixer.music.stop()
+    speak("Music stopped.")
+
+def next_song():
+    pygame.mixer.music.stop()  # Stop the current song
+    speak("Skipping to the next song.")
+
+def previous_song():
+    # Implement logic to play the previous song if available
+    speak("Playing the previous song.")
+
+def process_command(command):
+    if 'search' in command.lower():
+        # Perform Wikipedia
