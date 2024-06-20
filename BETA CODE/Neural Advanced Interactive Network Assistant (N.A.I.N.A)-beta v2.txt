@@ -1,0 +1,139 @@
+import speech_recognition as sr
+import pyttsx3
+import wikipedia
+import webbrowser
+import datetime
+import os
+import random
+import requests
+
+# Initialize text-to-speech engine
+engine = pyttsx3.init()
+
+# Get all available voices
+voices = engine.getProperty('voices')
+
+# Set female voice (assuming it's the first one in the list)
+engine.setProperty('voice', voices[0].id)
+
+# Set other properties
+engine.setProperty('rate', 150)  # Speed of speech
+engine.setProperty('volume', 0.9)  # Volume level (0.0 to 1.0)
+
+def listen():
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("N.A.I.NA is listening...")
+        recognizer.adjust_for_ambient_noise(source)
+        audio = recognizer.listen(source)
+    try:
+        print("N.A.I.NA is recognizing...")
+        query = recognizer.recognize_google(audio, language='en-US')
+        print(f"You said: {query}")
+    except Exception as e:
+        print("Sorry, N.A.I.NA didn't catch that.")
+        return None
+    return query
+
+def speak(text):
+    engine.say(text)
+    engine.runAndWait()
+
+def wish_me():
+    current_time = datetime.datetime.now().strftime("%H:%M")
+    if "00:00" <= current_time < "12:00":
+        speak("Good morning!")
+    elif "12:00" <= current_time < "18:00":
+        speak("Good afternoon!")
+    else:
+        speak("Good evening!")
+    speak("I'm N.A.I.NA, your Neural Advanced Interactive Network Assistant. How can I assist you today?")
+
+def search_wikipedia(query):
+    speak("Searching Wikipedia...")
+    try:
+        summary = wikipedia.summary(query, sentences=2)
+        speak("According to Wikipedia")
+        speak(summary)
+    except wikipedia.exceptions.DisambiguationError as e:
+        speak("There are multiple matches. Please specify your query.")
+
+def search_online(query):
+    url = f"https://www.google.com/search?q={query}"
+    speak("Searching online...")
+    webbrowser.open(url)
+
+def play_music():
+    query = "YOUR_SONG_NAME_HERE"  # Replace with the song you want to play
+    url = f"https://www.youtube.com/results?search_query={query}"
+    speak("Playing music...")
+    webbrowser.open(url)
+
+def get_weather(city):
+    api_key = "YOUR_API_KEY"  # Replace with your API key from OpenWeatherMap
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+    response = requests.get(url)
+    data = response.json()
+    if data['cod'] == 200:
+        weather_desc = data['weather'][0]['description']
+        temperature = data['main']['temp']
+        speak(f"The current weather in {city} is {weather_desc} with a temperature of {temperature} degrees Celsius.")
+    else:
+        speak("Sorry, I couldn't fetch the weather information at the moment.")
+
+def tell_joke():
+    url = "https://official-joke-api.appspot.com/random_joke"
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            joke_data = response.json()
+            setup = joke_data['setup']
+            punchline = joke_data['punchline']
+            speak(setup)
+            speak(punchline)
+        else:
+            speak("Sorry, I couldn't fetch a joke at the moment.")
+    except Exception as e:
+        speak("Sorry, I couldn't fetch a joke at the moment.")
+
+def process_command(command):
+    if 'search' in command.lower():
+        # Perform Wikipedia search
+        search_query = command.replace("search", "").strip()
+        search_wikipedia(search_query)
+    elif 'hello' in command.lower():
+        # Greet the user
+        speak("Hello! How can N.A.I.NA assist you?")
+    elif 'goodbye' in command.lower():
+        # Say goodbye
+        speak("Goodbye! Have a nice day!")
+        return False
+    elif 'play music' in command.lower():
+        # Play music from an online source
+        play_music()
+    elif 'time' in command.lower():
+        # Tell the current time
+        current_time = datetime.datetime.now().strftime("%I:%M %p")
+        speak(f"The current time is {current_time}")
+    elif 'weather' in command.lower():
+        # Get weather information
+        city = command.split("weather")[1].strip()
+        get_weather(city)
+    elif 'joke' in command.lower():
+        # Tell a joke
+        tell_joke()
+    else:
+        # Search online if no specific command detected
+        search_online(command)
+    return True
+
+def main():
+    wish_me()
+    active = True
+    while active:
+        command = listen()
+        if command:
+            active = process_command(command)
+
+if __name__ == "__main__":
+    main()

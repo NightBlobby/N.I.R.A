@@ -1,0 +1,514 @@
+import tkinter as tk
+from tkinter import font
+from datetime import datetime
+import webbrowser
+import requests
+import speech_recognition as sr
+import pyttsx3
+import threading
+import time
+import random
+import os
+import smtplib
+from email.message import EmailMessage
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from translate import Translator
+from forex_python.converter import CurrencyRates
+from forex_python.bitcoin import BtcConverter
+import pyowm
+
+# Download NLTK resources if not already downloaded
+nltk.download('averaged_perceptron_tagger')
+nltk.download('punkt')
+nltk.download('stopwords')
+
+# Initialize the speech engine
+engine = pyttsx3.init()
+
+# Set voice to female
+def set_voice():
+    voices = engine.getProperty('voices')
+    for voice in voices:
+        if 'female' in voice.name.lower():
+            engine.setProperty('voice', voice.id)
+            return
+    engine.setProperty('voice', 'english+f1')  # Default female voice
+set_voice()
+
+# Function to speak
+def speak(text):
+    engine.say(text)
+    engine.runAndWait()
+
+# Function to listen to the user's command
+def listen():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening...")
+        r.adjust_for_ambient_noise(source)
+        audio = r.listen(source)
+    try:
+        command = r.recognize_google(audio)
+        print(f"You said: {command}")
+        return command.lower()
+    except sr.UnknownValueError:
+        speak("Sorry, I did not understand that.")
+        return None
+    except sr.RequestError:
+        speak("Sorry, my speech service is down.")
+        return None
+    except Exception as e:
+        speak(f"An error occurred: {e}")
+        return None
+
+# Initialize translator
+translator = Translator(to_lang='en')
+
+# Function to translate text
+def translate_text(text, dest_lang):
+    try:
+        translation = translator.translate(text, dest=dest_lang)
+        return translation
+    except Exception as e:
+        return f"Translation failed: {e}"
+
+# Initialize currency converter
+currency_converter = CurrencyRates()
+btc_converter = BtcConverter()
+
+# Initialize weather API with your API key
+owm = pyowm.OWM('5a16d7f729e69aced4b2d8745c1d6f6c')  # Replace with your OpenWeatherMap API key
+
+# Function to fetch weather information
+def get_weather(city_name):
+    try:
+        observation = owm.weather_manager().weather_at_place(city_name)
+        weather = observation.weather
+        temperature = weather.temperature('celsius')['temp']
+        status = weather.detailed_status
+        weather_info = f"{city_name}: {temperature}°C, {status}"
+        weather_label.config(text=weather_info)
+        return weather_info
+    except Exception as e:
+        weather_label.config(text="Could not get weather information.")
+        return f"Could not get weather information. Please try again later {e}"
+
+# Function to fetch a joke from an online API
+def fetch_joke():
+    response = requests.get("https://official-joke-api.appspot.com/random_joke")
+    if response.status_code == 200:
+        joke_data = response.json()
+        return f"{joke_data['setup']} ... {joke_data['punchline']}"
+    else:
+        jokes = [
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "What do you get if you cross a cat with a dark horse? Kitty Perry.",
+            "Why don't some couples go to the gym? Because some relationships don't work out.",
+            "I told my wife she was drawing her eyebrows too high. She looked surprised."
+        ]
+        return random.choice(jokes)
+
+# Function to play music from a YouTube URL
+def play_music(url):
+    webbrowser.open(url)
+    speak("Playing music.")
+
+# Function to greet the user
+def greet_user():
+    hour = datetime.datetime.now().hour
+    if hour < 12:
+        speak("Good morning, Sir!")
+    elif hour < 18:
+        speak("Good afternoon, Sir!")
+    else:
+        speak("Good evening, Sir!")
+    now = datetime.datetime.now()
+    speak(f"Today is {now.strftime('%A, %B %d, %Y')}, and the time is {now.strftime('%I:%M %p')}.")
+
+# Function to send an email
+def send_email():
+    try:
+        speak("Who is the recipient?")
+        recipient = listen()
+        speak("What is the subject?")
+        subject = listen()
+        speak("What is the message?")
+        message_content = listen()
+
+        msg = EmailMessage()
+        msg.set_content(message_content)
+        msg['Subject'] = subject
+        msg['From'] = 'reeddplayz@gmail.com'  # Replace with your email
+        msg['To'] = recipient
+
+        with smtplib.SMTP('smtp.example.com', 587) as server:  # Replace with your SMTP server and port
+            server.starttls()
+            server.login('your_email@example.com', 'your_password')  # Replace with your login credentials
+            server.send_message(msg)
+
+        speak("Email sent.")
+    except Exception as e:
+        speak(f"Could not send the email. {e}")
+
+# Function to search and provide an answer
+def search_and_provide_answer(query):
+    try:
+        # Set up Google Custom Search API
+        api_key = "YOUR_GOOGLE_API_KEY"
+        search_engine_id = "YOUR_CUSTOM_SEARCH_ENGINE_ID"
+        search_url = f"https://www.googleapis.com/customsearch/v1?key={api_key}&cx={search_engine_id}&q={query}"
+
+        # Make request to the API
+        response = requests.get(search_url)
+        data = response.json()
+
+        # Parse the response
+        if "items" in data:
+            items = data["items"]
+            if items:
+                # Get the first relevant snippet
+                snippet = items[0]["snippet"]
+                speak(snippet)
+            else:
+                speak("No relevant information found.")
+        else:
+            speak("Error occurred while searching.")
+    except Exception as e:
+        speak(f"Error occurred while searching. {e}")
+
+# Function to classify sentence as command or question
+def classify_sentence(sentence):
+    tokens = word_tokenize(sentence)
+    words = [word for word in tokens if word.isalnum()]
+    stop_words = set(stopwords.words('english'))
+    words = [word for word in words if word.lower() not in stop_words]
+    tagged_words = nltk.pos_tag(words)
+    question_words = ['WDT', 'WP', 'WP$', 'WRB']
+    for word, tag in tagged_words:
+        if tag in question_words:
+            return "question"
+    return "command"
+
+# Memory storage dictionary
+memory = {}
+
+def remember(key, value):
+    memory[key] = value
+    speak(f"I will remember {key} as {value}.")
+
+def retrieve_memory(key):
+    if key in memory:
+        return memory[key]
+    else:
+        return "I don't remember anything about that."
+
+def set_timer(duration_seconds):
+    def timer_thread():
+        time.sleep(duration_seconds)
+        speak("Time's up!")
+    thread = threading.Thread(target=timer_thread)
+    thread.start()
+
+def set_alarm(alarm_time):
+    def alarm_thread():
+        while True:
+            current_time = datetime.datetime.now().strftime('%H:%M')
+            if current_time == alarm_time:
+                speak("It's time!")
+                break
+            time.sleep(30)  # Check every 30 seconds
+    thread = threading.Thread(target=alarm_thread)
+    thread.start()
+
+def parse_and_execute_command(command):
+    # Standardize the command to lower case
+    command = command.lower()
+
+    # Lists of phrases to match against
+    compliments = ["you are beautiful", "you are smart", "you are awesome", "you're beautiful"]
+    thanks = ["thanks", "thank you", "thank"]
+    goodbye = ["goodbye", "bye", "exit"]
+
+    classification = classify_sentence(command)
+    if classification == "question":
+        search_and_provide_answer(command)
+        return
+    
+    if any(compliment in command for compliment in compliments):
+        speak("Thank you!")
+    elif any(thank in command for thank in thanks):
+        speak("You're welcome.")
+    elif any(exit_command in command for exit_command in goodbye):
+        speak("Goodbye and take care, if you need anything feel free to ask!")
+        exit()
+    elif "what is your name" in command or "who are you" in command:
+        speak("I am your personal assistant.")
+    elif "calculate" in command:
+        try:
+            # Extract the mathematical expression
+            expression = command.split("calculate")[1].strip()
+            # Evaluate the expression
+            result = eval(expression)
+            speak(f"The result of {expression} is {result}")
+        except Exception as e:
+            speak(f"Sorry, I couldn't calculate that. {e}")
+        return
+    elif "open youtube" in command:
+        speak("Opening Youtube.")
+        webbrowser.open("https://www.youtube.com")
+    elif "open google" in command:
+        speak("Opening Google.")
+        webbrowser.open("https://www.google.com")
+    elif "open spotify" in command:
+        speak("Opening Spotify.")
+        webbrowser.open("https://www.spotify.com")
+    elif "open github" in command:
+        speak("Opening GitHub.")
+        webbrowser.open("https://www.github.com")
+    elif "open stack overflow" in command:
+        speak("Opening Stack Overflow.")
+        webbrowser.open("https://stackoverflow.com")
+    elif "set timer for" in command:
+        try:
+            duration = int(command.split("set timer for")[1].strip().split()[0])
+            set_timer(duration)
+            speak(f"Timer set for {duration} seconds.")
+        except Exception as e:
+            speak(f"Could not set timer. {e}")
+    elif "set alarm for" in command:
+        try:
+            alarm_time = command.split("set alarm for")[1].strip()
+            set_alarm(alarm_time)
+            speak(f"Alarm set for {alarm_time}.")
+        except Exception as e:
+            speak(f"Could not set alarm. {e}")
+    elif "what is the weather in" in command:
+        try:
+            city_name = command.split("what is the weather in")[1].strip()
+            weather_info = get_weather(city_name)
+            speak(weather_info)
+        except Exception as e:
+            speak(f"Could not get weather information. {e}")
+    elif "remember" in command:
+        try:
+            key_value = command.split("remember")[1].strip().split(" as ")
+            remember(key_value[0], key_value[1])
+        except Exception as e:
+            speak(f"Could not remember. {e}")
+    elif "what do you remember about" in command:
+        try:
+            key = command.split("what do you remember about")[1].strip()
+            value = retrieve_memory(key)
+            speak(value)
+        except Exception as e:
+            speak(f"Could not retrieve memory. {e}")
+    elif "tell me a joke" in command:
+        joke = fetch_joke()
+        speak(joke)
+    elif "send an email" in command:
+        send_email()
+    elif "translate" in command:
+        try:
+            parts = command.split("translate")[1].strip().split(" to ")
+            text = parts[0]
+            dest_lang = parts[1]
+            translation = translate_text(text, dest_lang)
+            speak(translation)
+        except Exception as e:
+            speak(f"Could not translate. {e}")
+    elif "convert" in command:
+        try:
+            parts = command.split("convert")[1].strip().split(" to ")
+            amount = float(parts[0].split()[0])
+            from_currency = parts[0].split()[1]
+            to_currency = parts[1]
+            if from_currency.lower() == "btc":
+                result = btc_converter.convert_btc_to_cur(amount, to_currency.upper())
+            else:
+                result = currency_converter.convert(from_currency.upper(), to_currency.upper(), amount)
+            speak(f"{amount} {from_currency} is equal to {result} {to_currency}")
+        except Exception as e:
+            speak(f"Could not convert currency. {e}")
+    else:
+        speak("I'm sorry, I don't understand that command.")
+
+class WeatherApp(tk.Tk):
+    def __init__(self):
+        super().__init__()
+
+        self.title("AI assistant")
+        self.configure(bg="#0A001E")
+        self.geometry("800x600")
+
+        # Load the custom NDOT 47 font
+        try:
+            self.ndot_font = font.Font(family="NDOT 47", size=10)
+        except Exception as e:
+            print(f"Error loading font: {e}")
+            self.ndot_font = font.Font(family="NDOT 47", size=10)  # Fallback font
+
+        # Weather icon and temperature
+        self.weather_frame = tk.Frame(self, bg="#0A001E")
+        self.weather_frame.place(relx=0.1, rely=0.4, anchor='w')
+
+        self.weather_icon_label = tk.Label(self.weather_frame, text="☀️", font=("Arial", 80), bg="#0A001E", fg="white")
+        self.weather_icon_label.grid(row=0, column=0)
+
+        self.temperature_label = tk.Label(self.weather_frame, text="-- °C", font=("Arial", 24), bg="#0A001E", fg="white")
+        self.temperature_label.grid(row=1, column=0, pady=5)
+
+        self.city_name_label = tk.Label(self.weather_frame, text="Enter City Name:", font=("Arial", 18), bg="#0A001E", fg="white")
+        self.city_name_label.grid(row=2, column=0)
+
+        self.city_entry = tk.Entry(self.weather_frame, font=("Arial", 12), width=15)
+        self.city_entry.grid(row=3, column=0, pady=10)
+
+        self.search_button = tk.Label(self.weather_frame, text="🔍", font=("Arial", 12), bg="#0A001E", fg="white", cursor="hand2")
+        self.search_button.grid(row=3, column=1, padx=5)
+        self.search_button.bind("<Button-1>", self.toggle_search_entry)
+
+        self.get_weather_button = tk.Button(self.weather_frame, text="Get Weather", font=("Arial", 12), bg="#555555", fg="white", relief="flat", cursor="hand2", command=self.get_weather)
+        self.get_weather_button.grid(row=4, column=0, pady=5)
+
+        # Time, date, and day
+        self.time_date_frame = tk.Frame(self, bg="#0A001E")
+        self.time_date_frame.place(relx=0.75, rely=0.4, anchor='center')
+
+        self.time_label = tk.Label(self.time_date_frame, text=datetime.now().strftime("%I:%M %p"), font=("Arial", 24), bg="#0A001E", fg="white")
+        self.time_label.grid(row=0, column=0, pady=5)
+
+        self.date_label = tk.Label(self.time_date_frame, text=datetime.now().strftime("%d-%m-%Y"), font=("Arial", 15), bg="#0A001E", fg="white")
+        self.date_label.grid(row=1, column=0, pady=5)
+
+        self.day_label = tk.Label(self.time_date_frame, text=datetime.now().strftime("%A"), font=("Arial", 15), bg="#0A001E", fg="white")
+        self.day_label.grid(row=2, column=0, pady=5)
+
+        # Help button and footer
+        self.bottom_frame = tk.Frame(self, bg="#0A001E")
+        self.bottom_frame.place(relx=0.005, rely=0.96, anchor='w')
+
+        self.help_button = tk.Button(self.bottom_frame, text="Help?", font=("Arial", 14), bg="#555555", fg="white", relief="flat", cursor="hand2", command=self.open_help)
+        self.help_button.grid(row=0, column=0, padx=10, pady=5)
+
+        self.footer_label = tk.Label(self.bottom_frame, text="©NightBlobby", font=self.ndot_font, bg="#0A001E", fg="white")
+        self.footer_label.grid(row=0, column=1, padx=10, pady=5)
+
+        # Command entry and result label
+        self.command_entry = tk.Entry(self, width=50, font=("Arial", 14))
+        self.command_entry.place(relx=0.5, rely=0.8, anchor='center')
+
+        self.result_label = tk.Label(self, text="", bg="#0A001E", font=("Arial", 14), fg="white")
+        self.result_label.place(relx=0.5, rely=0.85, anchor='center')
+
+        # Buttons for command actions
+        self.listen_button = tk.Button(self, text="Listen", font=("Arial", 14), bg="#555555", fg="white", relief="flat", cursor="hand2", command=self.listen_command)
+        self.listen_button.place(relx=0.3, rely=0.9, anchor='center')
+
+        self.submit_button = tk.Button(self, text="Submit", font=("Arial", 14), bg="#555555", fg="white", relief="flat", cursor="hand2", command=self.submit_command)
+        self.submit_button.place(relx=0.5, rely=0.9, anchor='center')
+
+        self.exit_button = tk.Button(self, text="Exit", font=("Arial", 14), bg="#555555", fg="white", relief="flat", cursor="hand2", command=self.exit_app)
+        self.exit_button.place(relx=0.7, rely=0.9, anchor='center')
+
+        # Update weather information initially
+        self.update_weather("London")
+        
+        # Update time and date continuously
+        self.update_time_date_continuous()
+
+    def open_help(self):
+        webbrowser.open("https://github.com/NightBlobby/N.A.I.N.A")
+
+    def update_weather(self, city):
+        api_key = "5a16d7f729e69aced4b2d8745c1d6f6c"  # Replace with your OpenWeatherMap API key
+        base_url = "http://api.openweathermap.org/data/2.5/weather?"
+        complete_url = base_url + "appid=" + api_key + "&q=" + city + "&units=metric"
+
+        response = requests.get(complete_url)
+        data = response.json()
+
+        if data["cod"] != "404":
+            try:
+                main = data["main"]
+                weather = data["weather"][0]
+
+                temperature = main["temp"]
+                weather_description = weather["description"]
+
+                # Update labels
+                self.temperature_label.config(text=f"{temperature} °C")
+                self.city_name_label.config(text=city.capitalize())
+
+                # Update weather icon
+                weather_icon = self.get_weather_icon(weather_description)
+                self.weather_icon_label.config(text=weather_icon)
+
+                # Change entry box to search button
+                self.city_entry.grid_remove()
+                self.search_button.grid(row=3, column=0, pady=10)
+
+                # Update time and date
+                self.update_time_date()
+            except KeyError as e:
+                print(f"KeyError: {e}")
+                self.temperature_label.config(text="-- °C")
+                self.city_name_label.config(text="Data not available")
+                self.weather_icon_label.config(text="❓")
+        else:
+            self.temperature_label.config(text="-- °C")
+            self.city_name_label.config(text="City not found")
+            self.weather_icon_label.config(text="❓")
+
+    def toggle_search_entry(self, event):
+        self.search_button.grid_remove()
+        self.city_entry.grid(row=3, column=0, pady=10)
+        self.city_entry.focus()
+
+    def get_weather(self, event=None):
+        city = self.city_entry.get()
+        if city:
+            self.update_weather(city)
+        else:
+            print("Please enter a city name.")
+
+    def get_weather_icon(self, description):
+        icon_map = {
+            "clear sky": "☀️",
+            "few clouds": "🌤️",
+            "scattered clouds": "☁️",
+            "broken clouds": "☁️",
+            "shower rain": "🌧️",
+            "rain": "🌧️",
+            "thunderstorm": "⛈️",
+            "snow": "❄️",
+            "mist": "🌫️",
+        }
+        return icon_map.get(description.lower(), "❓")
+
+    def update_time_date(self):
+        now = datetime.now()
+        self.time_label.config(text=now.strftime("%I:%M %p"))
+        self.date_label.config(text=now.strftime("%d-%m-%Y"))
+        self.day_label.config(text=now.strftime("%A"))
+
+    def update_time_date_continuous(self):
+        self.update_time_date()
+        self.after(60000, self.update_time_date_continuous)  # Update every minute
+
+    def listen_command(self):
+        # Placeholder for listen command function
+        self.result_label.config(text="Listening... (not implemented)")
+
+    def submit_command(self):
+        command = self.command_entry.get()
+        self.result_label.config(text=f"Command: {command}")
+        execute_command(command)
+
+    def exit_app(self):
+        self.destroy()
+
+if __name__ == '__main__':
+    app = WeatherApp()
+    app.mainloop()
