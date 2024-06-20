@@ -80,7 +80,7 @@ currency_converter = CurrencyRates()
 btc_converter = BtcConverter()
 
 # Initialize weather API with your API key
-owm = pyowm.OWM('5a16d7f729e69aced4b2d8745c1d6f6c')  # Replace with your OpenWeatherMap API key
+owm = pyowm.OWM('UR API')  # Replace with your OpenWeatherMap API key
 
 # Function to fetch weather information
 def get_weather(city_name):
@@ -169,8 +169,8 @@ def search_and_open(query):
 def search_and_provide_answer(query):
     try:
         # Set up Google Custom Search API
-        api_key = "AIzaSyAawDA4Jd28VKhDxp2M5SYa8RN9aBZ_ZcA"
-        search_engine_id = "d6792a9ede5fa4835"
+        api_key = "UR API"
+        search_engine_id = "UR SEARCH API"
         search_url = f"https://www.googleapis.com/customsearch/v1?key={api_key}&cx={search_engine_id}&q={query}"
 
         # Make request to the API
