@@ -1,21 +1,31 @@
-STATUS: Under Development
+## 🤖 NEURAL INTERACTIVE RESPONSIVE AGENT (N.I.R.A)
 
-# 🤖 NEURAL INTERACTIVE RESPONSIVE AGENT (N.I.R.A)
-An private AI ASSISTANT which helps you with your daily tasks and other related stuff its made in python later if possible will make it into an app which anyone can download it from playstore it can do things like chat gpt and google assistant but it does not share any data and keeps the conversation end to end encrypted. 
+**NEURAL INTERACTIVE RESPONSIVE AGENT (N.I.R.A)** is an innovative AI assistant designed to seamlessly integrate into your daily routine. Developed in Python, N.I.R.A. combines the conversational prowess of ChatGPT and the utility of Google Assistant while maintaining stringent privacy standards and end-to-end encryption. Our goal is to evolve N.I.R.A. into a fully-fledged app available on the Play Store.
 
-# 📢 Will the code be public? 
-yes the code will be public as newer versions come out with more advanced features and better UI i will release all the old Code to public
+### 🌟 Key Features
+- **Privacy First**: N.I.R.A. ensures that all operations are performed locally, with no data sharing or retention.
+- **AI-Driven Assistance**: Delivers intelligent and contextually aware responses to assist with various tasks.
+- **End-to-End Encryption**: Guarantees that all communications are secure and private.
 
-# 🧑‍💻 Does it share data or use any third part AI system?
-No, it does everything locally and its safe no data is shared and it doesnt rember anthing once its been turned off
+### 📢 Open Source Commitment
+As we enhance N.I.R.A. with new features and improvements, we are committed to releasing older versions of the code to the public. This transparency allows the community to benefit from and contribute to N.I.R.A.'s development.
 
-# 🦺 Need help?
-feel free to DM on discord User Name: @nightblobby
+### 🧑‍💻 Third-Party AI and Data Privacy
+N.I.R.A. operates independently of third-party AI systems, ensuring complete data privacy. No data is shared or retained once the assistant is turned off.
 
-# 💻 Compatibility
-# OS AND ROMS
--Windows ✔️
--Linux ❌
--Mac ❌
-(for now it works on Windows will test on mac and Linux)
+### 🦺 Support
+For assistance or inquiries, please reach out via Discord: **@nightblobby**
 
+### 💻 Compatibility
+Currently supported platforms:
+- **Windows**: ✔️ Fully supported
+- **Linux**: ❌ Testing in progress
+- **Mac**: ❌ Testing in progress
+
+### 🚀 Future Roadmap
+- Expand support to additional operating systems.
+- Enhance AI capabilities and user interactions.
+- Develop a user-friendly app for broader public access.
+
+### 📬 Contact
+For any questions, feedback, or collaboration opportunities, feel free to contact me on Discord: **@nightblobby**
