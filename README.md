@@ -5,6 +5,17 @@
 ### 🌟 Key Features
 - **Privacy First**: N.I.R.A. ensures that all operations are performed locally, with no data sharing or retention.
 - **AI-Driven Assistance**: Delivers intelligent and contextually aware responses to assist with various tasks.
+- **Voice Recognition**: Uses speech recognition to understand and execute commands.
+- **Text-to-Speech**: Converts text responses into speech using pyttsx3.
+- **Weather Information**: Fetches weather details for a given city using the OpenWeatherMap API.
+- **Joke Fetching**: Retrieves jokes from an online API.
+- **Timer and Alarm**: Sets timers and alarms.
+- **Google Search**: Searches and provides answers using the Google Custom Search API.
+- **NLP and Intent Classification**: Uses NLTK and sklearn for natural language processing and intent classification.
+- **Bluetooth and NFC Scanning**: Detects nearby Bluetooth and NFC devices.
+- **Dictionary Lookup**: Uses PyDictionary for word meanings.
+- **Currency Conversion**: Converts currencies using forex-python.
+- **News Fetching**: Retrieves top headlines using the NewsAPI.
 - **End-to-End Encryption**: Guarantees that all communications are secure and private.
 
 ### 📢 Open Source Commitment
@@ -18,9 +29,10 @@ For assistance or inquiries, please reach out via Discord: **@nightblobby**
 
 ### 💻 Compatibility
 Currently supported platforms:
-- **Windows**: ✔️ Fully supported
-- **Linux**: ❌ Testing in progress
-- **Mac**: ❌ Testing in progress
+- **Windows**: ✔️ Fully supported 
+- **Android**: ❌ Testing in progress
+- **Linux**: ❌ not in development 
+- **Mac**: ❌ not in development 
 
 ### 🚀 Future Roadmap
 - Expand support to additional operating systems.
