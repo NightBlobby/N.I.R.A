@@ -1,6 +1,18 @@
 # 🤖 NEURAL INTERACTIVE RESPONSIVE AGENT (N.I.R.A)
 
-**NEURAL INTERACTIVE RESPONSIVE AGENT (N.I.R.A)** is an advanced AI assistant designed to seamlessly integrate into your daily routine. Developed in Python, N.I.R.A combines the conversational capabilities of ChatGPT with the functionality of modern digital assistants, all while prioritizing privacy and end-to-end encryption. Our goal is to evolve N.I.R.A into a fully-fledged app available on the Play Store.
+**NEURAL INTERACTIVE RESPONSIVE AGENT (N.I.R.A)** is a cutting-edge AI assistant designed to seamlessly integrate into your daily routine. Developed in Python, N.I.R.A combines the conversational capabilities of ChatGPT with the functionality of modern digital assistants, while prioritizing privacy and end-to-end encryption. Our goal is to evolve N.I.R.A into a fully-fledged app available on the Play Store.
+
+---
+
+## 📚 Table of Contents
+
+- [Key Features](#-key-features)
+- [Installation and Prerequisites](#-installation-and-prerequisites)
+- [How It Works](#-how-it-works)
+- [Roadmap](#-roadmap)
+- [Contributing](#-contributing)
+- [Support](#-support)
+- [Contact](#-contact)
 
 ---
 
@@ -23,42 +35,113 @@
 
 ---
 
-## 📢 Open Source Commitment
+## 🛠️ Installation and Prerequisites
 
-We are dedicated to transparency and community collaboration. As N.I.R.A evolves with new features and improvements, older versions of the code will be released to the public, enabling the community to benefit from and contribute to its development.
+### Prerequisites
+
+- Python 3.7 or higher
+- Required Python libraries:
+  - `speech_recognition`
+  - `pyttsx3`
+  - `requests`
+  - `smtplib`
+  - `nltk`
+  - `forex-python`
+  - `pyowm`
+  - `sklearn`
+  - `spotipy`
+  - `PyDictionary`
+  - `hashlib`
+  - `OpenAI GPT-3` integration
+  - `newsapi-python` (for news fetching)
+
+### Installation
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/your-username/N.I.R.A.git
+    cd N.I.R.A
+    ```
+
+2. **Install the required libraries:**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. **Set up API keys and configurations:**
+   - Obtain API keys for Google Custom Search, OpenWeatherMap, NewsAPI, etc., and add them to a configuration file or environment variables.
 
 ---
 
-## 🧑‍💻 Third-Party AI and Data Privacy
+## 🛠️ How It Works
 
-N.I.R.A operates independently of third-party AI systems, guaranteeing complete data privacy. No data is shared or retained once the assistant is turned off.
+1. **Voice Recognition:**
+   - Utilizes `speech_recognition` to capture and interpret user commands.
+
+2. **Text-to-Speech:**
+   - Uses `pyttsx3` to convert text responses into spoken words.
+
+3. **Weather Information:**
+   - Fetches current weather data for a city using the OpenWeatherMap API.
+
+4. **Joke Fetching:**
+   - Retrieves jokes from an online API for entertainment.
+
+5. **Timer and Alarm:**
+   - Allows users to set and manage timers and alarms.
+
+6. **Google Search:**
+   - Executes search queries and provides results using the Google Custom Search API.
+
+7. **NLP and Intent Classification:**
+   - Employs `nltk` and `sklearn` to understand user intent and process natural language commands.
+
+8. **Bluetooth and NFC Scanning:**
+   - Scans for nearby Bluetooth and NFC devices.
+
+9. **Dictionary Lookup:**
+   - Uses `PyDictionary` to provide definitions and meanings of words.
+
+10. **Currency Conversion:**
+    - Converts currencies using `forex-python`.
+
+11. **News Fetching:**
+    - Retrieves top news headlines using the NewsAPI.
+
+12. **End-to-End Encryption:**
+    - Ensures secure and private communication throughout.
+
+---
+
+## 🚀 Roadmap
+
+- **Expand Platform Support**: Add compatibility for additional operating systems.
+- **Enhance AI Capabilities**: Improve conversational abilities and user interaction.
+- **App Development**: Create a user-friendly app for broader public access.
+- **Additional Features**: Incorporate more features based on user feedback.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions to enhance N.I.R.A. To get started:
+
+1. **Fork the repository** and create a new branch for your changes.
+2. **Make your changes** and ensure they are thoroughly tested.
+3. **Submit a pull request** with a clear description of your changes and their benefits.
+
+For detailed contributing guidelines, please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ---
 
 ## 🦺 Support
 
-For assistance or inquiries, please reach out via Discord: **[@nightblobby](https://discord.com/users/nightblobby)**
-
----
-
-## 💻 Compatibility
-
-Currently supported platforms:
-- **Windows**: ✔️ Fully supported
-- **Android**: ❌ Testing in progress
-- **Linux**: ❌ Not in development
-- **Mac**: ❌ Not in development
-
----
-
-## 🚀 Future Roadmap
-
-- Expand support to additional operating systems.
-- Enhance AI capabilities and user interactions.
-- Develop a user-friendly app for broader public access.
+For assistance or inquiries, please reach out via Discord: **[@nightblobby](https://discord.com/users/your_discord_id)**
 
 ---
 
 ## 📬 Contact
 
-For questions, feedback, or collaboration opportunities, feel free to contact me on Discord: **[@nightblobby](https://discord.com/users/nightblobby)**
+For questions, feedback, or collaboration opportunities, feel free to contact me on Discord: **[@nightblobby](https://discord.com/users/your_discord_id)**
