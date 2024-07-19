@@ -6,13 +6,13 @@
 
 ## 📚 Table of Contents
 
-- [Key Features](#-key-features)
-- [Installation and Prerequisites](#-installation-and-prerequisites)
-- [How It Works](#-how-it-works)
-- [Roadmap](#-roadmap)
-- [Contributing](#-contributing)
-- [Support](#-support)
-- [Contact](#-contact)
+- 🌟 [Key Features](#-key-features)
+- 🛠️ [Installation and Prerequisites](#-installation-and-prerequisites)
+- 🔧 [How It Works](#-how-it-works)
+- 🚧 [Roadmap](#-roadmap)
+- 🤝 [Contributing](#-contributing)
+- 🦺 [Support](#-support)
+- 📬 [Contact](#-contact)
 
 ---
 
@@ -143,7 +143,7 @@ Ensures all data transmissions are encrypted, maintaining user privacy and secur
 
 ---
 
-## 🚀 Roadmap
+## 🚧 Roadmap
 
 - **Expand Platform Support**: Add compatibility for additional operating systems including macOS and Linux.
 - **Enhance AI Capabilities**: Improve AI-driven responses and contextual understanding.
