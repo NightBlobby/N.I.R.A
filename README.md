@@ -168,13 +168,13 @@ For detailed guidelines, please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) 
 
 ## 🦺 Support
 
-If you encounter issues or need assistance, please reach out via Discord: **[@nightblobby](https://discord.com/@me/nightblobby)**
+If you encounter issues or need assistance, please reach out via Discord: **[@nightblobby](https://discord.com/user/nightblobby)**
 
 ---
 
 ## 📬 Contact
 
-For questions, feedback, or collaboration opportunities, contact me on Discord: **[@nightblobby](https://discord.com/@me/nightblobby)**
+For questions, feedback, or collaboration opportunities, contact me on Discord: **[@nightblobby](https://discord.com/user/nightblobby)**
 
 ---
 
