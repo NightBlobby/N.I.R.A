@@ -52,7 +52,6 @@
   - `spotipy`
   - `PyDictionary`
   - `hashlib`
-  - `OpenAI GPT-3` integration
   - `newsapi-python` (for news fetching)
 
 ### Installation
