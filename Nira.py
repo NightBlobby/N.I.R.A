@@ -1,114 +1,30 @@
 import tkinter as tk
-from tkinter import ttk, font, messagebox
+from tkinter import messagebox, scrolledtext
+import webbrowser
 import speech_recognition as sr
 import pyttsx3
 import threading
 import datetime
-import webbrowser
 import requests
-import time
 import random
-import asyncio
-import requests
-from bleak import BleakScanner, BleakClient
-from plyer import notification
-import nfc
-import os
 import smtplib
 from email.message import EmailMessage
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from translate import Translator
 from forex_python.converter import CurrencyRates
 from forex_python.bitcoin import BtcConverter
 import pyowm
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.svm import SVC
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-import joblib
-import spotipy
-from spotipy.oauth2 import SpotifyOAuth
-from PyDictionary import PyDictionary
-import hashlib
-import openai
-# Ensure you have StableLM installed
-from newsapi import NewsApiClient  
-# Install newsapi-python library
-
-openai.api_key = 'This is for a test purpose'
-
-assistant_name = "Nira"
-creator_name = "Blobby"
 
 # Download NLTK resources if not already downloaded
 nltk.download('averaged_perceptron_tagger')
 nltk.download('punkt')
 nltk.download('stopwords')
 
+# Initialize speech recognition and text-to-speech engines
 engine = pyttsx3.init()
-
-# List available voices
-voices = engine.getProperty('voices')
-for voice in voices:
-    print(f"Voice: {voice.id}")
-
-# Set the voice ID you want to use
-engine.setProperty('voice', 'com.apple.speech.synthesis.voice.karen')
 recognizer = sr.Recognizer()
-
-
-# Initialize currency converter
-currency_converter = CurrencyRates()
-btc_converter = BtcConverter()
-
-# Initialize weather API with your API key
-owm = pyowm.OWM('add your own')  # Replace with your OpenWeatherMap API key
-
-# Initialize Spotify API (Replace placeholders with your credentials)
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="YOUR_CLIENT_ID",
-                                               client_secret="YOUR_CLIENT_SECRET",
-                                               redirect_uri="YOUR_REDIRECT_URI",
-                                               scope="user-read-playback-state,user-modify-playback-state"))
-
-# Initialize PyDictionary
-dictionary = PyDictionary()
-
-# Function to greet the user based on the time of day
-def greet_user():
-    hour = datetime.datetime.now().hour
-    if 5 <= hour < 12:
-        speak("Good morning! How can I assist you today?")
-    elif 12 <= hour < 17:
-        speak("Good afternoon! How can I assist you today?")
-    elif 17 <= hour < 20:
-        speak("Good evening! How can I assist you today?")
-    else:
-        speak("Good night! How can I assist you today?")
-    
-    # Add personalized compliments or acknowledgments here
-    speak(f"I am {assistant_name}, your personal assistant.")
-    
-    now = datetime.datetime.now()
-    speak(f"Today is {now.strftime('%A, %B %d, %Y')}, and the time is {now.strftime('%I:%M %p')}.")
-
-# Initialize NLP model using sklearn (example setup)
-class NLPModel:
-    def __init__(self):
-        self.model = make_pipeline(StandardScaler(), SVC())
-        self.load_model()
-
-    def load_model(self):
-        try:
-            self.model = joblib.load('nlp_model.pkl')
-        except FileNotFoundError:
-            # Train or load your NLP model here
-            pass
-
-    def predict_intent(self, text):
-        return self.model.predict([text])[0]
-
-nlp_model = NLPModel()
 
 # Function to speak
 def speak(text):
@@ -118,28 +34,40 @@ def speak(text):
 # Function to listen to the user's command
 def listen():
     try:
-        while True:
-            with sr.Microphone() as source:
-                print("Listening...")
-                recognizer.adjust_for_ambient_noise(source)
-                audio = recognizer.listen(source)
-
-            command = recognizer.recognize_google(audio)
-            print(f"You said: {command}")
-
-            if "shut up" in command.lower() or "stop talking" in command.lower():
-                engine.stop()
-                break  # Exit the loop when command is detected
-            else:
-                parse_and_execute_command(command)
-
+        with sr.Microphone() as source:
+            print("Listening...")
+            recognizer.adjust_for_ambient_noise(source)
+            audio = recognizer.listen(source)
+        command = recognizer.recognize_google(audio)
+        print(f"You said: {command}")
+        return command.lower()
     except sr.UnknownValueError:
-        print("Sorry, I didn't catch that. Could you repeat?")
-        listen()  # Restart listening on unrecognized speech
+        speak("Sorry, I did not understand that.")
+        return None
     except sr.RequestError:
         speak("Sorry, my speech service is down.")
+        return None
     except Exception as e:
         speak(f"An error occurred: {e}")
+        return None
+
+# Initialize translator
+translator = Translator(to_lang='en')
+
+# Function to translate text
+def translate_text(text, dest_lang):
+    try:
+        translation = translator.translate(text, dest_lang)
+        return translation
+    except Exception as e:
+        return f"Translation failed: {e}"
+
+# Initialize currency converter
+currency_converter = CurrencyRates()
+btc_converter = BtcConverter()
+
+# Initialize weather API with your API key
+owm = pyowm.OWM('YOUR_API')  # Replace with your OpenWeatherMap API key
 
 # Function to fetch weather information for a given city
 def get_weather(city_name):
@@ -148,10 +76,9 @@ def get_weather(city_name):
         weather = observation.weather
         temperature = weather.temperature('celsius')['temp']
         status = weather.detailed_status
-        weather_info = f"{city_name}: {temperature}°C, {status}"
-        return weather_info
+        return city_name, temperature, status
     except Exception as e:
-        return f"Could not get weather information. Error: {e}"
+        return None, None, f"Error: {e}"
 
 # Function to fetch a joke from an online API
 def fetch_joke():
@@ -167,6 +94,18 @@ def fetch_joke():
             "I told my wife she was drawing her eyebrows too high. She looked surprised."
         ]
         return random.choice(jokes)
+
+# Function to greet the user
+def greet_user():
+    hour = datetime.datetime.now().hour
+    if hour < 12:
+        speak("Good morning!")
+    elif hour < 18:
+        speak("Good afternoon!")
+    else:
+        speak("Good evening!")
+    now = datetime.datetime.now()
+    speak(f"Today is {now.strftime('%A, %B %d, %Y')}, and the time is {now.strftime('%I:%M %p')}.")
 
 # Function to send an email
 def send_email():
@@ -212,12 +151,13 @@ def set_alarm(alarm_time):
             time.sleep(30)  # Check every 30 seconds
     thread = threading.Thread(target=alarm_thread)
     thread.start()
+
 # Function to search and provide an answer using Google Custom Search API
 def search_and_provide_answer(query):
     try:
         # Set up Google Custom Search API
-        api_key = "ADD YOUR API"  # Replace with your API key
-        search_engine_id = "Add your API"  # Replace with your search engine ID
+        api_key = "YOU_API"  # Replace with your API key
+        search_engine_id = "YOUR_API"  # Replace with your search engine ID
         search_url = f"https://www.googleapis.com/customsearch/v1?key={api_key}&cx={search_engine_id}&q={query}"
 
         # Make request to the API
@@ -237,168 +177,69 @@ def search_and_provide_answer(query):
             speak("Error occurred while searching.")
     except Exception as e:
         speak(f"Error occurred while searching. Error: {e}")
+
+# Function to classify sentence as command or question
 def classify_sentence(sentence):
-    words = word_tokenize(sentence)
-    words = [word.lower() for word in words if word.isalnum() and word.lower() not in stopwords.words('english')]
-    pos_tags = nltk.pos_tag(words)
-    nouns = [word for word, pos in pos_tags if pos.startswith('N')]
-    verbs = [word for word, pos in pos_tags if pos.startswith('V')]
-    if len(nouns) > len(verbs):
-        return "question"
+    tokens = word_tokenize(sentence)
+    words = [word for word in tokens if word.isalnum()]
+    stop_words = set(stopwords.words('english'))
+    words = [word for word in words if word.lower() not in stop_words]
+    tagged_words = nltk.pos_tag(words)
+    question_words = ['WDT', 'WP', 'WP$', 'WRB']
+    for word, tag in tagged_words:
+        if tag in question_words:
+            return "question"
+    return "command"
+
+# Memory storage dictionary
+memory = {}
+
+# Function to remember information
+def remember(key, value):
+    memory[key] = value
+    speak(f"I will remember {key} as {value}.")
+
+# Function to retrieve remembered information
+def retrieve_memory(key):
+    if key in memory:
+        return memory[key]
     else:
-        return "statement"
-# this gives some funtionality to chatgpt for better responses
+        return "I don't remember anything about that."
 
-
-def show_notification(title, message):
-    notification.notify(
-        title=title,
-        message=message,
-        timeout=10  # Notification duration in seconds
-    )
-
-async def bluetooth_scan():
-    try:
-        devices = await BleakScanner.discover()
-        if devices:
-            for device in devices:
-                device_name = device.name if device.name else "Unknown Device"
-                print(f"Bluetooth Device Found: {device.address} - {device_name}")
-                
-                # Adjust detection based on behavior or expected characteristics
-                if "Nothing Phone" in str(device.name):
-                    show_notification("Bluetooth Device Detected", f"You passed by a {device.name} user!")
-                
-                # Example: Use BleakClient to retrieve services and characteristics
-                try:
-                    async with BleakClient(device) as client:
-                        services = await client.get_services()
-                        print(f"Services: {services}")
-                        for service in services:
-                            # Add logic to check for specific services or characteristics
-                            pass
-                except Exception as e:
-                    print(f"Error accessing services for {device.address}: {e}")
-        else:
-            print("No Bluetooth devices found.")
-    except TypeError as e:
-        print(f"Error discovering Bluetooth devices: {e}")
-
-def nfc_detect(tag):
-    tag_id = tag.identifier.hex().upper()
-    print(f"NFC Tag Detected: {tag_id}")  # For debugging
-    if tag_id == 'A14C1':
-        show_notification("NFC Tag Detected", "You passed by a Nothing Phone 1 user!")
-    elif tag_id == 'A14C2':
-        show_notification("NFC Tag Detected", "You passed by a Nothing Phone 2 user!")
-    elif tag_id == 'A14C3':
-        show_notification("NFC Tag Detected", "You passed by a Nothing Phone 2A user!")
-
-async def run_nfc_scan():
-    try:
-        # Attempt to connect using different device paths
-        clf = None
-        possible_paths = ['usb', 'tty:S0', 'spi:']
-        for path in possible_paths:
-            try:
-                clf = nfc.ContactlessFrontend(path)
-                if clf:
-                    break
-            except IOError:
-                continue
-
-        if clf:
-            clf.connect(rdwr={'on-connect': nfc_detect})
-            clf.close()
-        else:
-            print("No NFC device found. Ensure your NFC reader is properly connected and recognized by your system.")
-    except IOError as e:
-        print(f"IOError: {e}")
-        print("Ensure that the NFC reader is properly connected and recognized by your system.")
-
-async def main():
-    # Run NFC scan in the background
-    nfc_task = asyncio.create_task(run_nfc_scan())
-
-    # Run Bluetooth scan concurrently
-    await bluetooth_scan()
-
-    # Wait for NFC scan to complete
-    await nfc_task
-
-def chatgpt_response(prompt):
-    try:
-        response = openai.Completion.create(
-            engine="text-davinci-003",
-            prompt=prompt,
-            max_tokens=100
-        )
-        return response.choices[0].text.strip()
-    except Exception as e:
-        return f"Sorry, I couldn't process your request. Error: {e}"
-
-# Initialize the News client
-def fetch_news(category):
-    url = f"https://newsapi.org/v2/top-headlines?category={category}&apiKey=fab33d4d84394644a2e2ddb4d372ffcd"
-    response = requests.get(url)
-    news_data = response.json()
-    articles = news_data['articles'][:5]  # Limiting to 5 articles for brevity
-    return articles
-
-# Function to search and provide an answer based on the command
 # Function to parse and execute the user command
 def parse_and_execute_command(command):
+    # Standardize the command to lower case
     command = command.lower()
 
     # Lists of phrases to match against
-    compliments = ["you are beautiful", "you are smart", "you are awesome", "you're beautiful", "you're awesome", "you'er Kind", "you're sweet", "i love you", "i like you"]
-    thanks = ["thanks", "thank you", "thank", "thank"]
+    compliments = ["you are beautiful", "you are smart", "you are awesome", "you're beautiful"]
+    thanks = ["thanks", "thank you", "thank"]
     goodbye = ["goodbye", "bye", "exit"]
+
     classification = classify_sentence(command)
+    if classification == "question":
+        search_and_provide_answer(command)
+        return
+    
     if any(compliment in command for compliment in compliments):
         speak("Thank you!")
-    if random.random() < 0.01:
-        webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley")
-    if 'news' in command:
-        if 'tech' in command:
-            articles = fetch_news('technology')
-            for article in articles:
-                speak(f"{article['title']}: {article['url']}")
-        elif 'sports' in command:
-            articles = fetch_news('sports')
-            for article in articles:
-                speak(f"{article['title']}: {article['url']}")
-        elif 'business' in command:
-            articles = fetch_news('business')
-            for article in articles:
-                speak(f"{article['title']}: {article['url']}")
-        elif 'entertainment' in command:
-            articles = fetch_news('entertainment')
-            for article in articles:
-                speak(f"{article['title']}: {article['url']}")
-        else:
-            speak("Please specify a valid news category like tech, sports, business, or entertainment.")
-    elif "repeat after me" in command:
-        to_repeat = command.replace("repeat after me", "").strip()
-        speak(to_repeat) 
-    elif "scan devices" in command:
-            asyncio.run(main())
+    elif any(thank in command for thank in thanks):
+        speak("You're welcome.")
+    elif any(exit_command in command for exit_command in goodbye):
+        speak("Goodbye and take care!")
+        exit()
     elif "what is your name" in command or "who are you" in command:
-        speak(f"I am {assistant_name}, Your assistant")
+        speak("I am your personal assistant.")
     elif "calculate" in command:
         try:
+            # Extract the mathematical expression
             expression = command.split("calculate")[1].strip()
+            # Evaluate the expression
             result = eval(expression)
             speak(f"The result of {expression} is {result}")
         except Exception as e:
             speak(f"Sorry, I couldn't calculate that. Error: {e}")
         return
-    elif "who is your creator" in command:
-        speak(f"im created by {creator_name}")
-    elif "who created you" in command:
-        speak(f"im created by {creator_name}")
-    elif "who made you" in command:
-        speak(f"im created by {creator_name}")
     elif "open youtube" in command:
         speak("Opening Youtube.")
         webbrowser.open("https://www.youtube.com")
@@ -429,194 +270,271 @@ def parse_and_execute_command(command):
         tokens = command.split("remember")
         if len(tokens) > 1:
             info = tokens[1].strip()
-            with open('memory.txt', 'a') as file:
-                file.write(info + '\n')
-            speak(f"I will remember that {info}")
-    elif "forget" in command:
-        tokens = command.split("forget")
-        if len(tokens) > 1:
-            info_to_forget = tokens[1].strip()
-            forget_from_memory(info_to_forget)
-    elif "play" in command and "song" in command:
-        play_song(command)
-    elif "what's the weather like in" in command or "weather in" in command:
-        city_name = command.split("in")[-1].strip()
-        weather_info = get_weather(city_name)
-        speak(weather_info)
-    elif "send email" in command:
-        send_email()
-    elif "set timer for" in command:
-        try:
-            duration = int(command.split("for")[-1].strip().split()[0])
-            set_timer(duration)
-            speak(f"Timer set for {duration} seconds.")
-        except ValueError:
-            speak("Sorry, I couldn't understand the duration.")
-    elif "set alarm for" in command:
-        try:
-            alarm_time = command.split("for")[-1].strip()
-            set_alarm(alarm_time)
-            speak(f"Alarm set for {alarm_time}.")
-        except Exception as e:
-            speak(f"Sorry, I couldn't set the alarm. Error: {e}")
-    elif "search" in command or "look up" in command:
-        search_term = command.replace("search", "").replace("look up", "").strip()
-        webbrowser.open(f"https://www.google.com/search?q={search_term}")
-    elif "object recognition" in command:
-        speak("Please show me the object to recognize.")
-        # Capture image using computer vision module and recognize
-        # Replace with your computer vision logic
-    elif "tell me about" in command:
-        topic = command.split("about")[-1].strip()
-        search_and_provide_answer(f"What is {topic}")
-    elif "bruh" in command:
-        speak("Did i do something wrong or what?")
-    elif "open" in command:
-        open_website(command)
-    elif any(thank in command for thank in thanks):
-        speak("You're welcome.")
-    elif any(goodbye_command in command for goodbye_command in goodbye):
-        speak("Goodbye! Have a great day. If you need anything else, feel free to reach out! im always here to Help! ")
-        exit()
-    elif classification == "question":
-        search_and_provide_answer(command)
-        return
-    else:
-        speak("")
-
-    # After answering, wait for the next command
-
-
-# Function to classify user input sentence
-def classify_sentence(sentence):
-    words = word_tokenize(sentence)
-    words = [word.lower() for word in words if word.isalnum() and word.lower() not in stopwords.words('english')]
-    pos_tags = nltk.pos_tag(words)
-    nouns = [word for word, pos in pos_tags if pos.startswith('N')]
-    verbs = [word for word, pos in pos_tags if pos.startswith('V')]
-    if len(nouns) > len(verbs):
-        return "question"
-    else:
-        return "statement"
-
-# Function to forget specific information from memory
-def forget_from_memory(info_to_forget):
-    try:
-        with open('memory.txt', 'r+') as file:
-            lines = file.readlines()
-            file.seek(0)
-            for line in lines:
-                if info_to_forget not in line.strip():
-                    file.write(line)
-            file.truncate()
-        speak(f"I have forgotten {info_to_forget}.")
-    except Exception as e:
-        speak(f"Sorry, I couldn't forget that. Error: {e}")
-
-# Function to play a song using Spotify
-def play_song(command):
-    try:
-        song_name = command.split("play")[-1].strip()
-        results = sp.search(q=song_name, limit=1)
-        if results['tracks']['items']:
-            track_uri = results['tracks']['items'][0]['uri']
-            sp.start_playback(uris=[track_uri])
-            speak(f"Playing {song_name} on Spotify.")
-        else:
-            speak(f"Sorry, I couldn't find {song_name} on Spotify.")
-    except Exception as e:
-        speak(f"Sorry, I couldn't play that song. Error: {e}")
-
-# Function to translate text using Google Translate API
-def translate_text(text, target_language='en'):
-    try:
-        response = requests.get(f"https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl={target_language}&dt=t&q={text}")
-        if response.status_code == 200:
-            translation = response.json()[0][0][0]
-            return translation
-        else:
-            return "Translation failed."
-    except Exception as e:
-        return f"Translation failed. Error: {e}"
-
-# Function to fetch news headlines
-def get_news_headlines():
-    try:
-        url = "https://newsapi.org/v2/top-headlines"
-        params = {
-            "country": "us",
-            "apiKey": "your_newsapi_key"  # Replace with your News API key
-        }
-        response = requests.get(url, params=params)
-        if response.status_code == 200:
-            news_data = response.json()
-            headlines = [article['title'] for article in news_data['articles'][:5]]
-            return headlines
-        else:
-            return []
-    except Exception as e:
-        return []
-
-# Function to analyze sentiment of text using a pretrained model
-def analyze_sentiment(text):
-    try:
-        # Use your NLP model for sentiment analysis
-        return "Positive"  # Replace with actual sentiment analysis logic
-    except Exception as e:
-        return "Error analyzing sentiment."
-
-# Function to provide help related to Python programming
-def provide_python_help(topic):
-    try:
-        # Provide help related to Python programming
-        speak(f"Here is some help regarding {topic}.")  # Replace with actual help content
-    except Exception as e:
-        speak(f"Sorry, I couldn't provide help regarding {topic}. Error: {e}")
-
-# Function to play a game of rock-paper-scissors
-def play_game_rock_paper_scissors():
-    try:
-        speak("Let's play rock-paper-scissors. What's your choice?")
-        player_choice = listen()
-        if player_choice:
-            choices = ['rock', 'paper', 'scissors']
-            computer_choice = random.choice(choices)
-            speak(f"I chose {computer_choice}.")
-            if player_choice == computer_choice:
-                speak("It's a tie!")
-            elif (player_choice == 'rock' and computer_choice == 'scissors') or \
-                 (player_choice == 'paper' and computer_choice == 'rock') or \
-                 (player_choice == 'scissors' and computer_choice == 'paper'):
-                speak("You win!")
+            parts = info.split("as")
+            if len(parts) == 2:
+                key = parts[0].strip()
+                value = parts[1].strip()
+                remember(key, value)
             else:
-                speak("I win!")
-    except Exception as e:
-        speak("Sorry, I couldn't play rock-paper-scissors. Error: {e}")
-
-# Function to provide a recommendation based on user input
-def provide_recommendation(recommendation_type):
-    try:
-        # Provide recommendation based on user input
-        speak(f"Here is a recommendation for {recommendation_type}.")  # Replace with actual recommendation logic
-    except Exception as e:
-        speak(f"Sorry, I couldn't provide a recommendation for {recommendation_type}. Error: {e}")
-
-# Main function to run the assistant
-def run_assistant():
-    greet_user()
-    while True:
-
-        command = listen()
-        if command:
-            parse_and_execute_command(command)
+                speak("Sorry, I didn't catch that. Please say 'remember [key] as [value]'.")
         else:
-            speak("")
-def process_input(command):
-    global engine  # Ensure engine is accessible globally
-    if "shut up" in command.lower() or "stop talking" in command.lower():
-        engine.stop()  # Stop speech output
+            speak("Sorry, I didn't catch that. Please say 'remember [key] as [value]'.")
+    elif "recall" in command or "retrieve" in command:
+        tokens = command.split("recall") if "recall" in command else command.split("retrieve")
+        if len(tokens) > 1:
+            key = tokens[1].strip()
+            info = retrieve_memory(key)
+            speak(info)
+        else:
+            speak("Sorry, I didn't catch that. Please specify what you want to recall.")
+    elif "translate" in command:
+        tokens = command.split("translate")
+        if len(tokens) > 1:
+            to_translate = tokens[1].strip()
+            translated_text = translate_text(to_translate, 'en')
+            speak(translated_text)
+        else:
+            speak("Sorry, I didn't catch that. Please say 'translate [text]' to translate.")
+    elif "convert currency" in command:
+        speak("Sure, please specify the amount and currencies to convert.")
+        amount = None
+        while not amount:
+            amount_text = listen()
+            try:
+                amount = float(amount_text)
+            except ValueError:
+                speak("Sorry, I didn't catch that. Please specify the amount again.")
+
+        speak("What currency would you like to convert from?")
+        from_currency = listen()
+
+        speak("What currency would you like to convert to?")
+        to_currency = listen()
+
+        try:
+            result = currency_converter.convert(from_currency.upper(), to_currency.upper(), amount)
+            speak(f"{amount} {from_currency.upper()} is approximately {result} {to_currency.upper()}.")
+        except Exception as e:
+            speak(f"Conversion failed. Error: {e}")
+    elif "convert bitcoin" in command or "bitcoin" in command:
+        speak("Sure, please specify the amount to convert.")
+        amount = None
+        while not amount:
+            amount_text = listen()
+            try:
+                amount = float(amount_text)
+            except ValueError:
+                speak("Sorry, I didn't catch that. Please specify the amount again.")
+
+        speak("What currency would you like to convert to?")
+        to_currency = listen()
+
+        try:
+            result = btc_converter.convert_to_btc(amount, to_currency.upper())
+            speak(f"{amount} BTC is approximately {result} {to_currency.upper()}.")
+        except Exception as e:
+            speak(f"Conversion failed. Error: {e}")
     else:
-        speak("I didn't understand that command.")
-# Start the assistant
+        search_and_provide_answer(command)
+# Function to toggle between themes
+def get_weather(city):
+    api_key = '5a16d7f729e69aced4b2d8745c1d6f6c'
+    base_url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric'
+    try:
+        response = requests.get(base_url)
+        weather_data = json.loads(response.text)
+        city_name = weather_data['name']
+        temperature = weather_data['main']['temp']
+        status = weather_data['weather'][0]['description'].capitalize()
+        return city_name, temperature, status
+    except Exception as e:
+        print(f"Error fetching weather: {e}")
+        return "Error", "--", "--"
+
+# Function to toggle between themes
+def toggle_theme():
+    current_theme = root.cget('bg')
+    if current_theme == "#1E1E1E":
+        # Switch to Light theme
+        new_theme = "#F5F5F5"  # Light Gray
+        button_color = "#3F51B5"  # Indigo
+        text_color = "#212121"  # Dark Text
+        content_bg = "#FFFFFF"  # White
+    else:
+        # Switch to Dark theme
+        new_theme = "#1E1E1E"  # Dark Gray
+        button_color = "#2196F3"  # Blue
+        text_color = "#FFFFFF"  # White
+        content_bg = "#424242"  # Dark Background
+
+    # Update root and frame colors
+    root.configure(bg=new_theme)
+    header_frame.configure(bg=new_theme)
+    header_label.configure(bg=new_theme, fg=text_color)
+    main_frame.configure(bg=content_bg)
+    sidebar_frame.configure(bg=button_color)
+    for widget in sidebar_frame.winfo_children():
+        if isinstance(widget, tk.Button):
+            widget.configure(bg=button_color, fg=text_color)
+    command_history_text.configure(bg=content_bg, fg=text_color)
+    footer_label.configure(bg=new_theme, fg=text_color)
+
+# Function to greet the user
+def greet_user():
+    hour = datetime.datetime.now().hour
+    if 5 <= hour < 12:
+        greet = "Good morning!"
+    elif 12 <= hour < 18:
+        greet = "Good afternoon!"
+    else:
+        greet = "Good evening!"
+    
+    time_label.configure(text=datetime.datetime.now().strftime('%I:%M %p'))
+    date_label.configure(text=datetime.datetime.now().strftime('%A, %B %d, %Y'))
+    update_weather("New York")  # Default city
+
+# Function to update weather information based on city input
+def update_weather(city):
+    city_name, temperature, status = get_weather(city)
+    weather_label.configure(text=f"{city_name} | {temperature}°C | {get_weather_icon(status)} {status}")
+
+# Function to get emoji based on weather status
+def get_weather_icon(status):
+    status = status.lower()
+    if "clear" in status:
+        return "☀️"
+    elif "clouds" in status:
+        return "☁️"
+    elif "rain" in status:
+        return "🌧️"
+    elif "thunderstorm" in status:
+        return "⛈️"
+    elif "snow" in status:
+        return "❄️"
+    else:
+        return ""
+
+# Function to handle button clicks
+def handle_button_click(button_text):
+    if button_text == "Listen...":
+        listen_command()
+    elif button_text == "GitHub Page":
+        open_github_page()
+    elif button_text == "Help!":
+        show_help()
+    elif button_text == "Update Weather":
+        city = city_entry.get()
+        update_weather(city)
+
+# Function to listen for voice input
+def listen_command():
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening...")
+        audio = recognizer.listen(source)
+
+    try:
+        command = recognizer.recognize_google(audio)
+        print(f"Recognized command: {command}")
+        # Depending on the recognized command, you can trigger actions here
+        # For example, process the command to fetch weather or perform other tasks
+    except sr.UnknownValueError:
+        print("Could not understand audio")
+    except sr.RequestError as e:
+        print(f"Could not request results; {e}")
+
+# Function to open GitHub page
+def open_github_page():
+    import webbrowser
+    webbrowser.open_new("https://github.com/NightBlobby/N.A.I.N.A")
+
+# Function to show help information
+def show_help():
+    help_text = "Commands you can try:\n" \
+                "- Ask for weather: 'What is the weather in [city]?'\n" \
+                "- Send email: 'Send an email'\n" \
+                "- Set timer: 'Set a timer for [duration] seconds'\n" \
+                "- Translate text: 'Translate [text]'\n" \
+                "- Convert currency: 'Convert [amount] [currency] to [currency]'\n" \
+                "- Convert Bitcoin: 'Convert Bitcoin'\n" \
+                "- Tell me a joke: 'Tell me a joke'\n" \
+                "- Open websites: 'Open YouTube', 'Open Google', 'Open Spotify', etc.\n" \
+                "- Remember information: 'Remember [key] as [value]'\n" \
+                "- Retrieve information: 'Recall [key]', 'Retrieve [key]'\n" \
+                "- Exit the assistant: 'Goodbye', 'Exit'\n" \
+                "- Get help: 'What can you do?', 'Help!'\n" \
+                "- And more!"
+    messagebox.showinfo("Help", help_text)
+
+# Function to create the UI
+def create_ui():
+    global root, header_frame, header_label, main_frame, sidebar_frame, content_frame, footer_label, command_history_text, time_label, date_label, weather_label, city_entry
+
+    root = tk.Tk()
+    root.title("AI Assistant")
+    root.geometry("800x600")
+    root.configure(bg="#1E1E1E")  # Set default background color
+
+    # Header
+    header_frame = tk.Frame(root, bg="#1E1E1E", padx=10, pady=10)
+    header_frame.pack(side=tk.TOP, fill=tk.X)
+
+    header_label = tk.Label(header_frame, text="AI Assistant", font=("Arial", 24, "bold"), bg="#1E1E1E", fg="#FFFFFF")
+    header_label.pack()
+
+    # Time, Date, Day, and Weather widgets
+    time_label = tk.Label(header_frame, font=("Arial", 14), bg="#1E1E1E", fg="#FFFFFF")
+    time_label.pack()
+
+    date_label = tk.Label(header_frame, font=("Arial", 14), bg="#1E1E1E", fg="#FFFFFF")
+    date_label.pack()
+
+    weather_label = tk.Label(header_frame, font=("Arial", 14), bg="#1E1E1E", fg="#FFFFFF")
+    weather_label.pack()
+
+    # Main content area
+    main_frame = tk.Frame(root, bg="#FFFFFF")  # White
+    main_frame.pack(fill=tk.BOTH, expand=True)
+
+    # Left sidebar
+    sidebar_frame = tk.Frame(main_frame, bg="#1E1E1E")  # Match main background color
+    sidebar_frame.pack(side=tk.LEFT, fill=tk.Y)
+
+    nav_buttons = ["Listen...", "GitHub Page", "Help!"]  # Updated button text
+    button_colors = ["#1976D2", "#FF5722", "#4CAF50"]  # Different colors for each button
+    for i, button_text in enumerate(nav_buttons):
+        button = tk.Button(sidebar_frame, text=button_text, font=("Arial", 14), bg=button_colors[i], fg="#FFFFFF", width=15, bd=0, highlightthickness=0, command=lambda b=button_text: handle_button_click(b))
+        button.pack(pady=5, padx=10, fill=tk.X)
+
+    # City entry and Update Weather button
+    city_label = tk.Label(sidebar_frame, text="Enter City:", font=("Arial", 14), bg="#1E1E1E", fg="#FFFFFF")
+    city_label.pack(pady=(20, 10))
+
+    city_entry = tk.Entry(sidebar_frame, font=("Arial", 12))
+    city_entry.pack(padx=10, pady=5, fill=tk.X)
+
+    update_weather_button = tk.Button(sidebar_frame, text="Update Weather", font=("Arial", 14), bg="#2196F3", fg="#FFFFFF", width=15, bd=0, highlightthickness=0, command=lambda: handle_button_click("Update Weather"))
+    update_weather_button.pack(pady=5, padx=10, fill=tk.X)
+
+    # Main content area (right side)
+    content_frame = tk.Frame(main_frame, bg="#FFFFFF")  # White
+    content_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
+
+    # Command history text box
+    command_history_label = tk.Label(content_frame, text="Command History", font=("Arial", 16), bg="#FFFFFF", fg="#212121")  # Dark Text
+    command_history_label.pack(pady=(20, 10))
+
+    command_history_text = scrolledtext.ScrolledText(content_frame, wrap=tk.WORD, width=40, height=10, font=("Arial", 12), bg="#FFFFFF", fg="#212121")  # Dark Text
+    command_history_text.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
+
+    # Footer
+    footer_label = tk.Label(root, text="© 2024 NightBlobby. All rights reserved.", font=("Arial", 10), bg="#1E1E1E", fg="#FFFFFF", anchor="se", padx=10, pady=5)
+    footer_label.pack(fill=tk.X, side=tk.BOTTOM)
+
+    greet_user()  # Call greet_user to initialize time, date, day, and weather
+
+    root.mainloop()
+
+# Entry point of the program
 if __name__ == "__main__":
-    run_assistant()
+    create_ui()
