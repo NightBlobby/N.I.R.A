@@ -16,7 +16,7 @@ This section outlines the versions of the project that are actively supported wi
 To report a security vulnerability in this project, please follow these guidelines:
 
 1. **Contact Information**:
-   - **Email**: [security@example.com](mailto:security@example.com)
+   - **Discord**: [@nightblobby]
    - **Security Issue Tracker**: [GitHub Issues](https://github.com/your-repo/issues)
 
 2. **Reporting Process**:
