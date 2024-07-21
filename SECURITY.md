@@ -2,20 +2,33 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+This section outlines the versions of the project that are actively supported with security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| 5.1.x   | :white_check_mark: Yes |
+| 5.0.x   | :x:                No  |
+| 4.0.x   | :white_check_mark: Yes |
+| < 4.0   | :x:                No  |
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+To report a security vulnerability in this project, please follow these guidelines:
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+1. **Contact Information**:
+   - **Email**: [security@example.com](mailto:security@example.com)
+   - **Security Issue Tracker**: [GitHub Issues](https://github.com/your-repo/issues)
+
+2. **Reporting Process**:
+   - **Submit a Report**: Send an email or create a private issue in the security issue tracker with detailed information about the vulnerability.
+   - **Acknowledgment**: You will receive a confirmation within 48 hours acknowledging receipt of your report.
+   - **Investigation**: Our security team will review the report and may request additional information if needed.
+   - **Update Frequency**: We will provide updates on the status of the vulnerability and any fixes within 30 days of receiving the initial report.
+   - **Resolution**: Once a vulnerability is confirmed, we will work to provide a fix in a timely manner. You will be notified when the fix is available and included in a new release.
+   - **Disclosure**: If you prefer to remain anonymous, let us know in your report. We will respect your preference in our public disclosure of the issue and fix.
+
+3. **What to Expect**:
+   - **Acceptance**: If the vulnerability is confirmed, it will be addressed in a future update. You will be acknowledged in our release notes if you consent.
+   - **Decline**: If the issue is not accepted as a vulnerability, we will provide an explanation for our decision.
+
+We are committed to ensuring the security of our project and appreciate your cooperation in helping us maintain a secure environment.
