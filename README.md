@@ -167,14 +167,19 @@ Need a hand or have a question? We’re here to help! Feel free to reach out on 
 Got questions, feedback, or ideas for collaboration? I’d love to hear from you! Connect with me on Discord: **[@nightblobby](https://discord.com/users/nightblobby)**. Let’s chat and see how we can work together to make N.I.R.A. even better! 💬✨
 
 ---
-================================== 🌟 THANK YOU! 🌟 ==================================
+🎉 🚀 **THANK YOU FOR BEING AWESOME!** 🚀 🎉
 
-✨ Your support fuels our journey! Keep exploring, stay curious, and stay tuned for more amazing updates. 
+Your support is the fuel that keeps us going! Thanks for being part of our journey. Keep exploring, stay tuned for more incredible updates, and let’s continue pushing the boundaries together!
 
-🚀 Let’s keep pushing the boundaries of what’s possible together!
+✨ **You rock!** ✨
 
-🙌 Catch you on the flip side! 🚀
+Stay tuned, stay curious, and see you on the next adventure!
 
-======================================================================================
+🔗 **[Join the conversation](https://discord.gg/ma6DGuwM)**
+
+🎉🚀 **Until next time!** 🚀🎉
+
+====================================================================================
+
 
 ---
