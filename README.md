@@ -21,13 +21,14 @@
 - **Privacy-First Approach**: Operates entirely locally with no external data sharing or retention.
 - **Advanced AI Capabilities**: Provides intelligent, context-aware responses and actions.
 - **Voice Recognition**: Processes and understands commands through sophisticated speech recognition.
+- **Text and Audio Input**: It can take commands using voice or Text.
 - **Text-to-Speech**: Converts text to speech using `pyttsx3` for natural and clear communication.
 - **Weather Information**: Retrieves real-time weather data via the OpenWeatherMap API.
 - **Joke Fetching**: Delivers jokes through an integrated online API for user engagement.
 - **Timer and Alarm Management**: Allows users to set, manage, and customize timers and alarms.
-- **Google Custom Search**: Conducts and presents search results using the Google Custom Search API.
-- **Natural Language Processing (NLP)**: Utilizes `nltk` and `sklearn` for advanced NLP and intent classification.
-- **Bluetooth and NFC Scanning**: Identifies and interacts with nearby Bluetooth and NFC devices.
+- **Gemini Pre Trained Model**: By using Gemini API Model the AI can have wide variety of knowledge and doesnt give too much strain on ur GPU on lower End Devices.
+- **Natural Language Processing (NLP)**: Utilizes `nltk` and `sklearn` and 'Gemini' for advanced NLP and intent classification.
+- **Bluetooth and NFC Scanning**: Identifies and interacts with nearby Bluetooth and NFC devices(May or may not be in the APP).
 - **Dictionary and Thesaurus**: Provides word definitions and synonyms through `PyDictionary`.
 - **Currency Conversion**: Converts currencies using `forex-python` for financial management.
 - **News Retrieval**: Fetches top news headlines via the NewsAPI.
@@ -71,7 +72,7 @@
 
 ---
 
-## 🛠️ How It Works
+## 🔧 How It Works
 
 ### Voice Recognition
 
@@ -93,17 +94,17 @@ Integrates with an online joke API to provide random jokes for user entertainmen
 
 Users can set and manage timers and alarms, with options for customizing alert sounds and durations.
 
-### Google Custom Search
+### Gemini Model
 
-Performs search queries and retrieves results using the Google Custom Search API. This feature allows users to obtain information from the web directly.
+Performs search queries and retrieves results using the Gemini Pre trained database. This feature allows users to obtain information from the web directly.
 
 ### Natural Language Processing (NLP)
 
-Employs `nltk` and `sklearn` for processing natural language and classifying user intents, enabling sophisticated understanding and responses.
+Utilizes `nltk`, `sklearn`, and `Gemini` for advanced NLP and intent classification, enabling sophisticated understanding and responses.
 
 ### Bluetooth and NFC Scanning
 
-Scans for and identifies nearby Bluetooth and NFC devices. This feature helps in interacting with various smart devices.
+Scans for and identifies nearby Bluetooth and NFC devices, helping in interacting with various smart devices (may or may not be in the app).
 
 ### Dictionary Lookup
 
@@ -111,31 +112,31 @@ Provides definitions, synonyms, and usage examples for words using `PyDictionary
 
 ### Currency Conversion
 
-Converts amounts between different currencies using the `forex-python` library, assisting users in financial transactions.
+Converts amounts between different currencies using the `forex-python` library, assisting users in financial management.
 
 ### News Retrieval
 
 Retrieves top news headlines from various sources using the NewsAPI, keeping users updated with current events.
 
-### Convertations
+### Conversations
 
-Added the ability to have a decent conversation with the AI.
+Allows for meaningful conversations with the AI.
 
 ### Computer Vision
 
-It can understand what its seeing and help u either find info about the object or help you solve the problem (still unter deverlopment it has a lot of errors)
+It can understand what it's seeing and help you either find information about the object or solve a problem (still under development with some errors).
 
 ### Rock Paper Scissors
 
-you can play rock paper scissors with the AI!
+Play rock paper scissors with the AI!
 
 ### Coin Flip
 
-You can make Coin flips idk i just felt it would be fun igs
+Make coin flips for fun!
 
 ### Greetings
 
-It will greet you everytime you run it giving you all the info you need like time and date
+It will greet you every time you run it, giving you all the info you need, like time and date.
 
 ### End-to-End Encryption
 
