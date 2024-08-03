@@ -7,7 +7,7 @@
 ## 📚 Table of Contents
 
 - 🌟 [Key Features](#-key-features)
-- 🛠️ [Installation and Prerequisites](#-installation-and-prerequisites)
+- 🛠️ [Installation and Prerequisites](#-installation-steps)
 - 🔧 [How It Works](#-how-it-works)
 - 🚧 [Roadmap](#-roadmap)
 - 🤝 [Contributing](#-contributing)
