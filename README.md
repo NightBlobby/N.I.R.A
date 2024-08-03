@@ -7,12 +7,13 @@
 ## 📚 Table of Contents
 
 - 🌟 [Key Features](#-key-features)
-- 🛠️ [Installation and Prerequisites](#-installation-steps)
+- 🛠️ [Installation and Prerequisites](#-installation-and-prerequisites)
 - 🔧 [How It Works](#-how-it-works)
 - 🚧 [Roadmap](#-roadmap)
 - 🤝 [Contributing](#-contributing)
 - 🦺 [Support](#-support)
 - 📬 [Contact](#-contact)
+- 🎉 [Thank You](#-thank-you)
 
 ---
 
