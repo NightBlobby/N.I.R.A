@@ -45,8 +45,8 @@
 
 ### Prerequisites
 
-- **Python 3.7+**: Ensure Python 3.7 or higher is installed.
-- **Required Libraries**: Install dependencies listed in `requirements.txt`.
+- **Python 3.7+**: Make sure you have Python 3.7 or higher installed.
+- **Required Libraries**: Install the dependencies listed in `requirements.txt`.
 
 ### Installation Steps
 
@@ -59,12 +59,25 @@
 
 2. **Set Up a Virtual Environment (Recommended)**
 
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # For Windows: venv\Scripts\activate
-    ```
+    Create and activate a virtual environment to manage dependencies:
+
+    - **On macOS/Linux:**
+
+      ```bash
+      python -m venv venv
+      source venv/bin/activate
+      ```
+
+    - **On Windows:**
+
+      ```bash
+      python -m venv venv
+      venv\Scripts\activate
+      ```
 
 3. **Install Dependencies**
+
+    Install the required libraries:
 
     ```bash
     pip install -r requirements.txt
@@ -72,8 +85,22 @@
 
 4. **Configuration**
 
-    - **API Keys**: Obtain and configure API keys for Google Custom Search, OpenWeatherMap, NewsAPI, and other services.
-    - **Configuration File**: Create a `.env` file in the root directory to include your API keys and settings.
+    - **API Keys**: Obtain API keys for services like Google Custom Search, OpenWeatherMap, and NewsAPI.
+    - **Configuration File**: Create a `.env` file in the root directory of the project and include your API keys and settings.
+
+    ```plaintext
+    # Example .env file
+    GOOGLE_API_KEY=your_google_api_key
+    OPENWEATHERMAP_API_KEY=your_openweathermap_api_key
+    NEWSAPI_KEY=your_newsapi_key
+    ```
+
+### 💡 Tips
+
+- **Virtual Environment**: Using a virtual environment helps keep your project's dependencies isolated from other projects.
+- **Configuration File**: Make sure to keep your `.env` file secure and avoid sharing it publicly.
+
+
 
 ---
 
