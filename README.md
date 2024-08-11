@@ -45,7 +45,7 @@
 
 ### Prerequisites
 
-- **Python 3.7+**: Make sure you have Python 3.7 or higher installed.
+- **Python 3.7+**: Ensure you have Python 3.7 or higher installed.
 - **Required Libraries**: Install the dependencies listed in `requirements.txt`.
 
 ### Installation Steps
@@ -85,22 +85,27 @@
 
 4. **Configuration**
 
-    - **API Keys**: Obtain API keys for services like Google Custom Search, OpenWeatherMap, and NewsAPI.
+    - **API Keys**: Obtain API keys for any services you are using (e.g., OpenAI, weather APIs).
     - **Configuration File**: Create a `.env` file in the root directory of the project and include your API keys and settings.
 
     ```plaintext
     # Example .env file
-    GOOGLE_API_KEY=your_google_api_key
-    OPENWEATHERMAP_API_KEY=your_openweathermap_api_key
-    NEWSAPI_KEY=your_newsapi_key
+    OPENAI_API_KEY=your_openai_api_key
+    WEATHER_API_KEY=your_weather_api_key
+    ```
+
+5. **Run the Application**
+
+    After setting up, you can start the application by running:
+
+    ```bash
+    python main.py
     ```
 
 ### 💡 Tips
 
 - **Virtual Environment**: Using a virtual environment helps keep your project's dependencies isolated from other projects.
-- **Configuration File**: Make sure to keep your `.env` file secure and avoid sharing it publicly.
-
-
+- **Configuration File**: Ensure that your `.env` file is secure and never commit it to version control. Use a `.gitignore` file to exclude it.
 
 ---
 
