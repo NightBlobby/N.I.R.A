@@ -20,7 +20,8 @@
 ## UI/UX Desgin
 
 - For Phone (Nothing Themed)
-- ![image](https://github.com/user-attachments/assets/e83f4fd6-9f4b-4827-8856-01d44ff9cc0e)
+  ![image](https://github.com/user-attachments/assets/e83f4fd6-9f4b-4827-8856-01d44ff9cc0e)
+  made By [ALI](https://x.com/AliFakhruddin13)
 
 ---
 ## Terms and Conditions (tired not to make it boring)
