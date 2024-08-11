@@ -17,6 +17,36 @@
 
 ---
 
+## UI/UX Desgin
+
+- For Phone (Nothing Themed)
+- ![image](https://github.com/user-attachments/assets/e83f4fd6-9f4b-4827-8856-01d44ff9cc0e)
+
+---
+## Terms and Conditions (tired not to make it boring)
+
+Welcome to N.I.R.A., your soon-to-be favorite AI assistant! Before we dive into the fun, let’s go over some important (and delightfully sarcastic) Terms and Conditions.
+
+1. **Acceptance of Terms**  
+By using N.I.R.A., you’re agreeing to these Terms and Conditions. Congratulations! You’re now part of an exclusive club of people who like to read the fine print. 
+
+2. **Usage Restrictions**  
+N.I.R.A. is here to assist, entertain, company you and occasionally baffle you with her quirks. However, please use her powers responsibly. No world domination plans or karaoke competitions, please. Any attempts to misuse her might result in an endless loop of dad jokes.
+
+3. **Updates and Upgrades**  
+We’ll be updating N.I.R.A. with new features and improvements. If she suddenly starts giving you unsolicited life advice or begins quoting Shakespeare, it’s just part of her charm. No need to panic.
+
+4. **Liability Disclaimer**  
+While we strive to make N.I.R.A. as fantastic as possible, we can’t promise she won’t occasionally be a bit eccentric. If she suggests eating pizza for breakfast or gives you directions to a non-existent place, it’s all in the name of fun.
+
+5. **Termination**  
+If you ever decide N.I.R.A. isn’t quite your cup of tea, you can end her services anytime. Just be prepared for a dramatic farewell message, possibly involving a heartfelt rendition of “My Heart Will Go On.”
+
+6. **Changes to Terms**  
+We might update these Terms from time to time. Don’t worry, we’ll keep it as entertaining as this message, so you won’t mind reading it.
+
+---
+
 ## 🌟 Key Features
 
 - 🔒 **Privacy-Centric Design**: Operates entirely locally, ensuring no external data sharing or retention. 
