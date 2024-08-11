@@ -67,7 +67,6 @@ from newsapi import NewsApiClient
 import google.generativeai as genai
 
 
-
 # Install newsapi-python library
 genai.configure(api_key='YOUR API')
 model = genai.GenerativeModel('gemini-1.5-pro-latest')
