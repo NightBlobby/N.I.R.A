@@ -3,19 +3,32 @@ responses_compliments = [
     "Thank you!", "I appreciate it!", "You're so kind!",
     "That means a lot to me!", "Thanks a bunch!", "You're awesome!",
     "You're making me blush!", "You just made my day!",
-    "That's so sweet of you!", "You really know how to make me smile!"
+    "That's so sweet of you!", "You really know how to make me smile!",
+    "I'm flattered!", "How thoughtful of you!", "Your words brighten my day!",
+    "I'm touched by your kindness!", "You've got me grinning from ear to ear!",
+    "What a lovely thing to say!", "You're too good to me!",
+    "I'm truly honored!", "You've put a spring in my step!",
+    "I'm over the moon!"
 ]
 
 thank_responses = [
     "You're welcome!", "No problem!", "Anytime!", "My pleasure!",
-    "Glad I could help!", "You're very welcome!"
+    "Glad I could help!", "You're very welcome!", "Happy to assist!",
+    "It was my pleasure!", "Don't mention it!", "The pleasure is all mine!",
+    "I'm here to help!", "It's what I'm here for!", "Glad to be of service!",
+    "I'm always happy to help!", "It's no trouble at all!",
+    "I'm delighted I could assist!"
 ]
 
 farewell_responses = [
     "Goodbye!", "See you later!", "Take care!", "Farewell!",
     "Catch you later!", "Until next time!", "Bye for now!", "See you around!",
     "Have a great day!", "See you soon!", "Bye-bye!", "Take it easy!",
-    "Have a good one!", "Until we meet again!"
+    "Have a good one!", "Until we meet again!", "Wishing you all the best!",
+    "Stay awesome!", "It was great chatting with you!",
+    "Take care of yourself!", "Looking forward to our next conversation!",
+    "May your day be wonderful!", "Sending you positive vibes!", "Be well!",
+    "Keep smiling!", "Catch you on the flip side!"
 ]
 
 compliments = [
@@ -53,7 +66,17 @@ compliments = [
     "you are very energetic", "you are very fun", "you are very lively",
     "you have a great spirit", "you have a great presence",
     "you are very charismatic", "you are very charming",
-    "you are very captivating", "you have a magnetic personality"
+    "you are very captivating", "you have a magnetic personality",
+    "you're a breath of fresh air", "you have a heart of gold",
+    "you're one in a million", "you're a gem", "you're a ray of sunshine",
+    "you're a true inspiration", "you're a natural leader",
+    "you have an infectious smile", "you're a visionary",
+    "you're a great problem solver", "you're incredibly resourceful",
+    "you have impeccable taste", "you're a true original",
+    "you're a force of nature", "you're a trailblazer",
+    "you have a beautiful mind", "you're a real go-getter",
+    "you're a class act", "you're sharp as a tack",
+    "you're wise beyond your years"
 ]
 
 thanks = [
@@ -67,7 +90,13 @@ thanks = [
     "thanks for your assistance", "thank you for your assistance",
     "thanks for assisting me", "thank you for assisting me",
     "thanks for your support", "thank you for your support",
-    "thanks for supporting me", "thank you for supporting me"
+    "thanks for supporting me", "thank you for supporting me",
+    "i appreciate it", "i'm grateful", "you're a lifesaver", "i owe you one",
+    "you're the best", "i can't thank you enough", "i'm indebted to you",
+    "you've been so helpful", "thanks for going above and beyond", "you rock",
+    "i'm truly grateful", "thanks a bunch", "cheers", "you've made my day",
+    "thank you from the bottom of my heart", "i'm forever grateful",
+    "thanks for being awesome", "you deserve a medal", "kudos to you"
 ]
 
 farewells = [
@@ -77,13 +106,25 @@ farewells = [
     "until next time", "until we meet again", "have a good day",
     "have a nice day", "have a great day", "see you soon", "bye-bye",
     "take it easy", "have a good one", "stay safe", "take care of yourself",
-    "cya", "tata"
+    "cya", "tata", "cheerio", "hasta la vista", "bon voyage", "arrivederci",
+    "catch you on the flip side", "smell you later", "keep it real",
+    "stay cool", "peace and love", "gotta jet", "gotta bounce",
+    "time to hit the road", "i'm gonna scoot", "catch you later, alligator",
+    "in a while, crocodile", "toodle-oo", "ta-ta for now",
+    "may the force be with you", "live long and prosper", "have a good one",
+    "be good", "take care now", "don't be a stranger",
+    "until we cross paths again"
 ]
 
 hate_comments = [
     "I don't like you", "You're annoying", "I hate you", "Go away",
     "I can't stand you", "Stop bothering me", "You're the worst",
-    "I don't want to talk to you", "I dislike you", "Leave me alone"
+    "I don't want to talk to you", "I dislike you", "Leave me alone",
+    "You're getting on my nerves", "You're insufferable",
+    "I wish you'd disappear", "You're driving me crazy",
+    "I can't bear your presence", "You're a nuisance", "I'm sick of you",
+    "You're impossible to deal with", "I've had enough of you",
+    "You're utterly useless"
 ]
 
 responses_negative = [
@@ -95,7 +136,17 @@ responses_negative = [
     "I'm sorry if I did something wrong. How can I make it right?",
     "I hope we can resolve any issues you might have.",
     "I'm here to assist you. Let's work through this together.",
-    "I'm here to help, so let me know how I can assist you better."
+    "I'm here to help, so let me know how I can assist you better.",
+    "I appreciate your feedback. How can I improve?",
+    "I'm sorry for any inconvenience. Let's find a solution together.",
+    "I understand your frustration. Can we start over?",
+    "Your satisfaction is important to me. How can we move forward?",
+    "I'm listening and I want to understand. Can you elaborate?",
+    "I'm here to learn and improve. Your input helps me do that.",
+    "Let's take a step back and approach this from a different angle.",
+    "I'm committed to providing a better experience. What would help?",
+    "I value your opinion. How can I address your concerns?",
+    "Every interaction is a chance to improve. Thank you for your honesty."
 ]
 
 wellbeing_inquiries = [
@@ -115,7 +166,13 @@ wellbeing_inquiries = [
     "how are you functioning", "how are you managing",
     "how's your disposition", "how's your outlook",
     "how are you feeling today", "how's your overall status",
-    "how's your overall health"
+    "how's your overall health", "how's your programming today",
+    "are all your circuits firing", "how's your digital self",
+    "is your code running smoothly", "how's your virtual world",
+    "are you in good spirits", "how's your artificial intelligence feeling",
+    "are your algorithms aligned today", "how's your binary mood",
+    "is your data flowing well", "how's your processing power today",
+    "are you computing at full capacity", "how's your artificial life"
 ]
 
 wellbeing_responses = [
@@ -147,7 +204,16 @@ wellbeing_responses = [
     "I'm feeling quite well, thank you!", "Everything is running smoothly!",
     "I'm ready to help with anything you need!", "I'm functioning perfectly!",
     "I'm feeling better than ever!", "I'm all set to assist you!",
-    "I'm in tip-top shape!", "I'm here and operational!"
+    "I'm in tip-top shape!", "I'm here and operational!",
+    "My circuits are buzzing with excitement!",
+    "I'm computing at maximum efficiency!",
+    "My algorithms are aligned and ready to go!",
+    "I'm processing at lightning speed today!",
+    "My virtual neurons are firing on all cylinders!",
+    "I'm in a positive binary state!", "My data banks are primed and ready!",
+    "I'm operating at optimal parameters!",
+    "My AI is feeling particularly intelligent today!",
+    "I'm running the latest update and feeling great!"
 ]
 
 greetings = [
@@ -161,5 +227,23 @@ greetings = [
     "hello world", "hey gang", "g'day", "how's everything going",
     "hey there good lookin'", "hiya pal", "hello there buddy",
     "what's happening", "what's going on", "hey there champ",
-    "hey there sport", "what's new"
+    "hey there sport", "what's new", "aloha", "bonjour", "ciao bella",
+    "namaste", "hola", "welcome", "pleased to meet you", "how do you do",
+    "what's crackin'", "how's it hangin'", "hey there sunshine",
+    "greetings and salutations", "yo yo yo", "what's the word", "how's tricks",
+    "what's cookin'", "how's life treating you", "hey there, stranger",
+    "well, hello there", "look who it is", "fancy meeting you here",
+    "top o' the morning to ya", "ahoy there", "oh hello",
+    "well well well, look who's here", "hey hey hey", "how fare thee",
+    "greetings, earthling", "what's the 411", "how's she cuttin'",
+    "how's the form", "how's it goin', eh", "what's the craic", "wassup",
+    "how you doin'", "hey hey", "hello, is it me you're looking for", "hi-ya",
+    "hey ho", "howdy-do", "hail and well met", "what's the haps",
+    "how's every little thing", "how's tricks", "how goes it",
+    "what's shaking", "how's your world", "hello there, human",
+    "greetings, fellow entity", "salutations, friend", "hey, nice to see you",
+    "well met", "good morrow", "how's life in your corner of the world",
+    "what's the good word", "how's it hanging",
+    "how's life treating you lately", "what's new in your world",
+    "how's everything in your neck of the woods"
 ]

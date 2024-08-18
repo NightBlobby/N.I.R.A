@@ -56,14 +56,9 @@ import asyncio
 from newsapi import NewsApiClient
 import google.generativeai as genai
 from utils.responses import greetings, thank_responses, compliments, hate_comments, thanks, farewell_responses, farewells, wellbeing_inquiries, wellbeing_responses, responses_negative, responses_compliments
-import os
-
-GEMINI_API = os.getenv("GEMINIAPI")
-
-
 
 # Ensure you have StableLM installed
-genai.configure(api_key=GEMINI_API)
+genai.configure(api_key="YOURKEY")
 model = genai.GenerativeModel('gemini-1.5-pro-latest')
 chat = model.start_chat()
 
@@ -95,13 +90,15 @@ btc_converter = BtcConverter()
 owm = pyowm.OWM('YOUAPI')  # Replace with your OpenWeatherMap API key
 
 # Initialize Spotify API (Replace placeholders with your credentials)
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="YOUR_CLIENT_ID",
-                                               client_secret="YOUR_CLIENT_SECRET",
-                                               redirect_uri="YOUR_REDIRECT_URI",
-                                               scope="user-read-playback-state,user-modify-playback-state"))
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
+    client_id="YOUR_CLIENT_ID",
+    client_secret="YOUR_CLIENT_SECRET",
+    redirect_uri="YOUR_REDIRECT_URI",
+    scope="user-read-playback-state,user-modify-playback-state"))
 
 # Initialize PyDictionary
 dictionary = PyDictionary()
+
 
 # Function to greet the user based on the time of day
 def greet_user():
@@ -119,10 +116,14 @@ def greet_user():
     # Add personalized compliments or acknowledgments here
     speak(f"I am {assistant_name}, your personal assistant.")
     now = datetime.datetime.now()
-    speak(f"Today is {now.strftime('%A, %B %d, %Y')}, and the time is {now.strftime('%I:%M %p')}.")
+    speak(
+        f"Today is {now.strftime('%A, %B %d, %Y')}, and the time is {now.strftime('%I:%M %p')}."
+    )
+
 
 class NLPModel:
     """A class for handling NLP model operations."""
+
     def __init__(self):
         self.model = make_pipeline(StandardScaler(), SVC())
         self.load_model()
@@ -139,7 +140,9 @@ class NLPModel:
         """Predict the intent of the given text."""
         return self.model.predict([text])[0]
 
+
 nlp_model = NLPModel()
+
 
 # Function to speak
 def speak(text):
@@ -148,6 +151,7 @@ def speak(text):
     print(output)
     engine.say(text)
     engine.runAndWait()
+
 
 # Function to listen to the user's command
 def listen(input_method):
@@ -160,12 +164,14 @@ def listen(input_method):
         speak("Invalid input method selected.")
         return None
 
+
 # Function to listen to the user's command via text input
 def listen_text():
     """Listen to the user's command via text input."""
     command = input("Enter your command: ")
     print(f"You said: {command}")
     return command
+
 
 # Function to listen to the user's command via voice input
 def listen_voice():
@@ -188,6 +194,7 @@ def listen_voice():
         speak(f"An error occurred: {e}")
         return None
 
+
 # Function to fetch weather information for a given city
 def get_weather(city_name):
     """Fetch weather information for a given city."""
@@ -201,23 +208,29 @@ def get_weather(city_name):
     except Exception as e:
         return f"Could not get weather information. Error: {e}"
 
+
 # Function to fetch a joke from an online API
 def fetch_joke():
     """Fetch a joke from an online API."""
-    response = requests.get("https://official-joke-api.appspot.com/random_joke")
+    response = requests.get(
+        "https://official-joke-api.appspot.com/random_joke")
     if response.status_code == 200:
         joke_data = response.json()
         return f"{joke_data['setup']}... {joke_data['punchline']}"
     else:
-        jokes = ["Why don't scientists trust atoms? Because they make up everything!",
-                 "What do you get if you cross a cat with a dark horse? Kitty Perry.",
-                 "Why don't some couples go to the gym? Because some relationships don't work out.",
-                 "It told my wife she was drawing her eyebrows too high. She looked surprised."]
+        jokes = [
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "What do you get if you cross a cat with a dark horse? Kitty Perry.",
+            "Why don't some couples go to the gym? Because some relationships don't work out.",
+            "It told my wife she was drawing her eyebrows too high. She looked surprised."
+        ]
         return random.choice(jokes)
+
 
 # Function to set a timer
 def set_timer(duration_seconds):
     """Set a timer for the given duration in seconds."""
+
     def timer_thread():
         time.sleep(duration_seconds)
         speak("Time's up!")
@@ -225,9 +238,11 @@ def set_timer(duration_seconds):
     thread = threading.Thread(target=timer_thread)
     thread.start()
 
+
 # Function to set an alarm
 def set_alarm(alarm_time):
     """Set an alarm for the given time."""
+
     def alarm_thread():
         while True:
             current_time = datetime.datetime.now().strftime('%H:%M')
@@ -240,17 +255,25 @@ def set_alarm(alarm_time):
     thread = threading.Thread(target=alarm_thread)
     thread.start()
 
+
 # Check if the query is a math question
 def is_math_question(query):
     """Check if the query is a math question."""
-    math_keywords = ["calculate", "solve", "what is", "what's", "equals", "plus", "minus", "times", "divided by"]
+    math_keywords = [
+        "calculate", "solve", "what is", "what's", "equals", "plus", "minus",
+        "times", "divided by"
+    ]
     return any(keyword in query.lower() for keyword in math_keywords)
+
 
 # Check if the query is a weather question
 def is_weather_question(query):
     """Check if the query is a weather question."""
-    weather_keywords = ["weather", "temperature", "forecast", "rain", "snow", "sunny", "cloudy"]
+    weather_keywords = [
+        "weather", "temperature", "forecast", "rain", "snow", "sunny", "cloudy"
+    ]
     return any(keyword in query.lower() for keyword in weather_keywords)
+
 
 # Function to fetch weather information for a given city
 def get_weather(city):
@@ -266,6 +289,7 @@ def get_weather(city):
     else:
         return "Sorry, I couldn't retrieve the weather information. Please check the city name or try again later."
 
+
 # Function to search and provide an answer using Gemini API or another search API for general questions
 def search_and_provide_answer(query):
     """Search and provide an answer using Gemini API or another search API for general questions."""
@@ -276,13 +300,15 @@ def search_and_provide_answer(query):
                 speak(f"The answer is {answer}")
                 print(f"The answer is {answer}")
             else:
-                speak("Sorry, I couldn't calculate that. Please rephrase your question.")
+                speak(
+                    "Sorry, I couldn't calculate that. Please rephrase your question."
+                )
         elif is_weather_question(query):
             # Extract the city from the query. This can be improved with a more sophisticated NLP approach.
             words = query.split()
             for i, word in enumerate(words):
                 if word.lower() in ["in", "at", "for"]:
-                    city = " ".join(words[i+1:])
+                    city = " ".join(words[i + 1:])
                     break
             else:
                 city = words[-1]
@@ -295,15 +321,21 @@ def search_and_provide_answer(query):
             if answer:
                 speak(answer)
             else:
-                speak("I couldn't find relevant information. Could you please provide more details?")
+                speak(
+                    "I couldn't find relevant information. Could you please provide more details?"
+                )
     except Exception as e:
         speak(f"An error occurred while processing your request. Error: {e}")
+
 
 # This gives some functionality to Nira for better responses
 def classify_sentence(sentence):
     """Classify a sentence as a question or a statement."""
     words = word_tokenize(sentence)
-    words = [word.lower() for word in words if word.isalnum() and word.lower() not in stopwords.words('english')]
+    words = [
+        word.lower() for word in words
+        if word.isalnum() and word.lower() not in stopwords.words('english')
+    ]
     pos_tags = nltk.pos_tag(words)
     nouns = [word for word, pos in pos_tags if pos.startswith('N')]
     verbs = [word for word, pos in pos_tags if pos.startswith('V')]
@@ -312,9 +344,13 @@ def classify_sentence(sentence):
     else:
         return "statement"
 
+
 def show_notification(title, message):
     """Show a notification with the given title and message."""
-    notification.notify(title=title, message=message, timeout=10)  # Notification duration in seconds (placeHolder)
+    notification.notify(
+        title=title, message=message,
+        timeout=10)  # Notification duration in seconds (placeHolder)
+
 
 async def bluetooth_scan():
     """Scan for Bluetooth devices and show a notification if a specific device is detected."""
@@ -323,10 +359,13 @@ async def bluetooth_scan():
         if devices:
             for device in devices:
                 device_name = device.name if device.name else "Unknown Device"
-                print(f"Bluetooth Device Found: {device.address} - {device_name}")
+                print(
+                    f"Bluetooth Device Found: {device.address} - {device_name}"
+                )
                 # Adjust detection based on behavior or expected characteristics
                 if "NothingPhone" in device.name:
-                    show_notification("Bluetooth Device Detected", f"You passed by a {device.name} user!")
+                    show_notification("Bluetooth Device Detected",
+                                      f"You passed by a {device.name} user!")
                     # Example: Use BleakClient to retrieve services and characteristics
                     try:
                         async with BleakClient(device) as client:
@@ -336,11 +375,14 @@ async def bluetooth_scan():
                                 # Add logic to check for specific services or characteristics
                                 pass
                     except Exception as e:
-                        print(f"Error accessing services for {device.address}: {e}")
+                        print(
+                            f"Error accessing services for {device.address}: {e}"
+                        )
         else:
             print("No Bluetooth devices found.")
     except TypeError as e:
         print(f"Error discovering Bluetooth devices: {e}")
+
 
 def nfc_detect(tag):
     """Detect NFC tags and show a notification if a specific tag is detected."""
@@ -348,11 +390,15 @@ def nfc_detect(tag):
     print(f"NFC Tag Detected: {tag_id}")
     # For debugging
     if tag_id == 'A14C1':
-        show_notification("NFC Tag Detected", "You passed by a Nothing Phone 1 user!")
+        show_notification("NFC Tag Detected",
+                          "You passed by a Nothing Phone 1 user!")
     elif tag_id == 'A14C2':
-        show_notification("NFC Tag Detected", "You passed by a Nothing Phone 2 user!")
+        show_notification("NFC Tag Detected",
+                          "You passed by a Nothing Phone 2 user!")
     elif tag_id == 'A14C3':
-        show_notification("NFC Tag Detected", "You passed by a Nothing Phone 2A user!")
+        show_notification("NFC Tag Detected",
+                          "You passed by a Nothing Phone 2A user!")
+
 
 async def run_nfc_scan():
     """Run NFC scan and connect to the NFC reader."""
@@ -371,10 +417,15 @@ async def run_nfc_scan():
             clf.connect(rdwr={'on-connect': nfc_detect})
             clf.close()
         else:
-            print("No NFC device found. Ensure your NFC reader is properly connected and recognized by your system.")
+            print(
+                "No NFC device found. Ensure your NFC reader is properly connected and recognized by your system."
+            )
     except IOError as e:
         print(f"IOError: {e}")
-    print("Ensure that the NFC reader is properly connected and recognized by your system.")
+    print(
+        "Ensure that the NFC reader is properly connected and recognized by your system."
+    )
+
 
 async def main():
     """Run NFC scan in the background and Bluetooth scan concurrently."""
@@ -385,6 +436,7 @@ async def main():
     # Wait for NFC scan to complete
     await nfc_task
 
+
 # Initialize the News client
 def fetch_news(category):
     """Fetch news headlines for a given category."""
@@ -394,6 +446,7 @@ def fetch_news(category):
     articles = news_data['articles'][:5]  # Limiting to 5 articles for brevity
     return articles
 
+
 # Lyric finder
 def search_lyrics(song_title, musixmatch_api_key):
     """Search for song lyrics using the Musixmatch API."""
@@ -402,24 +455,41 @@ def search_lyrics(song_title, musixmatch_api_key):
     try:
         # Search for the song
         search_url = f"{base_url}/track.search"
-        params = {"q_track": song_title, "page_size": 1, "apikey": musixmatch_api_key}
-        search_response = requests.get(search_url, headers=headers, params=params)
+        params = {
+            "q_track": song_title,
+            "page_size": 1,
+            "apikey": musixmatch_api_key
+        }
+        search_response = requests.get(search_url,
+                                       headers=headers,
+                                       params=params)
         if search_response.status_code == 403:
             return "Forbidden: Check if your Musixmatch API key is correct and has proper permissions."
         if search_response.ok:
             search_results = search_response.json()
-            tracks = search_results.get("message", {}).get("body", {}).get("track_list", [])
+            tracks = search_results.get("message",
+                                        {}).get("body",
+                                                {}).get("track_list", [])
             if tracks:
                 # Get the first result track
                 track = tracks[0]["track"]
                 track_id = track["track_id"]
                 # Fetch song lyrics
                 lyrics_url = f"{base_url}/track.lyrics.get"
-                lyrics_params = {"track_id": track_id, "apikey": musixmatch_api_key}
-                lyrics_response = requests.get(lyrics_url, headers=headers, params=lyrics_params)
+                lyrics_params = {
+                    "track_id": track_id,
+                    "apikey": musixmatch_api_key
+                }
+                lyrics_response = requests.get(lyrics_url,
+                                               headers=headers,
+                                               params=lyrics_params)
                 if lyrics_response.ok:
                     lyrics_data = lyrics_response.json()
-                    lyrics = lyrics_data.get("message", {}).get("body", {}).get("lyrics", {}).get("lyrics_body", "Lyrics not found.")
+                    lyrics = lyrics_data.get("message",
+                                             {}).get("body",
+                                                     {}).get("lyrics", {}).get(
+                                                         "lyrics_body",
+                                                         "Lyrics not found.")
                     return lyrics
                 else:
                     return f"Failed to fetch lyrics. Status code: {lyrics_response.status_code}"
@@ -430,21 +500,30 @@ def search_lyrics(song_title, musixmatch_api_key):
     except Exception as e:
         return f"An error occurred: {e}"
 
+
 def get_youtube_summary(video_url):
     """Summarize a YouTube video using yt-dlp and a summarization model."""
     try:
         # Fetch video info using yt-dlp
-        ydl_opts = {'quiet': True, 'skip_download': True, 'writeinfojson': True}
+        ydl_opts = {
+            'quiet': True,
+            'skip_download': True,
+            'writeinfojson': True
+        }
         # Extract video info with youtube_dl.YoutubeDL(ydl_opts) as ydl:
         info_dict = ydl.extract_info(video_url, download=False)
         # Get video description or transcript
         transcript = info_dict.get('description', 'No transcript available.')
         # Use a summarization model
         summarizer = pipeline("summarization")
-        summary = summarizer(transcript, max_length=150, min_length=30, do_sample=False)
+        summary = summarizer(transcript,
+                             max_length=150,
+                             min_length=30,
+                             do_sample=False)
         return summary[0]['summary_text']
     except Exception as e:
         return f"An error occurred while processing your request. Error: {e}"
+
 
 def search_and_provide_answer(query):
     """Search and provide an answer based on the command."""
@@ -454,7 +533,7 @@ def search_and_provide_answer(query):
             words = query.split()
             for i, word in enumerate(words):
                 if word.lower() in ["in", "at", "for"]:
-                    city = " ".join(words[i+1:])
+                    city = " ".join(words[i + 1:])
                     break
             else:
                 city = words[-1]
@@ -467,15 +546,21 @@ def search_and_provide_answer(query):
             if answer:
                 speak(answer)
             else:
-                speak("I couldn't find relevant information. Could you please provide more details?")
+                speak(
+                    "I couldn't find relevant information. Could you please provide more details?"
+                )
     except Exception as e:
         speak(f"An error occurred while processing your request. Error: {e}")
+
 
 # This gives some functionality to Nira for better responses
 def classify_sentence(sentence):
     """Classify a sentence as a question or a statement."""
     words = word_tokenize(sentence)
-    words = [word.lower() for word in words if word.isalnum() and word.lower() not in stopwords.words('english')]
+    words = [
+        word.lower() for word in words
+        if word.isalnum() and word.lower() not in stopwords.words('english')
+    ]
     pos_tags = nltk.pos_tag(words)
     nouns = [word for word, pos in pos_tags if pos.startswith('N')]
     verbs = [word for word, pos in pos_tags if pos.startswith('V')]
@@ -484,9 +569,13 @@ def classify_sentence(sentence):
     else:
         return "statement"
 
+
 def show_notification(title, message):
     """Show a notification with the given title and message."""
-    notification.notify(title=title, message=message, timeout=10)  # Notification duration in seconds (placeHolder)
+    notification.notify(
+        title=title, message=message,
+        timeout=10)  # Notification duration in seconds (placeHolder)
+
 
 async def bluetooth_scan():
     """Scan for Bluetooth devices and show a notification if a specific device is detected."""
@@ -495,10 +584,13 @@ async def bluetooth_scan():
         if devices:
             for device in devices:
                 device_name = device.name if device.name else "Unknown Device"
-                print(f"Bluetooth Device Found: {device.address} - {device_name}")
+                print(
+                    f"Bluetooth Device Found: {device.address} - {device_name}"
+                )
                 # Adjust detection based on behavior or expected characteristics
                 if "NothingPhone" in device.name:
-                    show_notification("Bluetooth Device Detected", f"You passed by a {device.name} user!")
+                    show_notification("Bluetooth Device Detected",
+                                      f"You passed by a {device.name} user!")
                     # Example: Use BleakClient to retrieve services and characteristics
                     try:
                         async with BleakClient(device) as client:
@@ -508,11 +600,14 @@ async def bluetooth_scan():
                                 # Add logic to check for specific services or characteristics
                                 pass
                     except Exception as e:
-                        print(f"Error accessing services for {device.address}: {e}")
+                        print(
+                            f"Error accessing services for {device.address}: {e}"
+                        )
         else:
             print("No Bluetooth devices found.")
     except TypeError as e:
         print(f"Error discovering Bluetooth devices: {e}")
+
 
 def nfc_detect(tag):
     """Detect NFC tags and show a notification if a specific tag is detected."""
@@ -520,11 +615,15 @@ def nfc_detect(tag):
     print(f"NFC Tag Detected: {tag_id}")
     # For debugging
     if tag_id == 'A14C1':
-        show_notification("NFC Tag Detected", "You passed by a Nothing Phone 1 user!")
+        show_notification("NFC Tag Detected",
+                          "You passed by a Nothing Phone 1 user!")
     elif tag_id == 'A14C2':
-        show_notification("NFC Tag Detected", "You passed by a Nothing Phone 2 user!")
+        show_notification("NFC Tag Detected",
+                          "You passed by a Nothing Phone 2 user!")
     elif tag_id == 'A14C3':
-        show_notification("NFC Tag Detected", "You passed by a Nothing Phone 2A user!")
+        show_notification("NFC Tag Detected",
+                          "You passed by a Nothing Phone 2A user!")
+
 
 async def run_nfc_scan():
     """Run NFC scan and connect to the NFC reader."""
@@ -543,10 +642,15 @@ async def run_nfc_scan():
             clf.connect(rdwr={'on-connect': nfc_detect})
             clf.close()
         else:
-            print("No NFC device found. Ensure your NFC reader is properly connected and recognized by your system.")
+            print(
+                "No NFC device found. Ensure your NFC reader is properly connected and recognized by your system."
+            )
     except IOError as e:
         print(f"IOError: {e}")
-    print("Ensure that the NFC reader is properly connected and recognized by your system.")
+    print(
+        "Ensure that the NFC reader is properly connected and recognized by your system."
+    )
+
 
 async def main():
     """Run NFC scan in the background and Bluetooth scan concurrently."""
@@ -557,6 +661,7 @@ async def main():
     # Wait for NFC scan to complete
     await nfc_task
 
+
 # Initialize the News client
 def fetch_news(category):
     """Fetch news headlines for a given category."""
@@ -565,6 +670,7 @@ def fetch_news(category):
     news_data = response.json()
     articles = news_data['articles'][:5]  # Limiting to 5 articles for brevity
     return articles
+
 
 # Function to search and provide an answer based on the command
 def parse_and_execute_command(command):
@@ -615,13 +721,17 @@ def parse_and_execute_command(command):
         speak("Neural Advanced Interactive Network Assistant")
         return
     elif "help" in command:
-        speak("The more information you give me, the better I can understand your needs and provide useful help. Please tell me more! I need more information to be helpful")
+        speak(
+            "The more information you give me, the better I can understand your needs and provide useful help. Please tell me more! I need more information to be helpful"
+        )
         return
     elif "what do you see" in command or "what is this" in command:
         answer_related_question(command)
 
     if random.random() < 0.01:
-        webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley")
+        webbrowser.open(
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+        )
 
     if 'news' in command:
         if 'tech' in command:
@@ -641,7 +751,9 @@ def parse_and_execute_command(command):
             for article in articles:
                 speak(f"{article['title']}: {article['url']}")
         else:
-            speak("Please specify a valid news category like tech, sports, business, or entertainment.")
+            speak(
+                "Please specify a valid news category like tech, sports, business, or entertainment."
+            )
     elif "repeat after me" in command:
         to_repeat = command.replace("repeat after me", "").strip()
         speak(to_repeat)
@@ -707,7 +819,8 @@ def parse_and_execute_command(command):
     elif "bruh" in command:
         speak("Did I do something wrong or what?")
     elif "search" in command or "lookup" in command:
-        search_term = command.replace("search", "").replace("lookup", "").strip()
+        search_term = command.replace("search", "").replace("lookup",
+                                                            "").strip()
         search_and_provide_answer(search_term)
     elif 'time' in command:
         strTime = datetime.datetime.now().strftime("%H:%M:%S")
@@ -728,11 +841,15 @@ def parse_and_execute_command(command):
 
     # After answering, wait for the next command
 
+
 # Function to classify user input sentence
 def classify_sentence(sentence):
     """Classify a sentence as a question or a statement."""
     words = word_tokenize(sentence)
-    words = [word.lower() for word in words if word.isalnum() and word.lower() not in stopwords.words('english')]
+    words = [
+        word.lower() for word in words
+        if word.isalnum() and word.lower() not in stopwords.words('english')
+    ]
     pos_tags = nltk.pos_tag(words)
     nouns = [word for word, pos in pos_tags if pos.startswith('N')]
     verbs = [word for word, pos in pos_tags if pos.startswith('V')]
@@ -740,6 +857,7 @@ def classify_sentence(sentence):
         return "question"
     else:
         return "statement"
+
 
 # Function to forget specific information from memory
 def forget_from_memory(info_to_forget):
@@ -756,6 +874,7 @@ def forget_from_memory(info_to_forget):
     except Exception as e:
         speak(f"Sorry, I couldn't forget that. Error: {e}")
 
+
 # Function to play a song using Spotify
 def play_song(command):
     """Play a song using Spotify."""
@@ -771,11 +890,14 @@ def play_song(command):
     except Exception as e:
         speak(f"Sorry, I couldn't play that song. Error: {e}")
 
+
 # Function to translate text using Google Translate API
 def translate_text(text, target_language='en'):
     """Translate text using Google Translate API."""
     try:
-        response = requests.get(f"https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl={target_language}&dt=t&q={text}")
+        response = requests.get(
+            f"https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl={target_language}&dt=t&q={text}"
+        )
         if response.status_code == 200:
             translation = response.json()[0][0][0]
             return translation
@@ -784,21 +906,28 @@ def translate_text(text, target_language='en'):
     except Exception as e:
         return f"Translation failed. Error: {e}"
 
+
 # Function to fetch news headlines
 def get_news_headlines():
     """Fetch news headlines."""
     try:
         url = "https://newsapi.org/v2/top-headlines"
-        params = {"country": "us", "apiKey": "fab33d4d84394644a2e2ddb4d372ffcd"}  # Replace with your NewsAPI key
+        params = {
+            "country": "us",
+            "apiKey": "fab33d4d84394644a2e2ddb4d372ffcd"
+        }  # Replace with your NewsAPI key
         response = requests.get(url, params=params)
         if response.status_code == 200:
             news_data = response.json()
-            headlines = [article['title'] for article in news_data['articles'][:5]]
+            headlines = [
+                article['title'] for article in news_data['articles'][:5]
+            ]
             return headlines
         else:
             return []
     except Exception as e:
         return []
+
 
 # Function to analyze sentiment of text using a pretrained model
 def analyze_sentiment(text):
@@ -809,6 +938,7 @@ def analyze_sentiment(text):
     except Exception as e:
         return "Error analyzing sentiment."
 
+
 # Function to provide help related to Python programming
 def provide_python_help(topic):
     """Provide help related to Python programming."""
@@ -818,6 +948,7 @@ def provide_python_help(topic):
         # Replace with actual help content
     except Exception as e:
         speak(f"Sorry, I couldn't provide help regarding {topic}. Error: {e}")
+
 
 # Function to play a game of rock-paper-scissors
 def play_game_rock_paper_scissors():
@@ -840,6 +971,7 @@ def play_game_rock_paper_scissors():
     except Exception as e:
         speak("Sorry, I couldn't play rock-paper-scissors. Error: {e}")
 
+
 # Function to provide a recommendation based on user input
 def provide_recommendation(recommendation_type):
     """Provide a recommendation based on user input."""
@@ -848,7 +980,10 @@ def provide_recommendation(recommendation_type):
         speak(f"Here is a recommendation for {recommendation_type}.")
         # Replace with actual recommendation logic
     except Exception as e:
-        speak(f"Sorry, I couldn't provide a recommendation for {recommendation_type}. Error: {e}")
+        speak(
+            f"Sorry, I couldn't provide a recommendation for {recommendation_type}. Error: {e}"
+        )
+
 
 # For coin flips
 def flip_coin():
@@ -856,12 +991,15 @@ def flip_coin():
     result = random.choice(["Heads", "Tails"])
     return result
 
+
 # Main function to run the assistant
 def run_assistant():
     """Run the assistant."""
     input_method = ""
     while input_method not in ["text", "voice"]:
-        input_method = input("Do you want to give commands via text or voice? (Enter 'text' or 'voice'): ").strip().lower()
+        input_method = input(
+            "Do you want to give commands via text or voice? (Enter 'text' or 'voice'): "
+        ).strip().lower()
         if input_method not in ["text", "voice"]:
             speak("Invalid input method. Please enter 'text' or 'voice'.")
 
@@ -874,6 +1012,7 @@ def run_assistant():
         else:
             speak("Please provide a valid command.")
 
+
 def process_input(command):
     """Process user input and perform actions based on the command."""
     global engine  # Ensure engine is accessible globally
@@ -881,6 +1020,7 @@ def process_input(command):
         engine.stop()  # Stop speech output
     else:
         speak("I didn't understand that command.")
+
 
 # Main function to choose input method
 # Start the assistant
