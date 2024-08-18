@@ -17,3 +17,5 @@ tensorflow
 numpy
 newsapi-python
 google-generativeai
+mediapipe
+newsapi
