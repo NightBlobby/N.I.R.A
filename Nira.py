@@ -675,9 +675,6 @@ def parse_and_execute_command(command):
     elif "help" in command :
         speak("The more information you give me, the better I can understand your needs and provide useful help. Please tell me more! I need more information to be helpful")
         return
-
-    elif "what do you see" in command or "what is this" in command:
-        answer_related_question(command)
         
     if random.random() < 0.01:
         webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley")
@@ -839,18 +836,6 @@ def parse_and_execute_command(command):
 
     # After answering, wait for the next command
 
-# Function to classify user input sentence
-def classify_sentence(sentence):
-    
-    words = word_tokenize(sentence)
-    words = [word.lower() for word in words if word.isalnum() and word.lower() not in stopwords.words('english')]
-    pos_tags = nltk.pos_tag(words)
-    nouns = [word for word, pos in pos_tags if pos.startswith('N')]
-    verbs = [word for word, pos in pos_tags if pos.startswith('V')]
-    if len(nouns) > len(verbs):
-        return "question"
-    else:
-        return "statement"
 
 # Function to forget specific information from memory
 def forget_from_memory(info_to_forget):
