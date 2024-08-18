@@ -56,9 +56,14 @@ import asyncio
 from newsapi import NewsApiClient
 import google.generativeai as genai
 from utils.responses import greetings, thank_responses, compliments, hate_comments, thanks, farewell_responses, farewells, wellbeing_inquiries, wellbeing_responses, responses_negative, responses_compliments
+import os
+
+GEMINI_API = os.getenv("GEMINIAPI")
+
+
 
 # Ensure you have StableLM installed
-genai.configure(api_key='AIzaSyBQoZazKr7rCgAz1ikAVJcL-z4necM6ZpY')
+genai.configure(api_key=GEMINI_API)
 model = genai.GenerativeModel('gemini-1.5-pro-latest')
 chat = model.start_chat()
 
