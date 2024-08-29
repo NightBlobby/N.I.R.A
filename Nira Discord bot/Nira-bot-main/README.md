@@ -38,8 +38,10 @@ Ensure you have the following installed:
 
 To install all dependencies, run:
 
-##bash
-pip install -r requirements.txt
+```bash
+ pip install -r requirements.txt
+```
+
 
 ### Help Command
 ### NIRA provides a comprehensive help command to assist users in exploring its functionalities.
