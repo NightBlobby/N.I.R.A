@@ -60,8 +60,8 @@ Dropdown Navigation: Use the dropdown menu in the help interface to browse diffe
 Direct Command Help: Type .help <command> to get detailed information on how to use a specific command.
 
 
-###Contributing
+### Contributing
 We welcome contributions! If you'd like to contribute to NIRA, please fork the repository and submit a pull request. For significant changes, please open an issue to discuss your ideas first.
 
-###License
+### License
 This project is licensed under the MIT License - see the LICENSE file for more details.
