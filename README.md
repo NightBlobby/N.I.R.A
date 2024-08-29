@@ -17,22 +17,23 @@
 
 ---
 
-## UI/UX Desgin
+## 🎨 UI/UX Design
 
-- For Phone (Nothing Themed)
-  ![image](https://github.com/user-attachments/assets/e83f4fd6-9f4b-4827-8856-01d44ff9cc0e)
-  made By [ALI](https://x.com/AliFakhruddin13)
+- **For Phone (Nothing Themed)**
+  ![Nothing Phone UI](https://github.com/user-attachments/assets/e83f4fd6-9f4b-4827-8856-01d44ff9cc0e)
+  Made by [ALI](https://x.com/AliFakhruddin13)
 
 ---
-## Terms and Conditions (tired not to make it boring)
+
+## 📜 Terms and Conditions (Tried Not to Make It Boring)
 
 Welcome to N.I.R.A., your soon-to-be favorite AI assistant! Before we dive into the fun, let’s go over some important (and delightfully sarcastic) Terms and Conditions.
 
 1. **Acceptance of Terms**  
-By using N.I.R.A., you’re agreeing to these Terms and Conditions. Congratulations! You’re now part of an exclusive club of people who like to read the fine print. 
+By using N.I.R.A., you’re agreeing to these Terms and Conditions. Congratulations! You’re now part of an exclusive club of people who like to read the fine print.
 
 2. **Usage Restrictions**  
-N.I.R.A. is here to assist, entertain, company you and occasionally baffle you with her quirks. However, please use her powers responsibly. No world domination plans or karaoke competitions, please. Any attempts to misuse her might result in an endless loop of dad jokes.
+N.I.R.A. is here to assist, entertain, and occasionally baffle you with her quirks. However, please use her powers responsibly. No world domination plans or karaoke competitions, please. Any attempts to misuse her might result in an endless loop of dad jokes.
 
 3. **Updates and Upgrades**  
 We’ll be updating N.I.R.A. with new features and improvements. If she suddenly starts giving you unsolicited life advice or begins quoting Shakespeare, it’s just part of her charm. No need to panic.
@@ -50,25 +51,25 @@ We might update these Terms from time to time. Don’t worry, we’ll keep it as
 
 ## 🌟 Key Features
 
-- 🔒 **Privacy-Centric Design**: Operates entirely locally, ensuring no external data sharing or retention. 
-- 🤖 **Advanced AI Capabilities**: Delivers intelligent, context-aware responses and actions. 
-- 🎙️ **Voice Recognition**: Utilizes sophisticated speech recognition to understand and process commands. 
-- ✉️🔊 **Flexible Input**: Accepts both voice and text commands. 
-- 🗣️ **Text-to-Speech**: Converts text to natural, clear speech using `pyttsx3`. 
-- 🌦️ **Weather Information**: Retrieves real-time weather data through the OpenWeatherMap API. 
-- 😂 **Joke Fetching**: Provides entertainment with jokes from an integrated online API. 
-- ⏰ **Timer and Alarm Management**: Enables setting, managing, and customizing timers and alarms. 
-- 💡 **Gemini Model Integration**: Utilizes the Gemini API Model for extensive knowledge with minimal GPU strain on lower-end devices. 
-- 🧠 **Natural Language Processing (NLP)**: Leverages `nltk`, `sklearn`, and Gemini for advanced NLP and intent classification. 
-- 📱🔍 **Bluetooth and NFC Scanning**: Detects and interacts with nearby Bluetooth and NFC devices (feature may vary). 
-- 📚 **Dictionary and Thesaurus**: Offers word definitions and synonyms through `PyDictionary`. 
-- 💱 **Currency Conversion**: Converts currencies with `forex-python` for financial management. 
-- 📰 **News Retrieval**: Keeps users updated with top news headlines via the NewsAPI. 
-- 💬 **Enhanced Conversations**: Facilitates engaging and meaningful conversations with the AI. 
-- 👁️ **Computer Vision**: Provides object recognition and problem-solving capabilities (currently in development). 
-- 🎲🪙 **Interactive Games**: Includes rock-paper-scissors and coin flip for casual interaction. 
-- 🌅 **Greetings**: Greets users with time and date information upon startup. 
-- 🔐 **End-to-End Encryption**: Ensures all communications are encrypted, upholding user privacy and security. 
+- 🔒 **Privacy-Centric Design**: Operates entirely locally, ensuring no external data sharing or retention.
+- 🤖 **Advanced AI Capabilities**: Delivers intelligent, context-aware responses and actions.
+- 🎙️ **Voice Recognition**: Utilizes sophisticated speech recognition to understand and process commands.
+- ✉️🔊 **Flexible Input**: Accepts both voice and text commands.
+- 🗣️ **Text-to-Speech**: Converts text to natural, clear speech using `pyttsx3`.
+- 🌦️ **Weather Information**: Retrieves real-time weather data through the OpenWeatherMap API.
+- 😂 **Joke Fetching**: Provides entertainment with jokes from an integrated online API.
+- ⏰ **Timer and Alarm Management**: Enables setting, managing, and customizing timers and alarms.
+- 💡 **Gemini Model Integration**: Utilizes the Gemini API Model for extensive knowledge with minimal GPU strain on lower-end devices.
+- 🧠 **Natural Language Processing (NLP)**: Leverages `nltk`, `sklearn`, and Gemini for advanced NLP and intent classification.
+- 📱🔍 **Bluetooth and NFC Scanning**: Detects and interacts with nearby Bluetooth and NFC devices (feature may vary).
+- 📚 **Dictionary and Thesaurus**: Offers word definitions and synonyms through `PyDictionary`.
+- 💱 **Currency Conversion**: Converts currencies with `forex-python` for financial management.
+- 📰 **News Retrieval**: Keeps users updated with top news headlines via the NewsAPI.
+- 💬 **Enhanced Conversations**: Facilitates engaging and meaningful conversations with the AI.
+- 👁️ **Computer Vision**: Provides object recognition and problem-solving capabilities (currently in development).
+- 🎲🪙 **Interactive Games**: Includes rock-paper-scissors and coin flip for casual interaction.
+- 🌅 **Greetings**: Greets users with time and date information upon startup.
+- 🔐 **End-to-End Encryption**: Ensures all communications are encrypted, upholding user privacy and security.
 
 ---
 
@@ -197,52 +198,48 @@ We might update these Terms from time to time. Don’t worry, we’ll keep it as
 
 ## 🚧 Roadmap
 
-- 🖥️ **Expand Platform Support**: Enhance compatibility for additional operating systems, including macOS and Linux. 
-- 🤖 **Enhance AI Capabilities**: Improve AI responses and contextual understanding. 
-- 📱 **Mobile App Development**: Develop a user-friendly mobile application. 
-- 🔧 **Feature Expansion**: Integrate user-requested features and improvements. 
-- 🛠️ **User Experience Enhancements**: Refine UI/UX based on user feedback. 
-
-
+- 🖥️ **Expand Platform Support**: Enhance compatibility for additional operating systems, including macOS and Linux.
+- 🤖 **Enhance AI Capabilities**: Improve AI responses and contextual understanding.
+- 📱 **Mobile App Development**: Develop a user-friendly mobile application.
+- 🔧 **Feature Expansion**: Integrate user-requested features and improvements.
+- 🎙️ **Voice Modulation**: Introduce voice modulation options for enhanced user interaction.
+- 🌍 **Multilingual Support**: Extend support for multiple languages.
+- 💬 **Advanced Chat Interface**: Develop a more sophisticated chat interface for natural conversations.
+- 🔍 **Better Search Algorithms**: Improve search algorithms for more accurate results.
+- 🚀 **Performance Optimization**: Continually optimize performance for faster response times.
+- 🤝 **Third-Party Integrations**: Add more integrations with popular apps and services.
 
 ---
 
 ## 🤝 Contributing
 
-We’re thrilled to have you interested in enhancing N.I.R.A.! Your contributions help us make this project even better. Here’s how you can get involved:
+We welcome contributions from the community! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to get involved.
 
-1. **Fork the Repository**: Start by creating your own fork on GitHub. 🕵️‍♂️
-2. **Create a Branch**: Develop your changes on a new branch to keep things organized. 🌱
-3. **Implement Changes**: Make your updates and ensure everything works as expected with thorough testing. 🔍
-4. **Submit a Pull Request**: Share your improvements with us by opening a pull request. Please include a detailed description of what you’ve done. 🚀
+### How to Contribute
 
-For more information on contributing, check out the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-name`).
+3. Make your changes.
+4. Commit your changes (`git commit -am 'Add feature'`).
+5. Push to the branch (`git push origin feature-name`).
+6. Open a Pull Request.
 
 ---
 
 ## 🦺 Support
 
-Need a hand or have a question? We’re here to help! Feel free to reach out on Discord for support: **[@nightblobby](https://discord.com/users/nightblobby)**. Whether it’s a quick question or an issue you’re facing, don’t hesitate to get in touch. 🤗
+If you encounter any issues or have questions, please check our [FAQ](FAQ.md) or open a [GitHub Issue](https://github.com/your-username/N.I.R.A/issues).
 
 ---
 
 ## 📬 Contact
 
-Got questions, feedback, or ideas for collaboration? I’d love to hear from you! Connect with me on Discord: **[@nightblobby](https://discord.com/users/nightblobby)**. Let’s chat and see how we can work together to make N.I.R.A. even better! 💬✨
+For any inquiries, reach out to us via email at `support@nira.com` or follow us on [Twitter](https://twitter.com/nightblobby).
 
 ---
-🎉 🚀 **THANK YOU FOR BEING AWESOME!** 🚀 🎉
 
-Your support is the fuel that keeps us going! Thanks for being part of our journey. Keep exploring, stay tuned for more incredible updates, and let’s continue pushing the boundaries together!
+## 🎉 Thank You
 
-✨ **You rock!** ✨
+Thank you for using N.I.R.A! We’re excited to have you on board and look forward to your feedback. Together, let’s make N.I.R.A the most advanced AI assistant in the universe! 🚀
 
-Stay tuned, stay curious, and see you on the next adventure!
-
-🔗 **[Join the conversation](https://discord.gg/ma6DGuwM)**
-
-🎉🚀 **Until next time!** 🚀🎉
-
-
-
----
+--- 
