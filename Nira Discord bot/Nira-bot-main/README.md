@@ -38,7 +38,7 @@ Ensure you have the following installed:
 
 To install all dependencies, run:
 
-```bash
+##bash
 pip install -r requirements.txt
 
 ### Help Command
