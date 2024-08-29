@@ -2,10 +2,12 @@
 
 ![Nira](https://media.discordapp.net/attachments/1267033692103249930/1267874241706070066/4_sin_titulo_20240730095924.png?ex=66d143a7&is=66cff227&hm=e027efff7c69b1b82f579ee0172c0b85ca9972ea0aab73864d3e315732b652ac&=&format=webp&quality=lossless&width=437&height=437)
 
-**Overview**
+*Overview*
+
 Meet Nira, the AI assistant with a personality! Created by the brilliant minds of Neural Nexus Team, Nira isn't just another run-of-the-mill AI. We represents a sophisticated AI assistant built to seamlessly integrate into your daily life. Developed in Python, N.I.R.A combines advanced technology with stringent privacy and security measures Our goal is to evolve N.I.R.A into a top-tier app available on the Play Store, delivering a tailored and secure assistant experience. She's smart, she's witty, and she might just Rickroll you when you least expect it. 😜
 
-**Nira (Neural Interactive Responsive Agent)** is designed to assist with everyday tasks, provide information, entertain with jokes, and even engage in friendly banter. With her advanced AI capabilities, Nira can learn from interactions, remember your preferences, and grow smarter over time. Think of her as the friend who knows a little bit about everything, is always up for a chat, and never judges you for asking "what's the capital of Mars?"
+*Nira (Neural Interactive Responsive Agent)*
+is designed to assist with everyday tasks, provide information, entertain with jokes, and even engage in friendly banter. With her advanced AI capabilities, Nira can learn from interactions, remember your preferences, and grow smarter over time. Think of her as the friend who knows a little bit about everything, is always up for a chat, and never judges you for asking "what's the capital of Mars?"
 
 ---
 
@@ -60,6 +62,7 @@ And there you have it—the Neural Nexus team, where innovation meets creativity
   Made by [ALI](https://x.com/AliFakhruddin13)
 
 ---
+### 🏗️ 3D Model Of Nira
 
 ![Nira 3D Model](https://media.discordapp.net/attachments/1267033870016970843/1277776790936617011/nirasp2.PNG?ex=66d108de&is=66cfb75e&hm=b76bafdd51d25df5dd831ff392b3a7138626bc3fb0d3cae331ed6c743c31ebe8&=&format=webp&quality=lossless&width=396&height=437)
 
