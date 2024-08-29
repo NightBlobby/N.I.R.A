@@ -1,6 +1,6 @@
 # NIRA - NEURAL INTERACTIVE RESPONSIVE AGENT
 
-![NIRA Logo](https://path/to/your/logo.png) <!-- Replace with the actual path to your logo -->
+![NIRA Logo](https://media.discordapp.net/attachments/1260069913813319773/1269681573788389437/image_1.png?ex=66d13f5c&is=66cfeddc&hm=b305355801bd9f3de812be825e1337bd6d35a2f4257127a3276cd3a51b16d5bc&=&format=webp&quality=lossless&width=601&height=601) <!-- Replace with the actual path to your logo -->
 
 ## Overview
 
