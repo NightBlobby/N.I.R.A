@@ -217,31 +217,32 @@ Nira works seamlessly across multiple platforms, including Windows, macOS, Linux
 
 Nira is powered by a blend of cutting-edge technologies and open-source libraries. Here's a peek under the hood:
 
- Python: The core programming language for Nira's brain.
- Google Generative AI: Nira uses this for natural language processing, making her conversations more fluid and human-like.
- Speech Recognition: Nira can understand voice commands, making interaction seamless.
- Pyttsx3: This library allows Nira to speak back to you, adding a more human touch.
- Requests: Nira fetches jokes and other content from online APIs using this library.
- Datetime: To provide time-based greetings and set reminders.
- Random: For injecting a bit of randomness into her jokes and responses.
- Asyncio: Handles asynchronous operations smoothly, ensuring Nira responds in real-time.
- Re (Regular Expressions): Helps Nira manage and interpret complex user commands and input.
- JSON: For storing user data securely and efficiently.
+- Python: The core programming language for Nira's brain.
+- Google Generative AI: Nira uses this for natural language processing, making her conversations more fluid and human-like.
+- Speech Recognition: Nira can understand voice commands, making interaction seamless.
+- Pyttsx3: This library allows Nira to speak back to you, adding a more human touch.
+- Requests: Nira fetches jokes and other content from online APIs using this library.
+- Datetime: To provide time-based greetings and set reminders.
+- Random: For injecting a bit of randomness into her jokes and responses.
+- Asyncio: Handles asynchronous operations smoothly, ensuring Nira responds in real-time.
+- Re (Regular Expressions): Helps Nira manage and interpret complex user commands and input.
+- JSON: For storing user data securely and efficiently.
 ---
 ### ⚠️ Error Handling and Recovery
 
 No system is perfect, not even Nira (though she'd never admit it). Here's how she handles the occasional hiccup:
- Fallback Jokes: If an online API is down, Nira will resort to her local joke database. Trust us; she still has some good ones stored!
- Rephrasing Prompts: If Nira doesn't understand a command or question, she'll politely ask you to rephrase.
- Learning from Mistakes: If she gets something wrong, you can correct her, and she'll learn from the interaction.
+
+- Fallback Jokes: If an online API is down, Nira will resort to her local joke database. Trust us; she still has some good ones stored!
+- Rephrasing Prompts: If Nira doesn't understand a command or question, she'll politely ask you to rephrase.
+- Learning from Mistakes: If she gets something wrong, you can correct her, and she'll learn from the interaction.
 
 ---
 
 ### 🕵️‍♂️ Security and Privacy
 Your privacy is Nira's top priority! Here's how we keep your data safe:
- Local Storage: All sensitive data is stored locally on your device. Nothing is sent to external servers.
- End-to-End Encryption: Communications between Nira and any online services are encrypted to protect your information.
- User Control: You have full control over what data Nira can access. Easily adjust permissions in the settings menu.
+- Local Storage: All sensitive data is stored locally on your device. Nothing is sent to external servers.
+- End-to-End Encryption: Communications between Nira and any online services are encrypted to protect your information.
+- User Control: You have full control over what data Nira can access. Easily adjust permissions in the settings menu.
 
 ---
 ### 🔮 Future Enhancements
