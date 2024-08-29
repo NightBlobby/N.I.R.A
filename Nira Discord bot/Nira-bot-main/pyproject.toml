@@ -8,7 +8,7 @@ packages = [{include = "repl_nix_stellar"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
-aiohttp = "^3.9.5"
+aiohttp = "^3.10.2"
 discord-py = "^2.4.0"
 requests = "^2.32.3"
 flask = "^3.0.3"
