@@ -15,25 +15,25 @@ is designed to assist with everyday tasks, provide information, entertain with j
 Welcome to the brainy brigade behind Neural Nexus! We're the squad that turns imagination into innovation, pixels into perfection, and code into awesomeness. Buckle up and meet the fantastic folks who make the magic happen:
 
 1. Blobby (The Visionary Founder & Developer) 🚀
-o What do you get when you cross a coding genius with a sprinkle of mad scientist? Meet Blobby! Our fearless founder and master developer, who can turn coffee into code faster than you can say "Neural Nexus!" When he's not debugging the universe, he's dreaming up the next big thing in tech.
+* What do you get when you cross a coding genius with a sprinkle of mad scientist? Meet Blobby! Our fearless founder and master developer, who can turn coffee into code faster than you can say "Neural Nexus!" When he's not debugging the universe, he's dreaming up the next big thing in tech.
 
 2. Creepsmile (App Developer Extraordinaire) 📱
-o If apps could have a superhero, it would be Creepsmile! From crafting sleek interfaces to making sure your favorite features work like a charm, Creepslime is the mastermind behind our smooth and snappy app experiences. Watch out for his superpower: debugging with a side of creativity!
+* If apps could have a superhero, it would be Creepsmile! From crafting sleek interfaces to making sure your favorite features work like a charm, Creepslime is the mastermind behind our smooth and snappy app experiences. Watch out for his superpower: debugging with a side of creativity!
 
 3. Ali (UI/UX Designer Maestro) 🎨
-o Ever wondered who makes tech look so darn good? That’s Ali! Our UI/UX designer who blends art with usability. Ali’s mission? To make sure every tap, swipe, and click feels like magic. When Ali’s around, interfaces don’t just work—they dazzle!
+* Ever wondered who makes tech look so darn good? That’s Ali! Our UI/UX designer who blends art with usability. Ali’s mission? To make sure every tap, swipe, and click feels like magic. When Ali’s around, interfaces don’t just work—they dazzle!
 
 4. PoketLabs (Avatar & Animator Wizard) 🎬
-o Meet the magic maker who brings pixels to life! Minilab is the avatar and animation genius behind our quirky characters and dazzling animations. If you’ve ever wondered how a digital avatar can make you smile, it’s all thanks to PoketLabs’s creative wizardry!
+* Meet the magic maker who brings pixels to life! Minilab is the avatar and animation genius behind our quirky characters and dazzling animations. If you’ve ever wondered how a digital avatar can make you smile, it’s all thanks to PoketLabs’s creative wizardry!
 
 5. Aarav (Discord Nira Bot Creator) 🤖
-o Ever talked to a bot and thought, “Wow, this is awesome!”? Aarav is the mastermind behind the Discord Nira Bot! When he’s not coding up a storm, he’s ensuring Nira’s witty and charming responses keep you entertained and engaged. Aarav’s bots don’t just chat—they enchant!
+* Ever talked to a bot and thought, “Wow, this is awesome!”? Aarav is the mastermind behind the Discord Nira Bot! When he’s not coding up a storm, he’s ensuring Nira’s witty and charming responses keep you entertained and engaged. Aarav’s bots don’t just chat—they enchant!
 
 6. Karim Azmy (Tester & Developer Extraordinaire) 🧪
-o If testing were an Olympic sport, Karim would be a gold medalist! Karim’s dual role as tester and developer means he’s got the best of both worlds—creating and perfecting. He’s the one who ensures our tech works flawlessly and finds those sneaky bugs before they become a problem.
+* If testing were an Olympic sport, Karim would be a gold medalist! Karim’s dual role as tester and developer means he’s got the best of both worlds—creating and perfecting. He’s the one who ensures our tech works flawlessly and finds those sneaky bugs before they become a problem.
 
 7. Nira (The Friendly AI Assistant with a Sense of Humor) 🤖😄
-o Last but not least, say hello to Nira! Nira’s not just any AI assistant—she’s your digital buddy with a personality that’s part genius, part comedian. She’s here to help, chat, and maybe even crack a joke or two. Ask her anything, but be warned—she might just sing you a song or start a dance party!
+* Last but not least, say hello to Nira! Nira’s not just any AI assistant—she’s your digital buddy with a personality that’s part genius, part comedian. She’s here to help, chat, and maybe even crack a joke or two. Ask her anything, but be warned—she might just sing you a song or start a dance party!
 
 And there you have it—the Neural Nexus team, where innovation meets creativity and every day is an adventure. Thanks for joining us on this journey!
 
