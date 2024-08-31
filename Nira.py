@@ -81,6 +81,11 @@ import sentencepiece
 from huggingface_hub import InferenceClient
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from huggingface_hub import InferenceClient
+import logging
+
+# Configure the logger
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 # Initialize the tokenizer and model for Llama
@@ -428,6 +433,8 @@ async def run_nfc_scan():
 async def main():
     # Run NFC scan in the background
     nfc_task = asyncio.create_task(run_nfc_scan())
+
+    run_assistant()
 
     # Run Bluetooth scan concurrently
     await bluetooth_scan()
@@ -813,5 +820,13 @@ def process_input(command):
 
 # Start the assistant
 if __name__ == "__main__":
-    run_assistant()
+    try:
+        # Run the main function asynchronously
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        # Handle a graceful shutdown when interrupted by the user
+        logger.info("Bot shutdown initiated by user.")
+    except Exception as e:
+        # Log any critical errors that were not caught elsewhere
+        logger.exception(f"Critical error occurred: {e}")
 
