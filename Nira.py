@@ -39,7 +39,7 @@ from google.api_core.exceptions import InternalServerError
 
 #==API==#
 # Install newsapi-python library
-genai.configure(api_key='AIzaSyC2eNwQQU6N23UeGCJ0fGXncnVGHtgoENY')
+genai.configure(api_key='YOUR API')
 model = genai.GenerativeModel('gemini-1.5-pro-latest')
 chat = model.start_chat()
 
