@@ -381,7 +381,7 @@ If you encounter any issues or have questions, please check our [FAQ](FAQ.md) or
 
 ## 📬 Contact
 
-For any inquiries, reach out to us via email at `support@nira.com` or follow us on [Twitter](https://twitter.com/nightblobby).
+For any inquiries, reach out to us via email at `nightblobby@gmail.com` or follow us on [Twitter](https://twitter.com/nightblobby).
 
 ---
 
