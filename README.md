@@ -4,14 +4,14 @@
 
 *Overview*
 
-Meet Nira, the AI assistant with a personality! Created by the brilliant minds of Neural Nexus Team, Nira isn't just another run-of-the-mill AI. We represents a sophisticated AI assistant built to seamlessly integrate into your daily life. Developed in Python, N.I.R.A combines advanced technology with stringent privacy and security measures Our goal is to evolve N.I.R.A into a top-tier app available on the Play Store, delivering a tailored and secure assistant experience. She's smart, she's witty, and she might just Rickroll you when you least expect it. 😜
+Meet Nira, the AI assistant with a personality! Created by the brilliant minds of Voidware Labs, Nira isn't just another run-of-the-mill AI. We represents a sophisticated AI assistant built to seamlessly integrate into your daily life. Developed in Python, N.I.R.A combines advanced technology with stringent privacy and security measures Our goal is to evolve N.I.R.A into a top-tier app available on the Play Store, delivering a tailored and secure assistant experience. She's smart, she's witty, and she might just Rickroll you when you least expect it. 😜
 
 *Nira (Neural Interactive Responsive Agent)*
 is designed to assist with everyday tasks, provide information, entertain with jokes, and even engage in friendly banter. With her advanced AI capabilities, Nira can learn from interactions, remember your preferences, and grow smarter over time. Think of her as the friend who knows a little bit about everything, is always up for a chat, and never judges you for asking "what's the capital of Mars?"
 
 ---
 
-### 🎉 Meet the Neural Nexus Dream Team! 🎉
+### 🎉 Meet the Voidware Labs Dream Team! 🎉
 Welcome to the brainy brigade behind Neural Nexus! We're the squad that turns imagination into innovation, pixels into perfection, and code into awesomeness. Buckle up and meet the fantastic folks who make the magic happen:
 
 1. Blobby (The Visionary Founder & Developer) 🚀
