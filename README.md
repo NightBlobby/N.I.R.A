@@ -63,7 +63,10 @@ Thanks for checking out **Voidware Labs**—where innovation meets creativity an
   Made by [ALI](https://x.com/AliFakhruddin13)
 
 - **For Phone (Official Nothing themed app) (V2)**
-  ![Nothing Official App UI](![image](https://github.com/user-attachments/assets/45d87689-5891-4dfb-a88c-890b68e35654)
+  ![Nothing Official App UI](https://github.com/user-attachments/assets/45d87689-5891-4dfb-a88c-890b68e35654)
+
+
+  Made by Vikky
 
 ---
 ### 🏗️ 3D Model Of Nira
