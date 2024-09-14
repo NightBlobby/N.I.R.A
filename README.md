@@ -253,8 +253,7 @@ Neural Nexus Team wish you a fantastic time with your new AI assistant. May your
 
 ## 🦺 Support
 
-If you encounter any issues or have questions, please check our [FAQ](FAQ.md) or open a [GitHub Issue](https://github.com/your-username/N.I.R.A/issues).
-
+If you encounter any issues or have questions, please check our [FAQ](FAQ.md)
 ---
 
 ## 📬 Contact
