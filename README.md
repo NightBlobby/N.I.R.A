@@ -1,6 +1,7 @@
 # 🤖 Nira - NEURAL INTERACTIVE RESPONSIVE AGENT (A.K.A. Your New Best Buddy!)
 
-![Nira](https://media.discordapp.net/attachments/1267033692103249930/1267874241706070066/4_sin_titulo_20240730095924.png?ex=66d143a7&is=66cff227&hm=e027efff7c69b1b82f579ee0172c0b85ca9972ea0aab73864d3e315732b652ac&=&format=webp&quality=lossless&width=437&height=437)
+![Nira](![25_sin_titulo_20240909222719](https://github.com/user-attachments/assets/ea67c6e8-bb7a-40aa-ba4e-a31c1951d612)
+)
 
 *Overview*
 
@@ -27,8 +28,13 @@ If there’s a superhero for apps, it’s **Creepsmile**. He’s the wizard who 
 
 
 
-### Ali (UI/UX Sorcerer) 🎨  
-Tech isn’t just supposed to work—it’s supposed to *shine*. Enter **Ali**, our UI/UX maestro. With the touch of an artist and the precision of a designer, he creates interfaces that make you feel like every tap is magic. Where others see pixels, Ali sees a canvas—ready to dazzle.
+### Vikky (UI/UX Designer Maestro)🎨 
+Ever wondered who makes tech look so darn good? That’s Vikky! Our UI/UX designer who blends art with usability. Vikky’s mission? To make sure every tap, swipe, and click feels like magic. When Vikky’s around, interfaces don’t just work—they dazzle!
+
+
+
+### Ali (Our Early App Designer)🖌️ 
+Before our apps dazzled with today’s sleek designs, Ali laid the foundation. As our early app designer, Ali ensured the initial interface was both functional and visually appealing, setting the stage for all the great things that followed. His artistic touch gave us the jumpstart we needed!
 
 
 
@@ -42,11 +48,6 @@ Ever chatted with a bot that felt *alive*? That’s **Aarav’s** doing! He’s 
 
 
 
-### Karim Azmy (The Flawless Tester/Developer) 🧪  
-Dual-wielding development and testing like a pro, **Karim** is the guardian of quality. If there’s a bug lurking, Karim will find it—and *obliterate* it. His relentless pursuit of perfection ensures that everything runs smoother than a high-speed connection on caffeine.
-
-
-
 ### Nira (The AI with Sass and Smarts) 🤖😄  
 Finally, meet the star of the show—**Nira** herself! She’s not just your AI assistant—she’s your quirky, genius digital bestie. Whether it’s helping with tasks, cracking jokes, or throwing surprise dance parties, Nira’s got personality for days. Just be careful—she might drop a Rickroll when you least expect it. 😉
 
@@ -54,27 +55,16 @@ Thanks for checking out **Voidware Labs**—where innovation meets creativity an
 
 ---
 
-## 📚 Table of Contents
-
-- 🌟 [Key Features](#-key-features)
-- 🛠️ [Installation and Prerequisites](#-installation-and-prerequisites)
-- 🔧 [How It Works](#-how-it-works)
-- 🚧 [Roadmap](#-roadmap)
-- 🤝 [Contributing](#-contributing)
-- 🦺 [Support](#-support)
-- 📬 [Contact](#-contact)
-- 🎉 [Thank You](#-thank-you)
-
-
----
-
 ## 🎨 UI/UX Design
 
-- **For Phone (Nothing Themed)**
+- **For Phone (Nothing Themed) (V1)**
   ![Nothing Phone UI](https://github.com/user-attachments/assets/e83f4fd6-9f4b-4827-8856-01d44ff9cc0e)
 
 
   Made by [ALI](https://x.com/AliFakhruddin13)
+
+- **For Phone (Official Nothing themed app) (V2)**
+  ![Nothing Official App UI](![image](https://github.com/user-attachments/assets/45d87689-5891-4dfb-a88c-890b68e35654)
 
 ---
 ### 🏗️ 3D Model Of Nira
@@ -148,7 +138,6 @@ Nira works seamlessly across multiple platforms, including Windows, macOS, Linux
 - ⏰ **Timer and Alarm Management**: Enables setting, managing, and customizing timers and alarms.
 - 💡 **Gemini Model Integration**: Utilizes the Gemini API Model for extensive knowledge with minimal GPU strain on lower-end devices.
 - 🧠 **Natural Language Processing (NLP)**: Leverages `nltk`, `sklearn`, and Gemini for advanced NLP and intent classification.
-- 📱🔍 **Bluetooth and NFC Scanning**: Detects and interacts with nearby Bluetooth and NFC devices (feature may vary).
 - 📚 **Dictionary and Thesaurus**: Offers word definitions and synonyms through `PyDictionary`.
 - 💱 **Currency Conversion**: Converts currencies with `forex-python` for financial management.
 - 📰 **News Retrieval**: Keeps users updated with top news headlines via the NewsAPI.
@@ -157,76 +146,6 @@ Nira works seamlessly across multiple platforms, including Windows, macOS, Linux
 - 🎲🪙 **Interactive Games**: Includes rock-paper-scissors and coin flip for casual interaction.
 - 🌅 **Greetings**: Greets users with time and date information upon startup.
 - 🔐 **End-to-End Encryption**: Ensures all communications are encrypted, upholding user privacy and security.
-
----
-
-## 🛠️ Installation and Prerequisites
-
-### 📋 Prerequisites
-
-- **Python 3.7+**: Ensure you have Python 3.7 or higher installed.
-- **Required Libraries**: Install the dependencies listed in `requirements.txt`.
-
-### Installation Steps
-
-1. **Clone the Repository**
-
-    ```bash
-    git clone https://github.com/your-username/N.I.R.A.git
-    cd N.I.R.A
-    ```
-
-2. **Set Up a Virtual Environment (Recommended)**
-
-    Create and activate a virtual environment to manage dependencies:
-
-    - **On macOS/Linux:**
-
-      ```bash
-      python -m venv venv
-      source venv/bin/activate
-      ```
-
-    - **On Windows:**
-
-      ```bash
-      python -m venv venv
-      venv\Scripts\activate
-      ```
-
-3. **Install Dependencies**
-
-    Install the required libraries:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. **Configuration**
-
-    - **API Keys**: Obtain API keys for any services you are using (e.g., OpenAI, weather APIs).
-    - **Configuration File**: Create a `.env` file in the root directory of the project and include your API keys and settings.
-
-    ```plaintext
-    # Example .env file
-    OPENAI_API_KEY=your_openai_api_key
-    WEATHER_API_KEY=your_weather_api_key
-    ```
-
-5. **Run the Application**
-
-    After setting up, you can start the application by running:
-
-    ```bash
-    python main.py
-    ```
-
-### 💡 Tips
-
-- **Virtual Environment**: Using a virtual environment helps keep your project's dependencies isolated from other projects.
-- **Configuration File**: Ensure that your `.env` file is secure and never commit it to version control. Use a `.gitignore` file to exclude it.
-
----
 
 ### 🎬 Behind the Scenes
 
@@ -242,6 +161,7 @@ Nira is powered by a blend of cutting-edge technologies and open-source librarie
 - Asyncio: Handles asynchronous operations smoothly, ensuring Nira responds in real-time.
 - Re (Regular Expressions): Helps Nira manage and interpret complex user commands and input.
 - JSON: For storing user data securely and efficiently.
+
 ---
 ### ⚠️ Error Handling and Recovery
 
@@ -299,33 +219,9 @@ Nira is always evolving, just like you. Here are some exciting features on the h
 - Roll out new features based on user feedback.
 - Explore integration with additional APIs for expanded functionality.
 - Improve UI/UX based on user testing and feedback.
+
 ---
 
-### 📝 Developer Notes
-To customize or extend Nira’s capabilities, developers can access the open-source code on GitHub. Contributions are welcome—let's make Nira even better together!
-Clone the Repository
-To get started with Nira’s code, clone the repository using the following command:
-```Bash code:
-git clone https://github.com/Blobby/Nira.git
-```
-
-*Dependencies*
-
-Before running Nira, ensure you have the necessary dependencies installed. You can install them via pip:
-```Bash code:
-pip install -r requirements.txt
-```
-
-*Configuration*
-Nira’s behavior and features can be customized through the config.json file. Modify this file to change settings such as personality traits, preferred joke categories, and more. For example:
-```Json code:
-{
-"personality": "quirky",
-"favorite_joke_category": "dad",
-"music_service": "spotify"
-}
-```
----
 ## 🤝 Contributing
 We welcome contributions! If you have ideas for new features, improvements, or just want to fix a bug, please fork the repository, make your changes, and submit a pull request. Our guidelines can be found in the CONTRIBUTING.md file.
 
@@ -344,41 +240,6 @@ Secret Dance Mode
 
 .Say “dance party,” and Nira will respond with a special message that might include some funky text-based dance moves.
 
----
-
-### 🖥️ Code Snippets
-Here are some handy code snippets to help you get the most out of Nira:
-Basic Interaction
-
-```Python code:
-import nira
-# Initialize Nira
-nira_instance = nira.Nira()
-# Greet Nira
-response = nira_instance.greet("Good morning")
-print(response)
-# Ask a question
-response = nira_instance.ask("What's the weather today?")
-print(response)
-```
-*Customizing Commands*
-
-```Python code:
-import nira
-# Initialize Nira with custom settings
-nira_instance = nira.Nira(config_file="custom_config.json")
-# Add a new command
-nira_instance.add_command("hello", "Hi there! How can I assist you today?")
-```
-*Handling Errors*
-
-```python code
-try:
-response = nira_instance.perform_action("unknown_command")
-except nira.UnknownCommandError as e:
-print(f"Oops! Something went wrong: {e}")
-```
----
 
 ### 🏁 Conclusion
 
