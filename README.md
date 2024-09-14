@@ -67,7 +67,7 @@ Thanks for checking out **Voidware Labs**—where innovation meets creativity an
    
 
 
-  Made by Vikky
+  Made by [Vivek Bhimani](https://x.com/vivekbhimani45)
 
 ---
 ### 🏗️ 3D Model Of Nira
