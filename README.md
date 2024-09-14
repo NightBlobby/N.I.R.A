@@ -63,7 +63,8 @@ Thanks for checking out **Voidware Labs**—where innovation meets creativity an
   Made by [ALI](https://x.com/AliFakhruddin13)
 
 - **For Phone (Official Nothing themed app) (V2)**
-  ![Nothing Official App UI](https://github.com/user-attachments/assets/45d87689-5891-4dfb-a88c-890b68e35654)
+  ![Nothing Official App UI](https://github.com/user-attachments/assets/33371c8b-b765-460a-ad2f-0441c15e06ea)
+   
 
 
   Made by Vikky
