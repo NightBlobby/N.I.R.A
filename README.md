@@ -72,7 +72,7 @@ Thanks for checking out **Voidware Labs**—where innovation meets creativity an
 ---
 ### 🏗️ 3D Model Of Nira
 
-![Nira 3D Model](https://media.discordapp.net/attachments/1267033870016970843/1277776790936617011/nirasp2.PNG?ex=66d108de&is=66cfb75e&hm=b76bafdd51d25df5dd831ff392b3a7138626bc3fb0d3cae331ed6c743c31ebe8&=&format=webp&quality=lossless&width=396&height=437)
+![Nira 3D Model](https://github.com/user-attachments/assets/ee57065c-3656-4197-bc3f-9e5ae4ae826b)
 
 
  Made by [PocketLabs]
