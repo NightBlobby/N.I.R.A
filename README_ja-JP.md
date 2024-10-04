@@ -21,7 +21,7 @@ Voidware Labs の優秀な頭脳によって開発された N.I.R.A は、あり
 
 
 ### Blobby (先見の明を持つマスターマインド) ⚡️  
-A coding genius with the soul of a mad scientist, **Blobby** is the fearless leader who transforms caffeine into code faster than a neural network can blink! When not bending the digital universe to his will, Blobby’s dreaming up the future of AI. He’s not just a developer—he’s the engine driving the impossible.
+マッドサイエンティストのソウルを持っているコーディングの天才、**Blobby** は、ニューラルネットワークが瞬くよりも先にカフェインをコードに変換をする、恐れ知らずなリーダーです。デジタルスペースを自分の意思で操っていないとき、彼は AI の未来を夢見ています。Blobby は、単なる開発者ではなく、不可能を可能にするエンジンなのです。
 
 
 
