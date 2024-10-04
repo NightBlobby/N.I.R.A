@@ -11,9 +11,12 @@ Voidware Labs の優秀な頭脳によって開発された N.I.R.A は、あり
 
 ---
 
-# 🚀 Meet the Legends of Voidware Labs! 🎉
+# 🚀 Voidware Labs のレジェンドたちに会いましょう! 🎉
 
-Welcome to the **elite squad** behind **Neural Nexus**, where creativity meets tech wizardry! We turn big ideas into cutting-edge innovations, crafting magic from pixels and code. So, strap in and meet the powerhouses who bring **Nira** to life!
+クリエイティビティとテクノロジーの魔術師が出会う場所、**Neural Nexus の新鋭部隊**へようこそ!<br>
+私たちは大きなアイデアを最先端のイノベーションに変えていきます。
+
+さぁ、シートベルトを締めて **N.I.R.A** に命を吹き込むパワーハウスたちに会いに行きましょう!
 
 
 
