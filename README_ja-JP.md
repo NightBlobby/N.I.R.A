@@ -60,14 +60,15 @@ Thanks for checking out **Voidware Labs**—where innovation meets creativity an
 ## 🎨 UI/UX デザイン
 
 - **For Phone (Nothing テーマ) (V1)**
+
   ![Nothing Phone UI](https://github.com/user-attachments/assets/e83f4fd6-9f4b-4827-8856-01d44ff9cc0e)
 
 
   作者: [ALI](https://x.com/AliFakhruddin13)
 
 - **For Phone (公式 Nothing テーマアプリ) (V2)**
+
   ![Nothing Official App UI](https://github.com/user-attachments/assets/33371c8b-b765-460a-ad2f-0441c15e06ea)
-   
 
 
   作者: [Vivek Bhimani](https://x.com/vivekbhimani45)
