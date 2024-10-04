@@ -39,37 +39,40 @@ Voidware Labs の優秀な頭脳によって開発された N.I.R.A は、あり
 
 
 ### Ali (初期のアプリデザイナー)🖌️ 
-Before our apps dazzled with today’s sleek designs, Ali laid the foundation. As our early app designer, Ali ensured the initial interface was both functional and visually appealing, setting the stage for all the great things that followed. His artistic touch gave us the jumpstart we needed!
+Ali が築き上げた基礎のおかげで我々のアプリが今の洗練されたデザインとなりました。初期のアプリデザイナーとして Ali は最初のインターフェースを機能的かつ視覚的で魅力的であることを保証し、その後の素晴らしい成果となる土台を築きました。彼のアーティスティックなタッチは、私たちに必要なスタートを切らせてくれました。
 
 
 
 ### PoketLabs (アニメーションの魔術師) 🎬  
-**Pixels + magic = PoketLabs!** The wizard behind avatars and animations that breathe life into the digital world. Every quirky move or playful gesture you see from Nira? That’s PoketLabs sprinkling a bit of creativity. If you’ve ever caught yourself smiling at an avatar, you know who’s to blame!
+**ピクセル + マジック = PoketLabs!**<br>
+デジタルワールドに生命を吹き込むアバターとアニメーションの魔術師、N.I.R.A の風変わりな動きや遊び心のある仕草は誰が生み出したのか?<br>それは PoketLabs が散りばめたクリエイティビティなのです。アバターを見て思わず笑顔になったのならそれは誰のせいかわかるはず!
 
 
 
 ### Aarav (ボットの魔術師) 🤖  
-Ever chatted with a bot that felt *alive*? That’s **Aarav’s** doing! He’s the brilliant mind behind the **Discord Nira Bot**, giving Nira her wit, charm, and quick responses. His bots don’t just talk—they *enchant*, turning conversations into magical experiences.
+生きていると感じるボットとチャットをしたことはありますか?それは **Aarav** の功績のおかげ!<br>
+彼は **Discord の N.I.R.A ボット**の開発者で優れた頭脳と機知、魅力、素早いレスポンスを可能にしています。彼の開発するボットは、単に会話をするだけでなく魔法のようなエクスペリエンスに変えて魅了してしまうでしょう。
 
 
 
 ### N.I.R.A (Sass と Smarts を備えた AI) 🤖😄  
-Finally, meet the star of the show—**Nira** herself! She’s not just your AI assistant—she’s your quirky, genius digital bestie. Whether it’s helping with tasks, cracking jokes, or throwing surprise dance parties, Nira’s got personality for days. Just be careful—she might drop a Rickroll when you least expect it. 😉
+最後にショーの主役である、**N.I.R.A** の紹介です!<br>
+彼女は単なる AI アシスタントではなく、風変わりだけど天才的なデジタルフレンドです。タスクのお手伝いやジョークを言ったり、サプライズなダンスパーティーを開催したりと N.I.R.A は個性的な性格をしています。ですが、思わぬときにリックロールを落とすかもしれないのでご注意を。 😉
 
-Thanks for checking out **Voidware Labs**—where innovation meets creativity and the future is built today! 🚀
+**Voidware Labs** をご覧いただきありがとうございます。ここはイノベーションとクリエイティビティが出会い、未来が今日に築かれる場所です! 🚀
 
 ---
 
 ## 🎨 UI/UX デザイン
 
-- **For Phone (Nothing テーマ) (V1)**
+- **for Phone (Nothing テーマ) (V1)**
 
   ![Nothing Phone UI](https://github.com/user-attachments/assets/e83f4fd6-9f4b-4827-8856-01d44ff9cc0e)
 
 
   作者: [ALI](https://x.com/AliFakhruddin13)
 
-- **For Phone (公式 Nothing テーマアプリ) (V2)**
+- **for Phone (公式 Nothing テーマアプリ) (V2)**
 
   ![Nothing Official App UI](https://github.com/user-attachments/assets/33371c8b-b765-460a-ad2f-0441c15e06ea)
 
