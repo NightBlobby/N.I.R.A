@@ -2,9 +2,10 @@
 
 ![Nira](https://github.com/user-attachments/assets/ea67c6e8-bb7a-40aa-ba4e-a31c1951d612)
 
-*Overview*
+*概要*
 
-Meet Nira, the AI assistant with a personality! Created by the brilliant minds of Voidware Labs, Nira isn't just another run-of-the-mill AI. We represents a sophisticated AI assistant built to seamlessly integrate into your daily life. Developed in Python, N.I.R.A combines advanced technology with stringent privacy and security measures Our goal is to evolve N.I.R.A into a top-tier app available on the Play Store, delivering a tailored and secure assistant experience. She's smart, she's witty, and she might just Rickroll you when you least expect it. 😜
+個性的な AI アシスタント、N.I.R.A を紹介しましょう!<br>
+Voidware Labs の優秀な頭脳によって開発された N.I.R.A は、ありふれた AI ではありません。あなたの日常生活にシームレスに溶け込むように洗練された AI アシスタントです。Python で開発された N.I.R.A は、高度な技術と厳格なプライバシー保護とセキュリティ対策を兼ね備えています。私たちの目標は、N.I.R.A を Play ストアでダウンロード可能なトップクラスのアプリに進化させ、カスタマイズされた安全なアシスタントエクスペリエンスを提供することです。N.I.R.A は賢く、機知に富み、思いがけないときにあなたをリックロールするかもしれません。 😜
 
 *Nira (Neural Interactive Responsive Agent)*
 is designed to assist with everyday tasks, provide information, entertain with jokes, and even engage in friendly banter. With her advanced AI capabilities, Nira can learn from interactions, remember your preferences, and grow smarter over time. Think of her as the friend who knows a little bit about everything, is always up for a chat, and never judges you for asking "what's the capital of Mars?"
