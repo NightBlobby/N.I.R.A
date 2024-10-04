@@ -20,65 +20,65 @@ Voidware Labs の優秀な頭脳によって開発された N.I.R.A は、あり
 
 
 
-### Blobby (The Visionary Mastermind) ⚡️  
+### Blobby (先見の明を持つマスターマインド) ⚡️  
 A coding genius with the soul of a mad scientist, **Blobby** is the fearless leader who transforms caffeine into code faster than a neural network can blink! When not bending the digital universe to his will, Blobby’s dreaming up the future of AI. He’s not just a developer—he’s the engine driving the impossible.
 
 
 
-### Creepsmile (App Developer Extraordinaire) 🦸‍♂️  
+### Creepsmile (卓越したアプリ開発者) 🦸‍♂️  
 If there’s a superhero for apps, it’s **Creepsmile**. He’s the wizard who turns your favorite features into seamless, snappy experiences. With a keyboard in one hand and a creative spark in the other, his superpower? Crafting slick, smooth interfaces with the precision of a digital ninja!
 
 
 
-### Vikky (UI/UX Designer Maestro)🎨 
+### Vikky (UI/UX デザイナーのマエストロ)🎨 
 Ever wondered who makes tech look so darn good? That’s Vikky! Our UI/UX designer who blends art with usability. Vikky’s mission? To make sure every tap, swipe, and click feels like magic. When Vikky’s around, interfaces don’t just work—they dazzle!
 
 
 
-### Ali (Our Early App Designer)🖌️ 
+### Ali (初期のアプリデザイナー)🖌️ 
 Before our apps dazzled with today’s sleek designs, Ali laid the foundation. As our early app designer, Ali ensured the initial interface was both functional and visually appealing, setting the stage for all the great things that followed. His artistic touch gave us the jumpstart we needed!
 
 
 
-### PoketLabs (The Animation Conjuror) 🎬  
+### PoketLabs (アニメーションの魔術師) 🎬  
 **Pixels + magic = PoketLabs!** The wizard behind avatars and animations that breathe life into the digital world. Every quirky move or playful gesture you see from Nira? That’s PoketLabs sprinkling a bit of creativity. If you’ve ever caught yourself smiling at an avatar, you know who’s to blame!
 
 
 
-### Aarav (The Bot Sorcerer) 🤖  
+### Aarav (ボットの魔術師) 🤖  
 Ever chatted with a bot that felt *alive*? That’s **Aarav’s** doing! He’s the brilliant mind behind the **Discord Nira Bot**, giving Nira her wit, charm, and quick responses. His bots don’t just talk—they *enchant*, turning conversations into magical experiences.
 
 
 
-### Nira (The AI with Sass and Smarts) 🤖😄  
+### N.I.R.A (Sass と Smarts を備えた AI) 🤖😄  
 Finally, meet the star of the show—**Nira** herself! She’s not just your AI assistant—she’s your quirky, genius digital bestie. Whether it’s helping with tasks, cracking jokes, or throwing surprise dance parties, Nira’s got personality for days. Just be careful—she might drop a Rickroll when you least expect it. 😉
 
 Thanks for checking out **Voidware Labs**—where innovation meets creativity and the future is built today! 🚀
 
 ---
 
-## 🎨 UI/UX Design
+## 🎨 UI/UX デザイン
 
-- **For Phone (Nothing Themed) (V1)**
+- **For Phone (Nothing テーマ) (V1)**
   ![Nothing Phone UI](https://github.com/user-attachments/assets/e83f4fd6-9f4b-4827-8856-01d44ff9cc0e)
 
 
-  Made by [ALI](https://x.com/AliFakhruddin13)
+  作者: [ALI](https://x.com/AliFakhruddin13)
 
-- **For Phone (Official Nothing themed app) (V2)**
+- **For Phone (公式 Nothing テーマアプリ) (V2)**
   ![Nothing Official App UI](https://github.com/user-attachments/assets/33371c8b-b765-460a-ad2f-0441c15e06ea)
    
 
 
-  Made by [Vivek Bhimani](https://x.com/vivekbhimani45)
+  作者: [Vivek Bhimani](https://x.com/vivekbhimani45)
 
 ---
-### 🏗️ 3D Model Of Nira
+### 🏗️ N.I.R.A の 3D モデル
 
 ![Nira 3D Model](https://github.com/user-attachments/assets/ee57065c-3656-4197-bc3f-9e5ae4ae826b)
 
 
- Made by [PocketLabs]
+ 作者: [PocketLabs]
 
 ---
 
@@ -179,7 +179,7 @@ No system is perfect, not even Nira (though she'd never admit it). Here's how sh
 
 ---
 
-### 🕵️‍♂️ Security and Privacy
+### 🕵️‍♂️ セキュリティとプライバシー
 Your privacy is Nira's top priority! Here's how we keep your data safe:
 - Local Storage: All sensitive data is stored locally on your device. Nothing is sent to external servers.
 - End-to-End Encryption: Communications between Nira and any online services are encrypted to protect your information.
@@ -198,7 +198,7 @@ Nira is always evolving, just like you. Here are some exciting features on the h
 
 ---
 
-## 🚧 Roadmap
+## 🚧 ロードマップ
 
 - 🖥️ **Expand Platform Support**: Enhance compatibility for additional operating systems, including macOS and Linux.
 - 🤖 **Enhance AI Capabilities**: Improve AI responses and contextual understanding.
@@ -233,7 +233,7 @@ We welcome contributions! If you have ideas for new features, improvements, or j
 
 ---
 
-### 🥚 Easter Eggs
+### 🥚 イースターエッグ
 
 .Nira is full of surprises! Here are some Easter eggs you might stumble upon:
 Rickroll
@@ -255,12 +255,12 @@ Neural Nexus Team wish you a fantastic time with your new AI assistant. May your
 
 ---
 
-## 🦺 Support
+## 🦺 サポート
 
 If you encounter any issues or have questions, please check our [FAQ](FAQ.md)
 ---
 
-## 📬 Contact
+## 📬 連絡先
 
 For any inquiries, reach out to us via email at `nightblobby@gmail.com` or follow us on [Twitter](https://twitter.com/nightblobby).
 
