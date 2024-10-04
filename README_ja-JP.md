@@ -33,7 +33,8 @@ Voidware Labs の優秀な頭脳によって開発された N.I.R.A は、あり
 
 
 ### Vikky (UI/UX デザイナーのマエストロ)🎨 
-Ever wondered who makes tech look so darn good? That’s Vikky! Our UI/UX designer who blends art with usability. Vikky’s mission? To make sure every tap, swipe, and click feels like magic. When Vikky’s around, interfaces don’t just work—they dazzle!
+誰がテクニックをこれ程素晴らしく見せているのか不思議に思ったことはないだろうか? それが Vikky なのです!<br>
+アートとユーザビリティーを融合させた UI/UX デザイナーで、Vikky の使命はタップ、スワイプ、クリックのすべての操作を魔法のように感じさせるようにすること。Vikky がいればインターフェースが単に機能するだけでなく、まばゆい輝きを放つぞ!
 
 
 
