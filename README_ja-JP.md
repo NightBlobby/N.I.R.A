@@ -21,12 +21,14 @@ Voidware Labs の優秀な頭脳によって開発された N.I.R.A は、あり
 
 
 ### Blobby (先見の明を持つマスターマインド) ⚡️  
-マッドサイエンティストのソウルを持っているコーディングの天才、**Blobby** は、ニューラルネットワークが瞬くよりも先にカフェインをコードに変換をする、恐れ知らずなリーダーです。デジタルスペースを自分の意思で操っていないとき、彼は AI の未来を夢見ています。Blobby は、単なる開発者ではなく、不可能を可能にするエンジンなのです。
+マッドサイエンティストのソウルを持っているコーディングの天才、**Blobby** は、ニューラルネットワークが瞬くよりも先にカフェインをコードに変換する、恐れ知らずなリーダーです。デジタルスペースを自分の意思で操っていないとき、彼は AI の未来を夢見ています。Blobby は、単なる開発者ではなく、不可能を可能にするエンジンなのです。
 
 
 
 ### Creepsmile (卓越したアプリ開発者) 🦸‍♂️  
-If there’s a superhero for apps, it’s **Creepsmile**. He’s the wizard who turns your favorite features into seamless, snappy experiences. With a keyboard in one hand and a creative spark in the other, his superpower? Crafting slick, smooth interfaces with the precision of a digital ninja!
+アプリのスーパーヒーローがいるとすれば、それは **Creepsmile** だ。<br>
+彼は、あなたのお気に入りの機能をシームレスでキレのあるエクスペリエンスに変えてしまう魔法使いでもある。片手にキーボード、もう片手にはクリエイティブな閃きを持つ彼のスーパーパワーとは?<br>
+デジタルニンジャの正確さの如く、スムーズなインターフェースを作り上げるぞ!
 
 
 
