@@ -94,14 +94,16 @@ Ali が築き上げた基礎のおかげで我々のアプリが今の洗練さ�
 すぐにあなたのお気に入りになる AI アシスタント、N.I.R.A へようこそ!<br>
 楽しい世界に飛び込む前に、重要な(そして愉快で皮肉な)利用規約を確認しましょう。
 
-1. **Acceptance of Terms**  
-By using N.I.R.A., you’re agreeing to these Terms and Conditions. Congratulations! You’re now part of an exclusive club of people who like to read the fine print.
+1. **利用規約の許諾**  
+N.I.R.A を使用することでそれぞれの利用規約に同意したと見なされます。<br>
+おめでとう! これで細かい活字を読むのが好きな人々の特別なクラブの一員になりました。
 
-2. **Usage Restrictions**  
-N.I.R.A. is here to assist, entertain, and occasionally baffle you with her quirks. However, please use her powers responsibly. No world domination plans or karaoke competitions, please. Any attempts to misuse her might result in an endless loop of dad jokes.
+2. **使用の制限**  
+N.I.R.A は、あなたを助けたり楽しませたり、時にはそのクセで困惑をさせるけど存在しています。ただし、彼女の力は責任を持って使ってください。彼女の力を使って世界征服計画やカラオケ大会はご遠慮ください。彼女を悪用しようとすると、親父ギャグの無限ループに陥るかもしれませんよ。
 
-3. **Updates and Upgrades**  
-We’ll be updating N.I.R.A. with new features and improvements. If she suddenly starts giving you unsolicited life advice or begins quoting Shakespeare, it’s just part of her charm. No need to panic.
+3. **アップデートとアップグレード**  
+N.I.R.A の新機能や改善点をアップデートしていきます。<br>
+もし彼女が突然に勝手な人生相談を始めたり、シェークスピアの引用を始めたりしてもそれは彼女の魅力の一部なので慌てる必要はありません。
 
 4. **Liability Disclaimer**  
 While we strive to make N.I.R.A. as fantastic as possible, we can’t promise she won’t occasionally be a bit eccentric. If she suggests eating pizza for breakfast or gives you directions to a non-existent place, it’s all in the name of fun.
