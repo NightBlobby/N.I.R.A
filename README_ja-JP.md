@@ -120,25 +120,25 @@ N.I.R.A の新機能や改善点をアップデートしていきます。<br>
 
 N.I.R.A はあなたの生活をより便利に、より生産的にそして豊かにするための様々な機能が満載です。
 
-1. 会話型 AI (ローカルベースの会話)
+1. 会話型 AI (ローカルベースの会話)<br>
 N.I.R.A は有意義で自然な会話をすることができます。具体的な質問に対する答えが必要でも、最新のニュースについて話し合いたい場合でも、単純に親身になって話を訊いて欲しいときでも N.I.R.A が対応をしてくれます。
 
-2. ローカル Q&A データベース
+2. ローカル Q&A データベース<br>
 N.I.R.A は質問と回答のローカルデータベースを維持します。以前に質問したことがあれば、それを記憶します。つまり時間の経過と共に応答が速くなり、効率も上がります。N.I.R.A は質問をするたびに賢くなるあなた専用の図書館のような存在になります。
 
-3. Dictionary and Thesaurus (Local Dictionary)
+3. Dictionary and Thesaurus (Local Dictionary)<br>
 Confused by a word? Nira can provide definitions and synonyms to help expand your vocabulary. She's like that really smart friend who always knows the right word
 
-4. Mood Detection
+4. Mood Detection<br>
 Is today a good day, a bad day, or an 'I need chocolate' day? Nira uses advanced sentiment analysis to detect your mood and adjust her responses accordingly. Feeling down? She might cheer you up with a joke or a motivational quote!
 
-5. Easter Eggs and Surprises
+5. Easter Eggs and Surprises<br>
 Nira is full of surprises! Say the right (or wrong) word, and you might find yourself in a Rickroll loop or getting an unexpected poem. Keep her guessing by mixing up your commands—she likes a good challenge!
 
-6. Ask Management and Reminders
+6. Ask Management and Reminders<br>
 Need help managing your to-do list? Nira can add tasks, set reminders, and even nag you (politely) until you get them done. She's like that little voice in your head, only smarter.
 
-7. Multi-Platform Compatibility
+7. Multi-Platform Compatibility<br>
 Nira works seamlessly across multiple platforms, including Windows, macOS, Linux, and Android. No matter where you are, Nira is ready to assist!
 
 ---
