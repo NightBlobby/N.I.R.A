@@ -126,10 +126,10 @@ N.I.R.A は有意義で自然な会話をすることができます。具体的
 2. ローカル Q&A データベース<br>
 N.I.R.A は質問と回答のローカルデータベースを維持します。以前に質問したことがあれば、それを記憶します。つまり時間の経過と共に応答が速くなり、効率も上がります。N.I.R.A は質問をするたびに賢くなるあなた専用の図書館のような存在になります。
 
-3. Dictionary and Thesaurus (Local Dictionary)<br>
-Confused by a word? Nira can provide definitions and synonyms to help expand your vocabulary. She's like that really smart friend who always knows the right word
+3. 辞書とシソーラス (ローカル辞書)<br>
+言葉に困惑をしていませんか? N.I.R.A は定義や同義語を提供して、あなたの語彙力を高めるのに役立ちます。彼女は常に正しい言葉を知っているとても優秀な友人のような存在になります。
 
-4. Mood Detection<br>
+4. 気分の検出機能<br>
 Is today a good day, a bad day, or an 'I need chocolate' day? Nira uses advanced sentiment analysis to detect your mood and adjust her responses accordingly. Feeling down? She might cheer you up with a joke or a motivational quote!
 
 5. Easter Eggs and Surprises<br>
