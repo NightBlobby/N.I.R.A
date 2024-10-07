@@ -130,15 +130,16 @@ N.I.R.A は質問と回答のローカルデータベースを維持します。
 言葉に困惑をしていませんか? N.I.R.A は定義や同義語を提供して、あなたの語彙力を高めるのに役立ちます。彼女は常に正しい言葉を知っているとても優秀な友人のような存在になります。
 
 4. 気分の検出機能<br>
-Is today a good day, a bad day, or an 'I need chocolate' day? Nira uses advanced sentiment analysis to detect your mood and adjust her responses accordingly. Feeling down? She might cheer you up with a joke or a motivational quote!
+今日は良い日なのか悪い日なのか、｢チョコレートが欲しい日｣なのかなど N.I.R.A は高度な感情分析機能であなたの気分を察知して、それに応じた反応に調整します。<br>
+もしかして落ち込んでいますか? 彼女はジョーク、やる気が出てくる引用文の紹介であなたを元気付けてくれるかもしれませんよ。
 
-5. Easter Eggs and Surprises<br>
-Nira is full of surprises! Say the right (or wrong) word, and you might find yourself in a Rickroll loop or getting an unexpected poem. Keep her guessing by mixing up your commands—she likes a good challenge!
+6. イースターエッグとサプライズ<br>
+N.I.R.A は驚きに満ちています! 正しい(または間違えた)言葉を言うとリックロールのループに入ったり、思いがけないポエムを出してくることがあったりします。N.I.R.A はチャレンジ精神が旺盛なので、色々なコマンドを混ぜて N.I.R.A を楽しませてみましょう!
 
-6. Ask Management and Reminders<br>
-Need help managing your to-do list? Nira can add tasks, set reminders, and even nag you (politely) until you get them done. She's like that little voice in your head, only smarter.
+7. 管理者の質問とリマインダー<br>
+ToDo リストの管理にお困りですか? N.I.R.A はタスクの追加やリマインダー設定、そしてタスクが完了まで(丁寧に)あなたに小言を言わせることもできます。彼女は、あなたの脳内の小さな声のようなものだけどより賢い存在となるでしょう。
 
-7. Multi-Platform Compatibility<br>
+8. Multi-Platform Compatibility<br>
 Nira works seamlessly across multiple platforms, including Windows, macOS, Linux, and Android. No matter where you are, Nira is ready to assist!
 
 ---
