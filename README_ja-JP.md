@@ -139,8 +139,8 @@ N.I.R.A は驚きに満ちています! 正しい(または間違えた)言葉�
 7. 管理者の質問とリマインダー<br>
 ToDo リストの管理にお困りですか? N.I.R.A はタスクの追加やリマインダー設定、そしてタスクが完了まで(丁寧に)あなたに小言を言わせることもできます。彼女は、あなたの脳内の小さな声のようなものだけどより賢い存在となるでしょう。
 
-8. Multi-Platform Compatibility<br>
-Nira works seamlessly across multiple platforms, including Windows, macOS, Linux, and Android. No matter where you are, Nira is ready to assist!
+8. マルチプラットフォームの互換性<br>
+N.I.R.A は Windows、macOS、Linux、Android など複数のプラットフォーム上でシームレスに動作します。どこでも N.I.R.A がサポートしてくれますよ。
 
 ---
 
