@@ -146,14 +146,14 @@ N.I.R.A は Windows、macOS、Linux、Android など複数のプラットフォ�
 
 ## 🌟 主な特徴
 
-- 🔒 **Privacy-Centric Design**: Operates entirely locally, ensuring no external data sharing or retention.
-- 🤖 **Advanced AI Capabilities**: Delivers intelligent, context-aware responses and actions.
-- 🎙️ **Voice Recognition**: Utilizes sophisticated speech recognition to understand and process commands.
-- ✉️🔊 **Flexible Input**: Accepts both voice and text commands.
-- 🗣️ **Text-to-Speech**: Converts text to natural, clear speech using `pyttsx3`.
-- 🌦️ **Weather Information**: Retrieves real-time weather data through the OpenWeatherMap API.
-- 😂 **Joke Fetching**: Provides entertainment with jokes from an integrated online API.
-- ⏰ **Timer and Alarm Management**: Enables setting, managing, and customizing timers and alarms.
+- 🔒 **プライバシー重視の設計**: 完全にローカルで動作し、外部にデータの共有や保持を行いません。
+- 🤖 **高度な AI 機能**: インテリジェントでコンテキストに応じたレスポンスとアクションを提供します。
+- 🎙️ **音声認識**: 高度な音声認識を利用でコマンドを理解し、処理をします。
+- ✉️🔊 **柔軟な入力**: 音声のコマンド、テキストのコマンドの両方が使用できます。
+- 🗣️ **テキストの読み上げ**: `pyttsx3` を使用してテキストを自然かつ明瞭な音声に変換します。
+- 🌦️ **天気予報**: OpenWeatherMap API を通じてリアルタイムな気象情報を取得します。
+- 😂 **ジョークの取得**: 統合されたオンライン API からジョークを交えたエンターテインメントを提供します。
+- ⏰ **タイマーとアラーム**: タイマーやアラームの設定と管理、カスタマイズが可能です。
 - 💡 **Gemini Model Integration**: Utilizes the Gemini API Model for extensive knowledge with minimal GPU strain on lower-end devices.
 - 🧠 **Natural Language Processing (NLP)**: Leverages `nltk`, `sklearn`, and Gemini for advanced NLP and intent classification.
 - 📚 **Dictionary and Thesaurus**: Offers word definitions and synonyms through `PyDictionary`.
