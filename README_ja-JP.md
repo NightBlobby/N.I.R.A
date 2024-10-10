@@ -192,16 +192,16 @@ N.I.R.A は最先端の技術とオープンソースライブラリと組み合
 ---
 
 ### 🕵️‍♂️ セキュリティとプライバシー
-Your privacy is Nira's top priority! Here's how we keep your data safe:
-- Local Storage: All sensitive data is stored locally on your device. Nothing is sent to external servers.
-- End-to-End Encryption: Communications between Nira and any online services are encrypted to protect your information.
-- User Control: You have full control over what data Nira can access. Easily adjust permissions in the settings menu.
+あなたのプライバシーは、N.I.R.A の最優先事項です! あなたのデータを安全に保つ方法は次の通りです:
+- ローカルストレージ: すべての機密なデータはデバイス上にローカルで保存されます。外部サーバーに送信されることはありません。
+- エンドツーエンド暗号化: N.I.R.A とオンラインサービス間の通信は、情報の保護のために暗号化されます。
+- ユーザーコントロール: N.I.R.A がアクセスできるデータを完全にコントロールできます。設定メニューで権限を簡単に変更できます。
 
 ---
 ### 🔮 今後の機能強化について
 
-Nira is always evolving, just like you. Here are some exciting features on the horizon:
- Voice Interaction for All Platforms: Expanding voice capabilities to all supported platforms.
+N.I.R.A はあなたと同じように常に進化をしています。今後登場するエキサイティングな機能をいくつかご紹介しましょう:
+ すべてのプラットフォームでの音声インタラクション: サポートされているすべてのプラットフォームに音声機能を拡張します。
  Deeper Learning: Enhanced AI models to understand more complex and nuanced commands.
  More Integrations: Support for additional music services, smart home devices, and more.
  Custom Voice Packs: Want Nira to sound
