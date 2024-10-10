@@ -267,23 +267,23 @@ N.I.R.A は単なる AI アシスタントではありません。ユーモア�
 
 
 N.I.R.A をお迎えしていただきありがとうございます。<br>
-フィードバックや提案または、エクスペリエンスを共有したい方は是非お聞かせください。Neural Nexus チームは、新たな AI アシスタントで素晴らしい時間と日々を過ごせることを願っています。日常は生産的、夜は安らかにそして N.I.R.A との日常が楽しいものになりますように。🌟
+フィードバックや提案または、エクスペリエンスを共有したい方は是非お聞かせください。Neural Nexus チームは、新たな AI アシスタントで素晴らしい時間と日々を過ごせることを願っています。日常は生産的、夜は安らかにそして N.I.R.A との生活が楽しいものになりますように。🌟
 
 ---
 
 ## 🦺 サポート
 
-If you encounter any issues or have questions, please check our [FAQ](FAQ.md)
+問題が発生した場合やご質問がある場合は [FAQ](FAQ.md) をご覧ください。
 ---
 
 ## 📬 連絡先
 
-For any inquiries, reach out to us via email at `nightblobby@gmail.com` or follow us on [Twitter](https://twitter.com/nightblobby).
+お問い合わせは、`nightblobby@gmail.com` のメールアドレスに連絡か [X: Twitter](https://twitter.com/nightblobby) をフォローしてください。
 
 ---
 
 ## 🎉 ありがとう
 
-Thank you for using N.I.R.A! We’re excited to have you on board and look forward to your feedback. Together, let’s make N.I.R.A the most advanced AI assistant in the universe! 🚀
+N.I.R.A をお迎えしていただきありがとうございます! フィードバックをお待ちしています。一緒に N.I.R.A を宇宙一で最も先進的な AI アシスタントに成長させていきましょう。🚀
 
 --- 
