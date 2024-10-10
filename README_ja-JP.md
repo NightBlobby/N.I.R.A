@@ -249,23 +249,25 @@ N.I.R.A はあなたと同じように常に進化をしています。今後登
 
 ### 🥚 イースターエッグ
 
-.Nira is full of surprises! Here are some Easter eggs you might stumble upon:
-Rickroll
+.N.I.R.A には驚きがたくさんあります! 偶然発見するかもしれないイースターエッグをいくつか紹介します:
+リックロール
 
-.Say the keyword “rick,” and Nira might just Rickroll you with a hidden video clip! Try it out and see if you can catch her off-guard.
-Funny Quotes
+.｢rick｣というキーワードを言うと N.I.R.A が秘密のビデオクリップでリックロールをするかもしれません。彼女の不意を突けるか試してみましょう。
+面白い名言
 
-.Ask Nira for a “funny quote” and get a delightful, quirky quote that will surely bring a smile to your face.
-Secret Dance Mode
+.N.I.R.A に｢面白い名言｣を訊いてみるときっと笑顔になるような、面白くておかしい名言が見つかるかもしれません。
+シークレットダンスモード
 
-.Say “dance party,” and Nira will respond with a special message that might include some funky text-based dance moves.
+.｢ダンスパーティー｣と言うと N.I.R.A はファンキーなテキストベースのダンスの動きを含む特別なメッセージを返してくれます。
 
 
 ### 🏁 結論
 
-Nira is more than just an AI assistant—she's your new digital companion with a knack for humor, helpfulness, and a touch of surprise. Whether you need help with daily tasks, a laugh to lighten your mood, or just someone to chat with, Nira is here for you.
-Thank you for using Nira! If you have feedback, suggestions, or just want to share your experience, we’d love to hear from you.
-Neural Nexus Team wish you a fantastic time with your new AI assistant. May your days be productive, your nights restful, and your interactions with Nira always enjoyable. 🌟
+N.I.R.A は単なる AI アシスタントではありません。ユーモア、親切さ、そしてちょっとしたサプライズが得意なあなたの新しい友達なデジタルコンパニオンです。日々のタスクや手助け、気分を明るくさせてくれる面白いこと、または会話の相手など N.I.R.A があなたのためにここにいるのです。
+
+
+N.I.R.A をお迎えしていただきありがとうございます。<br>
+フィードバックや提案または、エクスペリエンスを共有したい方は是非お聞かせください。Neural Nexus チームは、新たな AI アシスタントで素晴らしい時間と日々を過ごせることを願っています。日常は生産的、夜は安らかにそして N.I.R.A との日常が楽しいものになりますように。🌟
 
 ---
 
