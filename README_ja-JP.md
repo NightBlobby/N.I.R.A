@@ -1,4 +1,5 @@
 # 🤖 Nira - NEURAL INTERACTIVE RESPONSIVE AGENT (A.K.A. Your New Best Buddy!)
+[English](./README.md)
 
 ![Nira](https://github.com/user-attachments/assets/ea67c6e8-bb7a-40aa-ba4e-a31c1951d612)
 
