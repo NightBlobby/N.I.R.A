@@ -86,7 +86,7 @@ Ali が築き上げた基礎のおかげで我々のアプリが今の洗練さ�
 ![Nira 3D Model](https://github.com/user-attachments/assets/ee57065c-3656-4197-bc3f-9e5ae4ae826b)
 
 
- 作者: [PocketLabs]
+ 作者: PocketLabs
 
 ---
 
