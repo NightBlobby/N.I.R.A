@@ -158,8 +158,8 @@ N.I.R.A は Windows、macOS、Linux、Android など複数のプラットフォ�
 - 🧠 **自然言語処理 (NLP)**: `nltk`、 `sklearn`、 Gemini を活用した高度な NLP とインテント分類を行ないます。
 - 📚 **辞書と類語辞典**: `PyDictionary` を通して単語の定義と同義語を提供します。
 - 💱 **通貨の換算**: `forex-python` を使用した財務管理と通貨の換算。
-- 📰 **ニュースの検索**: NewsAPIを通じてユーザーに最新のトップニュースの見出しをお伝えします。
-- 💬 **強化された会話**: AIとの魅力的で有意義な会話を促進します。
+- 📰 **ニュースの検索**: NewsAPI を通じてユーザーに最新のトップニュースの見出しをお伝えします。
+- 💬 **強化された会話**: AI との魅力的で有意義な会話を促進します。
 - 👁️ **コンピュータービジョン**: オブジェクトの認識および問題解決機能の提供(現在開発中)。
 - 🎲🪙 **インタラクティブゲーム**: カジュアルなやり取りのジャンケンやコイントスがやれます。
 - 🌅 **挨拶**: 起動時に時刻と日付の情報をお知らせします。
@@ -167,18 +167,18 @@ N.I.R.A は Windows、macOS、Linux、Android など複数のプラットフォ�
 
 ### 🎬 舞台の裏側
 
-Nira is powered by a blend of cutting-edge technologies and open-source libraries. Here's a peek under the hood:
+N.I.R.A は最先端の技術とオープンソースライブラリと組み合わせて開発されています。その中身を覗いてみましょう:
 
-- Python: The core programming language for Nira's brain.
-- Google Generative AI: Nira uses this for natural language processing, making her conversations more fluid and human-like.
-- Speech Recognition: Nira can understand voice commands, making interaction seamless.
-- Pyttsx3: This library allows Nira to speak back to you, adding a more human touch.
-- Requests: Nira fetches jokes and other content from online APIs using this library.
-- Datetime: To provide time-based greetings and set reminders.
-- Random: For injecting a bit of randomness into her jokes and responses.
-- Asyncio: Handles asynchronous operations smoothly, ensuring Nira responds in real-time.
-- Re (Regular Expressions): Helps Nira manage and interpret complex user commands and input.
-- JSON: For storing user data securely and efficiently.
+- Python: N.I.R.A の頭脳となるコアプログラミング言語です。
+- Google Generative AI: N.I.R.A はこれを自然言語処理で使用して会話をより柔軟で人間らしくします。
+- Speech Recognition: N.I.R.A の音声コマンド認識とシームレスな対話を可能にしています。
+- Pyttsx3: このライブラリで N.I.R.A があなたに話しかける動作とより人間味を感じさせる動作をします。
+- Requests: このライブラリで N.I.R.A がオンライン API からジョークやその他のコンテンツを取得します。
+- Datetime: 時間をベースとした挨拶とリマインダーを提供します。
+- Random: 彼女のジョークや返答にちょっとしたランダムさを加えます。
+- Asyncio: 非同期操作をスムーズに処理し、N.I.R.A がリアルタイムなレスポンスを保証します。
+- Re (Regular Expressions): 複雑なユーザーコマンドと入力管理を N.I.R.A が解釈するのに役立てられます。
+- JSON: ユーザーデータの安全かつ効率的に保存します。
 
 ---
 ### ⚠️ エラーハンドリングとリカバリー
