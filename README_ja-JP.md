@@ -201,10 +201,10 @@ N.I.R.A は最先端の技術とオープンソースライブラリと組み合
 ### 🔮 今後の機能強化について
 
 N.I.R.A はあなたと同じように常に進化をしています。今後登場するエキサイティングな機能をいくつかご紹介しましょう:
- すべてのプラットフォームでの音声インタラクション: サポートされているすべてのプラットフォームに音声機能を拡張します。
- Deeper Learning: Enhanced AI models to understand more complex and nuanced commands.
- More Integrations: Support for additional music services, smart home devices, and more.
- Custom Voice Packs: Want Nira to sound
+- すべてのプラットフォームでの音声インタラクション: サポートされているすべてのプラットフォームに音声機能を拡張
+- ディープラーニング: より複雑で微妙なコマンドを理解するために AI モデルを強化
+- 更なる統合: 音楽サービスの追加、スマートホームデバイスなどのサポート
+- カスタム音声パック: N.I.R.A の声
 
 
 
@@ -212,16 +212,16 @@ N.I.R.A はあなたと同じように常に進化をしています。今後登
 
 ## 🚧 ロードマップ
 
-- 🖥️ **プラットフォームサポートの拡張**: Enhance compatibility for additional operating systems, including macOS and Linux.
-- 🤖 **AI 機能の強化**: Improve AI responses and contextual understanding.
-- 📱 **モバイルアプリの開発**: Develop a user-friendly mobile application.
-- 🔧 **機能の拡張**: Integrate user-requested features and improvements.
-- 🎙️ **音声変調**: Introduce voice modulation options for enhanced user interaction.
-- 🌍 **多言語のサポート**: Extend support for multiple languages.
-- 💬 **高度なチャットインターフェース**: Develop a more sophisticated chat interface for natural conversations.
-- 🔍 **より優れた検索アルゴリズム**: Improve search algorithms for more accurate results.
-- 🚀 **パフォーマンスの最適化**: Continually optimize performance for faster response times.
-- 🤝 **サードパーティーの統合**: Add more integrations with popular apps and services.
+- 🖥️ **プラットフォームサポートの拡張**: macOS や Linux などの追加のオペレーティングシステムとの互換性を強化。
+- 🤖 **AI 機能の強化**: AI のレスポンスとコンテキストの理解を向上。
+- 📱 **モバイルアプリの開発**: ユーザーフレンドリーなモバイルアプリを開発。
+- 🔧 **機能の拡張**: ユーザーが要望した機能と改善の統合。
+- 🎙️ **音声変調**: ユーザーインタラクションを強化するために音声変調のオプションを導入。
+- 🌍 **多言語のサポート**: 複数の言語のサポートを拡張。
+- 💬 **高度なチャットインターフェース**: 自然な会話を実現するためのより洗練されたチャットインターフェースの開発。
+- 🔍 **より優れた検索アルゴリズム**: より正確な結果を得るための検索アルゴリズムの改善。
+- 🚀 **パフォーマンスの最適化**: パフォーマンスの継続的な最適化でレスポンスまでの時間を短縮化。
+- 🤝 **サードパーティーの統合**: 人気のアプリやサービスとの統合を更に追加。
   
 **2024 Q4**  
 - Expand NLP capabilities to include more languages.
