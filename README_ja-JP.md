@@ -183,11 +183,11 @@ N.I.R.A は最先端の技術とオープンソースライブラリと組み合
 ---
 ### ⚠️ エラーハンドリングとリカバリー
 
-No system is perfect, not even Nira (though she'd never admit it). Here's how she handles the occasional hiccup:
+完全なシステムはありません。N.I.R.A も例外ではありません (彼女は決して認めませんが...)。彼女が時折起こす問題にどう対処すべきかをご紹介します:
 
-- Fallback Jokes: If an online API is down, Nira will resort to her local joke database. Trust us; she still has some good ones stored!
-- Rephrasing Prompts: If Nira doesn't understand a command or question, she'll politely ask you to rephrase.
-- Learning from Mistakes: If she gets something wrong, you can correct her, and she'll learn from the interaction.
+- 代替のジョーク: オンライン API がダウンした場合に N.I.R.A はローカルのデータベースを頼りにします。大丈夫、彼女は面白いジョークのネタをいくつか残してます!
+- プロンプトの言い換え: N.I.R.A が指示や質問を理解できない場合は、丁寧に言い換えてみてください。
+- 失敗から学習: 彼女が何かを間違えてしまったときは、訂正をしてあげることでやり取りから学習をするでしょう。
 
 ---
 
