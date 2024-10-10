@@ -224,24 +224,26 @@ N.I.R.A はあなたと同じように常に進化をしています。今後登
 - 🤝 **サードパーティーの統合**: 人気のアプリやサービスとの統合を更に追加。
   
 **2024 Q4**  
-- Expand NLP capabilities to include more languages.
-- Integrate advanced sentiment analysis for improved mood detection.
-- Develop cross-platform sync for task management and reminders.
+- NLP 機能を拡張してより多くの言語をサポート。
+- 高度な感情分析を統合し、気分の検出を改善。
+- タスク管理とリマインダーのためのクロスプラットフォームの同期を開発。
 
 **2025 Q1**  
-- Introduce more interactive Easter eggs and surprises.
-- Enhance voice synthesis to include different accents and tones.
-- Optimize AI performance for faster response times.
+- よりインタラクティブなイースターエッグやサプライズを導入。
+- 音声合成を強化して様々なアクセントやトーンを追加。
+- AI のパフォーマンスを最適化してレスポンスの時間を短縮化。
 
 **2025 Q2**  
-- Roll out new features based on user feedback.
-- Explore integration with additional APIs for expanded functionality.
-- Improve UI/UX based on user testing and feedback.
+- ユーザーのフィードバックに基づいて新しい機能を展開。
+- 機能を拡張するための追加の API との統合を検討。
+- ユーザーテストとフィードバックに基づいて UI/UX を改善。
 
 ---
 
 ## 🤝 貢献
-We welcome contributions! If you have ideas for new features, improvements, or just want to fix a bug, please fork the repository, make your changes, and submit a pull request. Our guidelines can be found in the CONTRIBUTING.md file.
+貢献は歓迎します!<br>
+新たな機能や改善のアイデアがある場合やバグの修正をしたい場合は、リポジトリをフォークして変更後にプルリクエストを送信してください。<br>
+ガイドラインは、CONTRIBUTING.md ファイルに記載されています。
 
 ---
 
