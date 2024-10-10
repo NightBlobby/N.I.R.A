@@ -157,13 +157,13 @@ N.I.R.A は Windows、macOS、Linux、Android など複数のプラットフォ�
 - 💡 **Gemini モデルの統合**: Gemini API モデルを使用することでローエンドデバイスの GPU への負荷を最小限に抑えつつ広範囲な知識を得ることができます。
 - 🧠 **自然言語処理 (NLP)**: `nltk`、 `sklearn`、 Gemini を活用した高度な NLP とインテント分類を行ないます。
 - 📚 **辞書と類語辞典**: `PyDictionary` を通して単語の定義と同義語を提供します。
-- 💱 **Currency Conversion**: Converts currencies with `forex-python` for financial management.
-- 📰 **News Retrieval**: Keeps users updated with top news headlines via the NewsAPI.
-- 💬 **Enhanced Conversations**: Facilitates engaging and meaningful conversations with the AI.
-- 👁️ **Computer Vision**: Provides object recognition and problem-solving capabilities (currently in development).
-- 🎲🪙 **Interactive Games**: Includes rock-paper-scissors and coin flip for casual interaction.
-- 🌅 **Greetings**: Greets users with time and date information upon startup.
-- 🔐 **End-to-End Encryption**: Ensures all communications are encrypted, upholding user privacy and security.
+- 💱 **通貨の換算**: `forex-python` を使用した財務管理と通貨の換算。
+- 📰 **ニュースの検索**: NewsAPIを通じてユーザーに最新のトップニュースの見出しをお伝えします。
+- 💬 **強化された会話**: AIとの魅力的で有意義な会話を促進します。
+- 👁️ **コンピュータービジョン**: オブジェクトの認識および問題解決機能の提供(現在開発中)。
+- 🎲🪙 **インタラクティブゲーム**: カジュアルなやり取りのジャンケンやコイントスがやれます。
+- 🌅 **挨拶**: 起動時に時刻と日付の情報をお知らせします。
+- 🔐 **エンドツーエンド暗号化**: すべての通信が暗号化され、ユーザーのプライバシーとセキュリティが維持されます。
 
 ### 🎬 舞台の裏側
 
