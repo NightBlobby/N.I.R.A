@@ -56,13 +56,7 @@ Thanks for checking out **Voidware Labs**—where innovation meets creativity an
 
 ## 🎨 UI/UX Design
 
-- **For Phone (Nothing Themed) (V1)**
-  ![Nothing Phone UI](https://github.com/user-attachments/assets/e83f4fd6-9f4b-4827-8856-01d44ff9cc0e)
-
-
-  Made by [ALI](https://x.com/AliFakhruddin13)
-
-- **For Phone (Official Nothing themed app) (V2)**
+- **For Phone (Official Nothing themed app) **
   ![Nothing Official App UI](https://github.com/user-attachments/assets/33371c8b-b765-460a-ad2f-0441c15e06ea)
    
 
