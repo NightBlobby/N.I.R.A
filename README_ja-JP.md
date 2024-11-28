@@ -65,15 +65,6 @@ Ali が築き上げた基礎のおかげで我々のアプリが今の洗練さ�
 
 ## 🎨 UI/UX デザイン
 
-- **for Phone (Nothing テーマ) (V1)**
-
-  ![Nothing Phone UI](https://github.com/user-attachments/assets/e83f4fd6-9f4b-4827-8856-01d44ff9cc0e)
-
-
-  作者: [ALI](https://x.com/AliFakhruddin13)
-
-- **for Phone (公式 Nothing テーマアプリ) (V2)**
-
   ![Nothing Official App UI](https://github.com/user-attachments/assets/33371c8b-b765-460a-ad2f-0441c15e06ea)
 
 
