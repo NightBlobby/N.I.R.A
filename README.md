@@ -32,11 +32,6 @@ Ever wondered who makes tech look so darn good? That’s Vikky! Our UI/UX design
 
 
 
-### Ali (Our Early App Designer)🖌️ 
-Before our apps dazzled with today’s sleek designs, Ali laid the foundation. As our early app designer, Ali ensured the initial interface was both functional and visually appealing, setting the stage for all the great things that followed. His artistic touch gave us the jumpstart we needed!
-
-
-
 ### PoketLabs (The Animation Conjuror) 🎬  
 **Pixels + magic = PoketLabs!** The wizard behind avatars and animations that breathe life into the digital world. Every quirky move or playful gesture you see from Nira? That’s PoketLabs sprinkling a bit of creativity. If you’ve ever caught yourself smiling at an avatar, you know who’s to blame!
 
