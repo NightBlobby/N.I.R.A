@@ -1,4 +1,4 @@
-# 🤖 Nira - NEURAL INTERACTIVE RESPONSIVE AGENT (A.K.A. Your New Best Buddy!)
+# 🤖 Nira - NEURAL INTERACTIVE RESPONSIVE AGENT (A.K.A. Your New Best Buddy!) ----OutDated version(and no longer open source)---
 
 ![Nira](https://github.com/user-attachments/assets/ea67c6e8-bb7a-40aa-ba4e-a31c1951d612)
 
