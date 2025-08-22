@@ -33,11 +33,6 @@ Ever wondered who makes tech look so darn good? That’s Vikky! Our UI/UX design
 
 
 
-### Ali (Our Early App Designer)🖌️ 
-Before our apps dazzled with today’s sleek designs, Ali laid the foundation. As our early app designer, Ali ensured the initial interface was both functional and visually appealing, setting the stage for all the great things that followed. His artistic touch gave us the jumpstart we needed!
-
-
-
 ### PoketLabs (The Animation Conjuror) 🎬  
 **Pixels + magic = PoketLabs!** The wizard behind avatars and animations that breathe life into the digital world. Every quirky move or playful gesture you see from Nira? That’s PoketLabs sprinkling a bit of creativity. If you’ve ever caught yourself smiling at an avatar, you know who’s to blame!
 
@@ -57,13 +52,7 @@ Thanks for checking out **Voidware Labs**—where innovation meets creativity an
 
 ## 🎨 UI/UX Design
 
-- **For Phone (Nothing Themed) (V1)**
-  ![Nothing Phone UI](https://github.com/user-attachments/assets/e83f4fd6-9f4b-4827-8856-01d44ff9cc0e)
-
-
-  Made by [ALI](https://x.com/AliFakhruddin13)
-
-- **For Phone (Official Nothing themed app) (V2)**
+- **For Phone (Official Nothing themed app) **
   ![Nothing Official App UI](https://github.com/user-attachments/assets/33371c8b-b765-460a-ad2f-0441c15e06ea)
    
 
