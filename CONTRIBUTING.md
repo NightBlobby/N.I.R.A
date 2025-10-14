@@ -1,15 +1,37 @@
 # Contributing to N.I.R.A
 
-Thank you for your interest in contributing to **NEURAL INTERACTIVE RESPONSIVE AGENT (N.I.R.A)**! We appreciate your help in making our project better. Please follow the guidelines below to ensure a smooth contribution process.
+Thank you for your interest in contributing to **NEURAL INTERACTIVE RESPONSIVE AGENT (N.I.R.A)**!  
+We appreciate your help in making our project better. Please follow the guidelines below to ensure a smooth contribution process.
+
+---
+
+## ⚖️ Important Notice — Code Usage & Attribution
+
+The N.I.R.A project is protected under its license, and **any use, reuse, or modification of its code must include proper credit** to the original project and authors.
+
+You **must not**:
+- Reupload, rename, or redistribute N.I.R.A or its source code without clear credit.
+- Claim ownership of any part of this codebase as your own.
+- Use the project or its derivatives for unethical, deceptive, or malicious purposes.
+
+You **must**:
+- Clearly attribute this project if any part of the code, structure, or assets are used in another project.
+
+**Example of proper credit:**
+> “This project uses components or code inspired by N.I.R.A (https://github.com/NightBlobby/N.I.R.A). All credit to the original authors.”
+
+Failure to follow this guideline may result in take-down requests or revocation of permission to use the N.I.R.A codebase.
+
+---
 
 ## How to Contribute
 
-1. **Fork the Repository**: Start by forking the repository to your own GitHub account. This allows you to freely make changes without affecting the main project.
+1. **Fork the Repository**  
+   Fork the repository to your own GitHub account to make your changes safely.
 
-2. **Clone Your Fork**: Clone your forked repository to your local machine using:
-    ```bash
-    git clone https://github.com/YOUR_USERNAME/N.I.R.A.git
-    ```
+2. **Clone Your Fork**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/N.I.R.A.git
 
 3. **Create a Branch**: Create a new branch for your changes. Use a descriptive name for the branch to indicate the purpose of your changes.
     ```bash
