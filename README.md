@@ -246,6 +246,25 @@ Neural Nexus Team wish you a fantastic time with your new AI assistant. May your
 If you encounter any issues or have questions, please check our [FAQ](FAQ.md)
 ---
 
+## ⚖️ Important Notice — Usage, Attribution & Credit Policy
+
+> **N.I.R.A and all its related code, designs, and assets are the property of Voidware Labs and contributors.**
+
+To protect the integrity of our work and the efforts of everyone who contributed:
+
+- ❌ **Do not reuse, copy, or redistribute** this codebase — in part or whole — without explicit credit.  
+- ⚠️ **Do not rename, rebrand, or claim N.I.R.A or its source code as your own.**
+- ✅ If you wish to use or build upon any part of N.I.R.A’s code, you **must clearly credit** the original project and link back to this repository.
+
+**Proper credit example:**
+> “This project is based on or inspired by N.I.R.A (Neural Interactive Responsive Agent) — developed by Voidware Labs. Original source: [https://github.com/NightBlobby/N.I.R.A](https://github.com/NightBlobby/N.I.R.A)”
+
+Violation of these terms may result in takedown actions or reporting for plagiarism under GitHub’s policy or even fines.
+
+**In short:** You’re welcome to learn from N.I.R.A — just remember to **use it with credit.**
+
+---
+
 ## 📬 Contact
 
 For any inquiries, reach out to us via email at `nightblobby@gmail.com` or follow us on [Twitter](https://twitter.com/nightblobby).
