@@ -1,4 +1,5 @@
 # 🤖 Nira - NEURAL INTERACTIVE RESPONSIVE AGENT (A.K.A. Your New Best Buddy!)
+[English](./README.md)
 
 ![Nira](https://github.com/user-attachments/assets/ea67c6e8-bb7a-40aa-ba4e-a31c1951d612)
 
@@ -76,7 +77,7 @@ Ali が築き上げた基礎のおかげで我々のアプリが今の洗練さ�
 ![Nira 3D Model](https://github.com/user-attachments/assets/ee57065c-3656-4197-bc3f-9e5ae4ae826b)
 
 
- 作者: [PocketLabs]
+ 作者: PocketLabs
 
 ---
 
@@ -117,45 +118,68 @@ N.I.R.A は有意義で自然な会話をすることができます。具体的
 2. ローカル Q&A データベース<br>
 N.I.R.A は質問と回答のローカルデータベースを維持します。以前に質問したことがあれば、それを記憶します。つまり時間の経過と共に応答が速くなり、効率も上がります。N.I.R.A は質問をするたびに賢くなるあなた専用の図書館のような存在になります。
 
-3. Dictionary and Thesaurus (Local Dictionary)<br>
-Confused by a word? Nira can provide definitions and synonyms to help expand your vocabulary. She's like that really smart friend who always knows the right word
+3. 辞書とシソーラス (ローカル辞書)<br>
+言葉に困惑をしていませんか? N.I.R.A は定義や同義語を提供して、あなたの語彙力を高めるのに役立ちます。彼女は常に正しい言葉を知っているとても優秀な友人のような存在になります。
 
-4. Mood Detection<br>
-Is today a good day, a bad day, or an 'I need chocolate' day? Nira uses advanced sentiment analysis to detect your mood and adjust her responses accordingly. Feeling down? She might cheer you up with a joke or a motivational quote!
+4. 気分の検出機能<br>
+今日は良い日なのか悪い日なのか、｢チョコレートが欲しい日｣なのかなど N.I.R.A は高度な感情分析機能であなたの気分を察知して、それに応じた反応に調整します。<br>
+もしかして落ち込んでいますか? 彼女はジョーク、やる気が出てくる引用文の紹介であなたを元気付けてくれるかもしれませんよ。
 
-5. Easter Eggs and Surprises<br>
-Nira is full of surprises! Say the right (or wrong) word, and you might find yourself in a Rickroll loop or getting an unexpected poem. Keep her guessing by mixing up your commands—she likes a good challenge!
+6. イースターエッグとサプライズ<br>
+N.I.R.A は驚きに満ちています! 正しい(または間違えた)言葉を言うとリックロールのループに入ったり、思いがけないポエムを出してくることがあったりします。N.I.R.A はチャレンジ精神が旺盛なので、色々なコマンドを混ぜて N.I.R.A を楽しませてみましょう!
 
-6. Ask Management and Reminders<br>
-Need help managing your to-do list? Nira can add tasks, set reminders, and even nag you (politely) until you get them done. She's like that little voice in your head, only smarter.
+7. 管理者の質問とリマインダー<br>
+ToDo リストの管理にお困りですか? N.I.R.A はタスクの追加やリマインダー設定、そしてタスクが完了まで(丁寧に)あなたに小言を言わせることもできます。彼女は、あなたの脳内の小さな声のようなものだけどより賢い存在となるでしょう。
 
-7. Multi-Platform Compatibility<br>
-Nira works seamlessly across multiple platforms, including Windows, macOS, Linux, and Android. No matter where you are, Nira is ready to assist!
+8. マルチプラットフォームの互換性<br>
+N.I.R.A は Windows、macOS、Linux、Android など複数のプラットフォーム上でシームレスに動作します。どこでも N.I.R.A がサポートしてくれますよ。
 
 ---
 
 ## 🌟 主な特徴
 
-- 🔒 **Privacy-Centric Design**: Operates entirely locally, ensuring no external data sharing or retention.
-- 🤖 **Advanced AI Capabilities**: Delivers intelligent, context-aware responses and actions.
-- 🎙️ **Voice Recognition**: Utilizes sophisticated speech recognition to understand and process commands.
-- ✉️🔊 **Flexible Input**: Accepts both voice and text commands.
-- 🗣️ **Text-to-Speech**: Converts text to natural, clear speech using `pyttsx3`.
-- 🌦️ **Weather Information**: Retrieves real-time weather data through the OpenWeatherMap API.
-- 😂 **Joke Fetching**: Provides entertainment with jokes from an integrated online API.
-- ⏰ **Timer and Alarm Management**: Enables setting, managing, and customizing timers and alarms.
-- 💡 **Gemini Model Integration**: Utilizes the Gemini API Model for extensive knowledge with minimal GPU strain on lower-end devices.
-- 🧠 **Natural Language Processing (NLP)**: Leverages `nltk`, `sklearn`, and Gemini for advanced NLP and intent classification.
-- 📚 **Dictionary and Thesaurus**: Offers word definitions and synonyms through `PyDictionary`.
-- 💱 **Currency Conversion**: Converts currencies with `forex-python` for financial management.
-- 📰 **News Retrieval**: Keeps users updated with top news headlines via the NewsAPI.
-- 💬 **Enhanced Conversations**: Facilitates engaging and meaningful conversations with the AI.
-- 👁️ **Computer Vision**: Provides object recognition and problem-solving capabilities (currently in development).
-- 🎲🪙 **Interactive Games**: Includes rock-paper-scissors and coin flip for casual interaction.
-- 🌅 **Greetings**: Greets users with time and date information upon startup.
-- 🔐 **End-to-End Encryption**: Ensures all communications are encrypted, upholding user privacy and security.
+- 🔒 **プライバシー重視の設計**: 完全にローカルで動作し、外部にデータの共有や保持を行いません。
+- 🤖 **高度な AI 機能**: インテリジェントでコンテキストに応じたレスポンスとアクションを提供します。
+- 🎙️ **音声認識**: 高度な音声認識を利用でコマンドを理解して処理をします。
+- ✉️🔊 **柔軟な入力**: 音声のコマンド、テキストのコマンドの両方が使用できます。
+- 🗣️ **テキストの読み上げ**: `pyttsx3` を使用してテキストを自然かつ明瞭な音声に変換します。
+- 🌦️ **天気予報**: OpenWeatherMap API を通じてリアルタイムな気象情報を取得します。
+- 😂 **ジョークの取得**: 統合されたオンライン API からジョークを交えたエンターテインメントを提供します。
+- ⏰ **タイマーとアラーム**: タイマーやアラームの設定と管理、カスタマイズが可能です。
+- 💡 **Gemini モデルの統合**: Gemini API モデルを使用することでローエンドデバイスの GPU への負荷を最小限に抑えつつ広範囲な知識を得ることができます。
+- 🧠 **自然言語処理 (NLP)**: `nltk`、 `sklearn`、 Gemini を活用した高度な NLP とインテント分類を行ないます。
+- 📚 **辞書と類語辞典**: `PyDictionary` を通して単語の定義と同義語を提供します。
+- 💱 **通貨の換算**: `forex-python` を使用した財務管理と通貨の換算。
+- 📰 **ニュースの検索**: NewsAPI を通じてユーザーに最新のトップニュースの見出しをお伝えします。
+- 💬 **強化された会話**: AI との魅力的で有意義な会話を促進します。
+- 👁️ **コンピュータービジョン**: オブジェクトの認識および問題解決機能の提供(現在開発中)。
+- 🎲🪙 **インタラクティブゲーム**: カジュアルなやり取りのジャンケンやコイントスがやれます。
+- 🌅 **挨拶**: 起動時に時刻と日付の情報をお知らせします。
+- 🔐 **エンドツーエンド暗号化**: すべての通信が暗号化され、ユーザーのプライバシーとセキュリティが維持されます。
 
 ### 🎬 舞台の裏側
+
+N.I.R.A は最先端の技術とオープンソースライブラリと組み合わせて開発されています。その中身を覗いてみましょう:
+
+- Python: N.I.R.A の頭脳となるコアプログラミング言語です。
+- Google Generative AI: N.I.R.A はこれを自然言語処理で使用して会話をより柔軟で人間らしくします。
+- Speech Recognition: N.I.R.A の音声コマンド認識とシームレスな対話を可能にしています。
+- Pyttsx3: このライブラリで N.I.R.A があなたに話しかける動作とより人間味を感じさせる動作をします。
+- Requests: このライブラリで N.I.R.A がオンライン API からジョークやその他のコンテンツを取得します。
+- Datetime: 時間をベースとした挨拶とリマインダーを提供します。
+- Random: 彼女のジョークや返答にちょっとしたランダムさを加えます。
+- Asyncio: 非同期操作をスムーズに処理し、N.I.R.A がリアルタイムなレスポンスを保証します。
+- Re (Regular Expressions): 複雑なユーザーコマンドと入力管理を N.I.R.A が解釈するのに役立てられます。
+- JSON: ユーザーデータの安全かつ効率的に保存します。
+
+---
+### ⚠️ エラーハンドリングとリカバリー
+
+完全なシステムはありません。N.I.R.A も例外ではありません(彼女は決して認めませんが...)。彼女が時折起こす問題にどう対処すべきかをご紹介します:
+
+- 代替のジョーク: オンライン API がダウンした場合に N.I.R.A はローカルのデータベースを頼りにします。大丈夫、彼女は面白いジョークのネタをいくつか残してます!
+- プロンプトの言い換え: N.I.R.A が指示や質問を理解できない場合は、丁寧に言い換えてみてください。
+- 失敗から学習: 彼女が何かを間違えてしまったときは、訂正をしてあげることでやり取りから学習をするでしょう。
 
 Nira は、最先端のテクノロジーとオープンソース ライブラリの組み合わせを利用しています。ボンネットの下を覗いてみましょう:
 
@@ -180,6 +204,21 @@ Nira は、最先端のテクノロジーとオープンソース ライブラ�
 ---
 
 ### 🕵️‍♂️ セキュリティとプライバシー
+
+あなたのプライバシーは、N.I.R.A の最優先事項です! あなたのデータを安全に保つ方法は次の通りです:
+- ローカルストレージ: すべての機密なデータはデバイス上にローカルで保存されます。外部サーバーに送信されることはありません。
+- エンドツーエンド暗号化: N.I.R.A とオンラインサービス間の通信は、情報の保護のために暗号化されます。
+- ユーザーコントロール: N.I.R.A がアクセスできるデータを完全にコントロールできます。設定メニューで権限を簡単に変更できます。
+
+---
+### 🔮 今後の機能強化について
+
+N.I.R.A はあなたと同じように常に進化をしています。今後登場するエキサイティングな機能をいくつかご紹介しましょう:
+- すべてのプラットフォームでの音声インタラクション: サポートされているすべてのプラットフォームに音声機能を拡張
+- ディープラーニング: より複雑で微妙なコマンドを理解するために AI モデルを強化
+- 更なる統合: 音楽サービスの追加、スマートホームデバイスなどのサポート
+- カスタム音声パック: N.I.R.A の声
+
 Nira はあなたのプライバシーを最優先に考えています。データを安全に保つ方法は次のとおりです。
 - ローカル ストレージ: すべての機密データはデバイス上にローカルに保存されます。外部サーバーには何も送信されません。
 - エンドツーエンドの暗号化: Nira とオンライン サービス間の通信は、情報を保護するために暗号化されます。
@@ -200,35 +239,75 @@ Nira はあなたのプライバシーを最優先に考えています。デー
 
 ## 🚧 ロードマップ
 
-- 🖥️ **プラットフォームサポートの拡張**: Enhance compatibility for additional operating systems, including macOS and Linux.
-- 🤖 **AI 機能の強化**: Improve AI responses and contextual understanding.
-- 📱 **モバイルアプリの開発**: Develop a user-friendly mobile application.
-- 🔧 **機能の拡張**: Integrate user-requested features and improvements.
-- 🎙️ **音声変調**: Introduce voice modulation options for enhanced user interaction.
-- 🌍 **多言語のサポート**: Extend support for multiple languages.
-- 💬 **高度なチャットインターフェース**: Develop a more sophisticated chat interface for natural conversations.
-- 🔍 **より優れた検索アルゴリズム**: Improve search algorithms for more accurate results.
-- 🚀 **パフォーマンスの最適化**: Continually optimize performance for faster response times.
-- 🤝 **サードパーティーの統合**: Add more integrations with popular apps and services.
+- 🖥️ **プラットフォームサポートの拡張**: macOS や Linux などの追加のオペレーティングシステムとの互換性を強化。
+- 🤖 **AI 機能の強化**: AI のレスポンスとコンテキストの理解を向上。
+- 📱 **モバイルアプリの開発**: ユーザーフレンドリーなモバイルアプリを開発。
+- 🔧 **機能の拡張**: ユーザーが要望した機能と改善の統合。
+- 🎙️ **音声変調**: ユーザーインタラクションを強化するために音声変調のオプションを導入。
+- 🌍 **多言語のサポート**: 複数の言語のサポートを拡張。
+- 💬 **高度なチャットインターフェース**: 自然な会話を実現するためのより洗練されたチャットインターフェースの開発。
+- 🔍 **より優れた検索アルゴリズム**: より正確な結果を得るための検索アルゴリズムの改善。
+- 🚀 **パフォーマンスの最適化**: パフォーマンスの継続的な最適化でレスポンスまでの時間を短縮化。
+- 🤝 **サードパーティーの統合**: 人気のアプリやサービスとの統合を更に追加。
   
 **2024 Q4**  
-- Expand NLP capabilities to include more languages.
-- Integrate advanced sentiment analysis for improved mood detection.
-- Develop cross-platform sync for task management and reminders.
+- NLP 機能を拡張してより多くの言語をサポート。
+- 高度な感情分析を統合し、気分の検出を改善。
+- タスク管理とリマインダーのためのクロスプラットフォームの同期を開発。
 
 **2025 Q1**  
-- Introduce more interactive Easter eggs and surprises.
-- Enhance voice synthesis to include different accents and tones.
-- Optimize AI performance for faster response times.
+- よりインタラクティブなイースターエッグやサプライズを導入。
+- 音声合成を強化して様々なアクセントやトーンを追加。
+- AI のパフォーマンスを最適化してレスポンスの時間を短縮化。
 
 **2025 Q2**  
-- Roll out new features based on user feedback.
-- Explore integration with additional APIs for expanded functionality.
-- Improve UI/UX based on user testing and feedback.
+- ユーザーのフィードバックに基づいて新しい機能を展開。
+- 機能を拡張するための追加の API との統合を検討。
+- ユーザーテストとフィードバックに基づいて UI/UX を改善。
 
 ---
 
 ## 🤝 貢献
+
+貢献は歓迎します!<br>
+新たな機能や改善のアイデアがある場合やバグの修正をしたい場合は、リポジトリをフォークして変更後にプルリクエストを送信してください。<br>
+ガイドラインは、CONTRIBUTING.md ファイルに記載されています。
+
+---
+
+### 🥚 イースターエッグ
+
+.N.I.R.A には驚きがたくさんあります! 偶然発見するかもしれないイースターエッグをいくつか紹介します:
+リックロール
+
+.｢rick｣というキーワードを言うと N.I.R.A が秘密のビデオクリップでリックロールをするかもしれません。彼女の不意を突けるか試してみましょう。
+面白い名言
+
+.N.I.R.A に｢面白い名言｣を訊いてみるときっと笑顔になるような、面白くておかしい名言が見つかるかもしれません。
+シークレットダンスモード
+
+.｢ダンスパーティー｣と言うと N.I.R.A はファンキーなテキストベースのダンスの動きを含む特別なメッセージを返してくれます。
+
+
+### 🏁 結論
+
+N.I.R.A は単なる AI アシスタントではありません。ユーモア、親切さ、そしてちょっとしたサプライズが得意なあなたの新しい友達なデジタルコンパニオンです。日々のタスクや手助け、気分を明るくさせてくれる面白いこと、または会話の相手など N.I.R.A があなたのためにここにいるのです。
+
+
+N.I.R.A をお迎えしていただきありがとうございます。<br>
+フィードバックや提案または、エクスペリエンスを共有したい方は是非お聞かせください。Neural Nexus チームは、新たな AI アシスタントで素晴らしい時間と日々を過ごせることを願っています。日常は生産的、夜は安らかにそして N.I.R.A との生活が楽しいものになりますように。🌟
+
+---
+
+## 🦺 サポート
+
+問題が発生した場合やご質問がある場合は [FAQ](FAQ.md) をご覧ください。
+---
+
+## 📬 連絡先
+
+お問い合わせは、`nightblobby@gmail.com` のメールアドレスに連絡か [X: Twitter](https://twitter.com/nightblobby) をフォローしてください。
+
 寄付を歓迎します!新機能や改善に関するアイデアがある場合、または単にバグを修正したい場合は、リポジトリをフォークして変更を加え、プル リクエストを送信してください。私たちのガイドラインは CONTRIBUTING.md ファイルにあります。
 
 ---
@@ -279,8 +358,8 @@ N.I.R.A はオープンな知識共有を尊重しつつ、Voidware Labs チー�
 
 ---
 
-## 🎉 ありがとう
+## 🎉 ありがとうございます
 
-N.I.R.A.をご利用いただき誠にありがとうございます。ぜひご参加いただき、フィードバックをお待ちしております。一緒に N.I.R.A を宇宙で最も先進的な AI アシスタントにしましょう! 🚀
+N.I.R.A をお迎えしていただきありがとうございます! フィードバックをお待ちしています。一緒に N.I.R.A を宇宙一で最も先進的な AI アシスタントに成長させていきましょう。🚀
 
 --- 
