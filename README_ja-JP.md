@@ -259,7 +259,20 @@ Neural Nexus チームは、新しい AI アシスタントと素晴らしい時
 
 問題が発生したり質問がある場合は、[FAQ](FAQ.md) をご確認ください。
 ---
+### ⚖️ 使用およびクレジットに関するポリシー (Usage & Credit Policy)
 
+このリポジトリのコードおよび関連する素材 (**N.I.R.A - Neural Interactive Responsive Agent**) は、  
+**Voidware Labs** およびその貢献者によって作成されたものです。
+
+- 🚫 **コードの再利用・再配布は禁止** されています。  
+- ✅ **学習目的や参考利用** は自由ですが、その際は **明確なクレジット** を付与してください。  
+- 📜 クレジットの形式例:  
+  > “Based on N.I.R.A (Neural Interactive Responsive Agent) — originally developed by Voidware Labs (https://github.com/NightBlobby/N.I.R.A)”  
+- ❌ プロジェクトの一部または全部を改変して **クレジットなしで再公開・再配布することは禁止** です。
+
+N.I.R.A はオープンな知識共有を尊重しつつ、Voidware Labs チームの努力と創造性を保護することを目的としています。  
+プロジェクトを参照または再利用する場合は、必ずクレジットを明記してください。🙏
+---
 ## 📬 連絡先
 
 お問い合わせについては、`nightblobby@gmail.com` にメールでご連絡いただくか、[Twitter](https://twitter.com/nightblobby) をフォローしてください。
